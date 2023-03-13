@@ -1,0 +1,593 @@
+/*Font support for MAC*/
+// @font-face {
+//   font-family: 'Century Gothic';
+//   font-weight: normal;
+//   font-style: normal;
+//   src: local('Century Gothic'), url('/blobcontent/zty/fonts/CenturyGothic.ttf') format('truetype')
+// }
+
+// @font-face {
+//   font-family: 'Century Gothic';
+//   font-weight: bold;
+//   font-style: normal;
+//   src: local('Century Gothic Bold'), url('/blobcontent/zty/fonts/CenturyGothicBold.ttf') format('truetype')
+// }
+
+// @font-face {
+//   font-family: 'Century Gothic';
+//   font-weight: bold;
+//   font-style: italic;
+//   src: local('Century Gothic Bold Italic'), url('/blobcontent/zty/fonts/CenturyGothicBoldItalic.ttf') format('truetype')
+// }
+
+// @font-face {
+//   font-family: 'Century Gothic';
+//   font-weight: normal;
+//   font-style: italic;
+//   src: local('Century Gothic Italic'), url('/blobcontent/zty/fonts/CenturyGothicItalic.ttf') format('truetype')
+// }
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: baseline;
+  background: transparent
+}
+
+body {
+  text-align: left;
+  font-feature-settings: "liga" 0;
+  -moz-font-feature-settings: "liga" off
+}
+
+#document.skn-srz9 ol,
+#document.skn-srz9 ul {
+  list-style: none
+}
+
+#document.skn-srz9 table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: inherit;
+  color: inherit;
+  width: 100%
+}
+
+/*START content disc style for LI*/
+#document.skn-srz9 ul,
+#document.skn-srz9 li {
+  margin: 0;
+  padding: 0;
+  list-style-type: disc
+}
+
+#document.skn-srz9 ul li {
+  margin: 0 0 0 16px;
+  padding: 0
+}
+
+@-moz-document url-prefix() {
+  #document.skn-srz9 ul li {
+    margin: 0 0 0 12px;
+    padding: 0 0 0 3px
+  }
+}
+
+/*END content disc style for LI*/
+
+/*common css*/
+#document.skn-srz9 .txtBold {
+  font-weight: bold
+}
+
+#document.skn-srz9 .paddedline {
+  display: block
+}
+
+#document.skn-srz9 .word-break {
+  word-wrap: break-word
+}
+
+#document.skn-srz9 table.skills,
+.table_wrapper {
+  width: 100%;
+  margin-top: 0;
+  word-wrap: break-word
+}
+
+#document.skn-srz9 table.skills th,
+table.skills td {
+  width: 20%;
+  text-align: center
+}
+
+#document.skn-srz9 table.skills .skillname,
+#document.skn-srz9 table.skills .skillrating {
+  text-align: left;
+  width: 35%
+}
+
+#document.skn-srz9 table.skills .skillrating {
+  width: 20%
+}
+
+#document.skn-srz9 table.skills .skillyears,
+#document.skn-srz9 table.skills .skilllast {
+  width: 19%
+}
+
+#document.skn-srz9 table.skills .pad1 {
+  width: 5%
+}
+
+#document.skn-srz9 .skills .pad2,
+#document.skn-srz9 table.skills .pad3 {
+  width: 1%
+}
+
+/* document */
+#document.skn-srz9 {
+  box-sizing: border-box;
+  color: #343434;
+  font-variant-ligatures: none;
+  line-height: 16px;
+  min-height: 792px
+}
+
+#document.skn-srz9 .name {
+  display: table;
+  width: 100%;
+  color: #002e58;
+  font-weight: 700;
+  overflow: hidden;
+  padding: 0;
+  text-align: left;
+  word-wrap: break-word
+}
+
+#document.skn-srz9 .flname {
+  font-weight: 400;
+  vertical-align: top
+}
+
+#document.skn-srz9 .address .singlecolumn {
+  margin-left: 0 !important
+}
+
+#document.skn-srz9 .heading {
+  font-weight: 700;
+  line-height: 15px;
+  margin-bottom: 10px;
+  padding-left: 15px;
+  position: relative
+}
+
+#document.skn-srz9 .heading:before {
+  background: #002e58;
+  border-radius: 50%;
+  content: '';
+  height: 5px;
+  left: 1px;
+  position: absolute;
+  top: 8px;
+  width: 5px
+}
+
+#document.skn-srz9 .sectiontitle {
+  color: #002e58;
+  word-wrap: break-word
+}
+
+#document.skn-srz9 .degreeGap {
+  margin-bottom: 4px
+}
+
+#document.skn-srz9 .locationGap {
+  margin-top: 4px
+}
+
+#document.skn-srz9 .firstparagraph {
+  margin-top: 0 !important
+}
+
+#document.skn-srz9 .section:empty {
+  display: none
+}
+
+/*monogram*/
+#document.skn-srz9 .right-box {
+  position: relative
+}
+
+#document.skn-srz9 .monogram,
+#document.skn-srz9 .flname {
+  display: table-cell
+}
+
+#document.skn-srz9 .monogram {
+  width: 92px;
+  min-height: 92px;
+  vertical-align: top
+}
+
+#document.skn-srz9 .flname {
+  padding-left: 20px
+}
+
+#document.skn-srz9 .monogram svg text {
+  font-size: 28px;
+  font-style: italic;
+  font-weight: 400;
+  text-transform: lowercase
+}
+
+/*left and right css*/
+#document.skn-srz9 .parentContainer {
+  border-collapse: collapse;
+  display: table;
+  min-height: inherit;
+  table-layout: fixed;
+  width: 100%
+}
+
+#document.skn-srz9 .left-box,
+#document.skn-srz9 .right-box {
+  padding-left: 15px;
+  vertical-align: top;
+  display: table-cell
+}
+
+#document.skn-srz9 .left-box {
+  box-sizing: initial;
+  letter-spacing: .2px;
+  padding-left: 0;
+  padding-right: 15px
+}
+
+#document.skn-srz9 .right-box .section:first-child,
+#document.skn-srz9 .left-box .section:first-child,
+#document.skn-srz9 .summary {
+  padding-top: 0
+}
+
+#document.skn-srz9 .right-box .paddedline.date-content {
+  position: absolute;
+  margin-left: 0;
+  width: 65px
+}
+
+#document.skn-srz9 .paragraph {
+  position: relative
+}
+
+#document.skn-srz9 .right-box .experience .paragraph,
+#document.skn-srz9 .right-box .summary .paragraph {
+  margin-left: 0
+}
+
+#document.skn-srz9 .summary .singlecolumn {
+  margin-left: 0 !important
+}
+
+#document.skn-srz9>div:not(.topsection),
+#document.skn-srz9>div:not(.parentContainer) {
+  min-height: auto
+}
+
+#document.skn-srz9 .resumeTitle {
+  color: #002e58;
+  font-weight: 500
+}
+
+/* Issues fix for builder page */
+#displayResume #document.skn-srz9.document {
+  min-height: 792px
+}
+
+#document.skn-srz9>div {
+  min-height: inherit
+}
+
+#document.skn-srz9 .left-box .sortable-item .notdraggable,
+#document.skn-srz9 .right-box .sortable-item .notdraggable {
+  padding-top: 0px
+}
+
+#document.skn-srz9 .right-box .sortable-item .summary {
+  padding-top: 20px
+}
+
+#document.skn-srz9 .sortable-item .name {
+  padding-bottom: 0
+}
+
+#document.skn-srz9 .ratingWrapper .default-fill {
+  fill: #002e58
+}
+
+#document.skn-srz9 .sortable-item .ratingWrapper span {
+  top: 0
+}
+
+/* Only for firefox */
+@-moz-document url-prefix() {
+  #document.skn-srz9 .parentContainer {
+    height: 1px
+  }
+}
+
+/*Icons*/
+#document.skn-srz9 .iconRow {
+  clear: both;
+  padding-bottom: 7px;
+  word-wrap: break-word
+}
+
+#document.skn-srz9 .iconRow .iconSvg {
+  width: 20px;
+  height: 20px;
+  float: left;
+  margin-right: 5px
+}
+
+#document.skn-srz9 .iconRow .iconSvg svg:first-child {
+  width: 20px;
+  height: 20px
+}
+
+#document.skn-srz9 .iconRow svg circle {
+  fill: #002e58
+}
+
+#document.skn-srz9 .iconRow svg path {
+  fill: #fff
+}
+
+#document.skn-srz9 .iconRow .icoTxt {
+  margin-left: 25px
+}
+
+#document.skn-srz9 .ratingWrapper {
+  text-align: right
+}
+
+#document.skn-srz9 .ratingWrapper .noLnht {
+  line-height: 0
+}
+
+#document.skn-srz9 .ratingWrapper svg {
+  height: 13px
+}
+
+/* For dates fix */
+#document.skn-srz9 .right-box .hidedates {
+  visibility: hidden;
+  position: static !important;
+  display: block;
+  float: left
+}
+
+#document.skn-srz9 .left-box .hidedates {
+  display: none
+}
+
+#document.skn-srz9 .paragraph.datespara:after {
+  content: '';
+  display: table;
+  clear: both
+}
+
+#document.skn-srz9 .socl.icoTxt {
+  word-break: break-all
+}
+
+/* Added to handle SOCL link issue*/
+
+/*PICT*/
+#document.skn-srz9:not(.ZFR) .photo {
+  display: none
+}
+
+#document.skn-srz9.ZFR .prflPic,
+#document.skn-srz9.ZFR .prflPic>div {
+  width: 154px;
+  height: 154px
+}
+
+#document.skn-srz9.ZFR .prflPic img {
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 100%;
+  max-height: 100%;
+  border-radius: 50%;
+}
+
+#document.skn-srz9 table {
+  line-height: 18px
+}
+
+#document.skn-srz9.pagesize {
+  width: 700px
+}
+
+#document.skn-srz9.fontface {
+  font-family: Century Gothic
+}
+
+#document.skn-srz9.fontsize {
+  font-size: 11px
+}
+
+#document.skn-srz9.vmargins {
+  padding-top: 22px;
+  padding-bottom: 22px
+}
+
+#document.skn-srz9.hmargins {
+  padding-left: 22px;
+  padding-right: 22px
+}
+
+#document.skn-srz9 .section {
+  padding-top: 20px
+}
+
+#document.skn-srz9 .left-box .section:after {
+  padding-bottom: 10px
+}
+
+#document.skn-srz9 .paragraph {
+  margin-top: 10px
+}
+
+#document.skn-srz9 .singlecolumn,
+#document.skn-srz9 .maincolumn {
+  word-break: break-word
+}
+
+#document.skn-srz9 .right-box .singlecolumn,
+#document.skn-srz9 .right-box .maincolumn {
+  margin-left: 0px
+}
+
+#document.skn-srz9 table.skills td {
+  padding-top: 5px
+}
+
+#document.skn-srz9 .jobtitle,
+#document.skn-srz9 .degree,
+#document.skn-srz9 .programline {
+  font-size: 14px
+}
+
+#document.skn-srz9 .name {
+  color: #0187de;
+  font-size: 36px;
+  line-height: 43px
+}
+
+#document.skn-srz9 .monogram svg circle,
+#document.skn-srz9 .iconRow svg circle {
+  fill: #0187de
+}
+
+#document.skn-srz9 .heading {
+  line-height: 22px
+}
+
+#document.skn-srz9 .sectiontitle,
+#document.skn-srz9 .resumeTitle,
+#document.skn-srz9 .heading:before {
+  font-size: 16px;
+  color: #0187de
+}
+
+#document.skn-srz9 .resumeTitle {
+  line-height: 22px
+}
+
+#document.skn-srz9 .heading:before {
+  background: #0187de;
+  top: 9px
+}
+
+#document.skn-srz9 .left-box {
+  width: 165px
+}
+
+#document.skn-srz9 .right-box .paragraph .singlecolumn {
+  margin-left: 91px
+}
+
+/*Icons*/
+#document.skn-srz9 .iconRow .iconSvg {
+  padding-top: -2px
+}
+
+/*fixes for builder page*/
+#document.skn-srz9 .left-box .sortable-item .section,
+#document.skn-srz9 .right-box .sortable-item .section {
+  padding-top: 20px
+}
+
+#document.skn-srz9 .ratingWrapper .default-fill {
+  fill: #0187de
+}
+
+/*Hover border style*/
+#document.skn-srz9.active .wrapper-bg {
+  left: -62px !important;
+  right: -62px !important
+}
+
+#document.skn-srz9.active .acrs-bdr {
+  left: -60px !important
+}
+
+#document.skn-srz9.active .acr-edit,
+#document.skn-srz9.active .acr-delete {
+  left: -59px !important
+}
