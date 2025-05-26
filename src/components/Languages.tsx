@@ -1,4 +1,6 @@
 import React from 'react';
+import SkillLevelRow from '../common/components/SkillLevelRow';
+import { LANGUAGES } from '../common/constants/skillsAndLanguages';
 
 const Languages = () => {
   return (
@@ -19,36 +21,9 @@ const Languages = () => {
           </div>
           <div className=""> {/* This div was empty in source, kept for structure */}
             <div className="sortableInner">
-              {/* English(B1) */}
-              <div className="row m-t">
-                <div className="col-6">English(B1)</div>
-                <div className="col-6">
-                  <div className="noLnht">
-                    <svg viewBox="0 0 500 100" id="FIELD_RATV" type="count">
-                      <circle cx="50" cy="50" r="40" fill="#0187de" className="default-fill"></circle>
-                      <circle cx="150" cy="50" r="40" fill="#0187de" className="default-fill"></circle>
-                      <circle cx="250" cy="50" r="40" fill="#0187de" className="default-fill"></circle>
-                      <circle cx="350" cy="50" r="40" fill="#d5d6d6"></circle>
-                      <circle cx="450" cy="50" r="40" fill="#d5d6d6"></circle>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-              {/* Russian */}
-              <div className="row m-t">
-                <div className="col-6">Russian</div>
-                <div className="col-6">
-                  <div className="noLnht">
-                    <svg viewBox="0 0 500 100" id="FIELD_RATV" type="count">
-                      <circle cx="50" cy="50" r="40" fill="#0187de" className="default-fill"></circle>
-                      <circle cx="150" cy="50" r="40" fill="#0187de" className="default-fill"></circle>
-                      <circle cx="250" cy="50" r="40" fill="#0187de" className="default-fill"></circle>
-                      <circle cx="350" cy="50" r="40" fill="#0187de" className="default-fill"></circle>
-                      <circle cx="450" cy="50" r="40" fill="#0187de" className="default-fill"></circle>
-                    </svg>
-                  </div>
-                </div>
-              </div>
+              {LANGUAGES.map(({ language, level }) => (
+                <SkillLevelRow key={language} label={language} level={level} />
+              ))}
             </div>
           </div>
         </div>

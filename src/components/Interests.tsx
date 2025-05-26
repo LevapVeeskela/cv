@@ -1,4 +1,5 @@
 import React from 'react';
+import { INTERESTS } from '../common/constants/interests';
 
 const Interests = () => {
   return (
@@ -25,12 +26,9 @@ const Interests = () => {
               >
                 <div className="clearfix doc-item">
                   <div className="field singlecolumn" id="FIELD_FRFM">
-                    <p>Darts</p>
-                    <p>Snowboarding</p>
-                    <p>Vacation with friends</p>
-                    <p>Active leisure</p>
-                    <p>Travelling</p>
-                    <p>Constantly learn something new</p>
+                    {INTERESTS.map((interest, i) => (
+                      <p key={i}>{interest}</p>
+                    ))}
                   </div>
                 </div>
               </div>
