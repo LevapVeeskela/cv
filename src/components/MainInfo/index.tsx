@@ -1,6 +1,6 @@
 import React from 'react';
-import photo from '../assets/photo.jpg';
-import { MAIN_INFO, BIOGRAPHY } from '../common/constants/mainInfo';
+import photo from '../../assets/photo.jpg';
+import { MAIN_INFO, BIOGRAPHY } from '../../common/constants/mainInfo';
 
 const MainInfo = () => {
   return (
@@ -16,8 +16,8 @@ const MainInfo = () => {
           data-section-cd="NAME"
         >
           <div className=" doc-item">
-            <div className=""> {/* This div was empty in source, kept for structure */}
-              <div className=""> {/* This div was empty in source, kept for structure */}
+            <div className="">
+              <div className="">
                 <div
                   id="PARAGRAPH_NAME_83ad81a4-6570-07e0-c565-eab1f67c3d54"
                   className="paragraph PARAGRAPH_NAME firstparagraph  "
@@ -28,7 +28,7 @@ const MainInfo = () => {
                         <img
                           src={photo}
                           style={{ borderRadius: '50%' }}
-                          alt="Paul Alexeev" // Added alt text
+                          alt={MAIN_INFO.photoAlt}
                         />
                       </div>
                       <div className="flname">
@@ -65,8 +65,8 @@ const MainInfo = () => {
           data-section-cd="SUMM"
         >
           <div className=" doc-item">
-            <div className=""> {/* This div was empty in source, kept for structure */}
-              <div className=""> {/* This div was empty in source, kept for structure */}
+            <div className="">
+              <div className="">
                 <div
                   id="PARAGRAPH_SUMM_739d11f0-7e56-44b6-6bb7-d3c6d928d8be"
                   className="paragraph PARAGRAPH_SUMM firstparagraph  "

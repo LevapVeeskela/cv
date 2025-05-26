@@ -1,5 +1,5 @@
 import React from 'react';
-import { INTERESTS } from '../common/constants/interests';
+import { INTERESTS } from '../../common/constants/interests';
 
 const Interests = () => {
   return (
@@ -18,7 +18,7 @@ const Interests = () => {
               Interests
             </div>
           </div>
-          <div className=""> {/* This div was empty in source, kept for structure */}
+          <div className="">
             <div className="sortableInner">
               <div
                 id="PARAGRAPH_INTR_83935628-71b0-5f4b-53cf-b3aba687a49e"

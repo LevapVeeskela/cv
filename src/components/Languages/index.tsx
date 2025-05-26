@@ -1,6 +1,6 @@
 import React from 'react';
-import SkillLevelRow from '../common/components/SkillLevelRow';
-import { LANGUAGES } from '../common/constants/skillsAndLanguages';
+import SkillLevelRow from '../../common/components/SkillLevelRow';
+import { LANGUAGES } from '../../common/constants/skillsAndLanguages';
 
 const Languages = () => {
   return (
@@ -19,7 +19,7 @@ const Languages = () => {
               Languages
             </div>
           </div>
-          <div className=""> {/* This div was empty in source, kept for structure */}
+          <div className="">
             <div className="sortableInner">
               {LANGUAGES.map(({ language, level }) => (
                 <SkillLevelRow key={language} label={language} level={level} />

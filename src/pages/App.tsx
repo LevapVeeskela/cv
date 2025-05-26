@@ -1,13 +1,15 @@
 import React from 'react';
 import './style.scss';
 
-import Contacts from '../components/Contacts';
-import Skills from '../components/Skills';
-import Languages from '../components/Languages';
-import MainInfo from '../components/MainInfo';
-import WorkHistory from '../components/WorkHistory';
-import Education from '../components/Education';
-import Interests from '../components/Interests';
+import { 
+  Contacts,
+  Skills,
+  Languages,
+  MainInfo,
+  WorkHistory,
+  Education,
+  Interests 
+} from '../components';
 
 const App = () => {
   return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import { WORK_HISTORY } from '../common/constants/workHistory';
+import { WORK_HISTORY } from '../../common/constants/workHistory';
 
 const WorkHistory = () => {
   return (
@@ -18,8 +18,8 @@ const WorkHistory = () => {
               Work History
             </div>
           </div>
-          <div className=""> {/* This div was empty in source, kept for structure */}
-            <div className=""> {/* This div was empty in source, kept for structure */}
+          <div className="">
+            <div className="">
               {WORK_HISTORY.map((job, idx) => (
                 <div key={job.title + job.company + idx} className="paragraph datespara PARAGRAPH_EXPR">
                   <div className="clearfix doc-item">
