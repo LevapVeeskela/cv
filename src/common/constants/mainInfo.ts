@@ -10,7 +10,7 @@ wide range of programming utilities and languages.
 Knowledgeable of backend and frontend development
 requirements. Able to handle any part of the process
 easily. Collaborative team player with excellent
-technical abilities offering with 5 years of
+technical abilities offering with 8 years of
 experience. Successful Full Stack Developer offering
 own experience in demanding environments focused on
 producing cutting-edge systems any complexity.

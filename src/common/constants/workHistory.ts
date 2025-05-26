@@ -1,11 +1,27 @@
 export const WORK_HISTORY = [
   {
+    title: 'Software Engineer',
+    company: 'Eurasian processing company',
+    city: 'Minsk',
+    country: 'Belarus',
+    start: '2022',
+    end: 'Current',
+    details: [
+      'Front-end development, contributing to the successful delivery of 6 diverse projects to production.',
+      'Specialized in developing and maintaining critical user-facing applications using React 18.3.1, Redux, and TypeScript.',
+      'Key projects include the user personal account https://clients.e1-card.ru/ and the real-time fuel station route builder https://locator.e1-card.ru/.',
+      'Architected and implemented robust solutions, improving existing structures and establishing effective architecture for new initiatives.',
+      'Conducted code reviews, managed task distribution in Jira, and participated in technical interviews for front-end developer candidates.',
+      'Utilized Axios for API interactions and worked extensively with REST APIs.',
+    ],
+  },
+  {
     title: 'Team Lead Frontend Developer',
     company: 'eComCharge',
     city: 'Minsk',
     country: 'Belarus',
     start: '2021',
-    end: 'Current',
+    end: 'August 2022',
     details: [
       'Led front-end development.',
       'Had 3 projects in the active phase at the same time. Everything reached production.',
