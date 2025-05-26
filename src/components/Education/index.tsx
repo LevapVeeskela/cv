@@ -10,7 +10,7 @@ const Education = () => {
       </header>
       <div className='sortableInner'>
         {EDUCATION.map((edu, index) => (
-          <div key={index} className='paragraph datespara PARAGRAPH_EDUC'>
+          <div key={index} className='paragraph datespara '>
             <div className='clearfix doc-item'>
               <div className='paddedline date-content'>
                 <span className='jobdates'>{edu.start}</span>

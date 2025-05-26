@@ -7,7 +7,7 @@ const MainInfo = () => {
   return (
     <>
       {/* Name and Title Section */}
-      <section className='section-container data-NAME'>
+      <section className='section-container'>
         <div className='name word-break'>
           <div className='monogram'>
             <img
@@ -17,23 +17,19 @@ const MainInfo = () => {
             />
           </div>
           <div className='flname'>
-            <span className='field' id='FIELD_FNAM'>
-              {MAIN_INFO.firstName}
-            </span>
-            <span className='field word-break txtBold' id='FIELD_LNAM'>
+            <span className='field'>{MAIN_INFO.firstName}</span>
+            <span className='field word-break txtBold'>
               {MAIN_INFO.lastName}
             </span>
-            <div className='resumeTitle' id='FIELD_DCTL'>
-              {MAIN_INFO.title}
-            </div>
+            <div className='resumeTitle'>{MAIN_INFO.title}</div>
           </div>
         </div>
       </section>
 
       {/* Summary/Biography Section */}
-      <section className='section-container data-SUMM'>
+      <section className='section-container'>
         <header className='heading'>Summary</header>
-        <div className='field singlecolumn' id='FIELD_FRFM'>
+        <div className='field singlecolumn'>
           <p>{BIOGRAPHY}</p>
         </div>
       </section>

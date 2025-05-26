@@ -12,7 +12,7 @@ const WorkHistory = () => {
         {WORK_HISTORY.map((job, idx) => (
           <div
             key={job.title + job.company + idx}
-            className='paragraph datespara PARAGRAPH_EXPR'
+            className='paragraph datespara'
           >
             <div className='clearfix doc-item'>
               <div className='paddedline date-content'>
