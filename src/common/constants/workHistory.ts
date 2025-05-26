@@ -14,8 +14,8 @@ export const WORK_HISTORY = [
       'I was involved in porting an old project to a new framework.',
       'Did review code for members teams, I distribute tasks in Jira.',
       'Conducted technical interviews with candidates for the position of front-end developers.',
-      'Main stack technologies which we used that: new projects writed on Angular2/ReactJs+Typescript+MobX, old project on AngularJs and ported to Angular 12 version.'
-    ]
+      'Main stack technologies which we used that: new projects writed on Angular2/ReactJs+Typescript+MobX, old project on AngularJs and ported to Angular 12 version.',
+    ],
   },
   {
     title: 'Lead Developer',
@@ -28,8 +28,8 @@ export const WORK_HISTORY = [
       'Leading small team developer, which working on rewrite monolity project on microservices.',
       'I am writing frontend-project on ReactJs+Redux+TypeScript+FabricJs+SignalR+WebRTC, and backend based on microservices architecture.',
       'I had been checked code of members teams, I distribute tasks in Jira.',
-      'I conduct technical interviews with candidates for the position of front-end developers.'
-    ]
+      'I conduct technical interviews with candidates for the position of front-end developers.',
+    ],
   },
   {
     title: 'Full Stack Developer',
@@ -49,7 +49,7 @@ export const WORK_HISTORY = [
       'Maintained existing applications and designed and delivered new applications.',
       'Contributed ideas and suggestions in team meetings.',
       'Interviewed candidates for front-end.',
-      'Shared experience with begginers.'
-    ]
-  }
+      'Shared experience with begginers.',
+    ],
+  },
 ];

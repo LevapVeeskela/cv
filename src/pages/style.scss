@@ -27,6 +27,7 @@
 //   src: local('Century Gothic Italic'), url('/blobcontent/zty/fonts/CenturyGothicItalic.ttf') format('truetype')
 // }
 
+// prettier-ignore-start
 html,
 body,
 div,
@@ -66,7 +67,6 @@ strong,
 sub,
 sup,
 tt,
-var,
 b,
 u,
 i,
@@ -88,33 +88,34 @@ tfoot,
 thead,
 tr,
 th,
-td {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  vertical-align: baseline;
-  background: transparent
-}
+// prettier-ignore
+// td {
+//   margin: 0;
+//   padding: 0;
+//   border: 0;
+//   outline: 0;
+//   vertical-align: baseline;
+//   background: transparent;
+// }
 
-body {
-  text-align: left;
-  font-feature-settings: "liga" 0;
-  -moz-font-feature-settings: "liga" off
-}
+// body {
+//   text-align: left;
+//   font-feature-settings: "liga" 0;
+//   -moz-font-feature-settings: "liga" off
+// }
 
-#document.skn-srz9 ol,
-#document.skn-srz9 ul {
-  list-style: none
-}
+// #document.skn-srz9 ol,
+// #document.skn-srz9 ul {
+//   list-style: none
+// }
 
-#document.skn-srz9 table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  font-size: inherit;
-  color: inherit;
-  width: 100%
-}
+// #document.skn-srz9 table {
+//   border-collapse: collapse;
+//   border-spacing: 0;
+//   font-size: inherit;
+//   color: inherit;
+//   width: 100%
+// }
 
 /*START content disc style for LI*/
 #document.skn-srz9 ul,

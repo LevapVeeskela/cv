@@ -1,0 +1,10 @@
+build
+src/i18n/locales/**
+**/*.json
+**/*.md
+**/*.svg
+**/*.jpg
+**/*.jpeg
+**/*.png
+src/assets/*
+stats.html

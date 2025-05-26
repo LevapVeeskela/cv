@@ -1,0 +1,19 @@
+{
+  "parser": "typescript",
+  "semi": true,
+  "singleQuote": true,
+  "useTabs": false,
+  "tabWidth": 2,
+  "endOfLine": "crlf",
+  "printWidth": 80,
+  "arrowParens": "always",
+  "trailingComma": "all",
+  "singleAttributePerLine": false,
+  "htmlWhitespaceSensitivity": "css",
+  "proseWrap": "always",
+  "insertPragma": false,
+  "requirePragma": false,
+  "embeddedLanguageFormatting": "auto",
+  "quoteProps": "as-needed",
+  "jsxSingleQuote": true
+}
