@@ -1,4 +1,5 @@
 import React from 'react';
+import { CONTACTS } from '../../common/constants/contacts';
 
 const Contacts = () => {
   return (
@@ -39,15 +40,15 @@ const Contacts = () => {
                         <div className="icoTxt">
                           <span className="field" id="FIELD_STRT"></span> {/* Empty in source */}
                           <span className="field" id="FIELD_CITY">
-                            Minsk
+                            {CONTACTS.address.city}
                           </span>
                           <span>,</span>
                           <span className="field" id="FIELD_STAT">
-                            HM
+                            {CONTACTS.address.state}
                           </span>
                           <span>, </span>
                           <span className="field" id="FIELD_ZIPC">
-                            220002
+                            {CONTACTS.address.zip}
                           </span>
                         </div>
                       </div>
@@ -63,7 +64,11 @@ const Contacts = () => {
                         </div>
                         <div className="icoTxt">
                           <span className="field" id="FIELD_HPHN">
-                            375336362168
+                            <a
+                              href={`tel:${CONTACTS.phone}`}
+                              target="_blank"
+                              rel="noopener noreferrer">{CONTACTS.phone}
+                            </a>
                           </span>
                           <span className="field" id="FIELD_CPHN"></span> {/* Empty in source */}
                         </div>
@@ -87,7 +92,11 @@ const Contacts = () => {
                             className="field"
                             style={{ fontSize: '0.9em' }}
                           >
-                            paulalexeev10@gmail.com
+                            <a
+                              href={`mailto:${CONTACTS.email}`}
+                              target="_blank"
+                              rel="noopener noreferrer">{CONTACTS.email}
+                            </a>
                           </span>
                         </div>
                       </div>
@@ -112,7 +121,10 @@ const Contacts = () => {
                         id="FIELD_SOCL"
                         style={{ fontSize: '0.9em' }}
                       >
-                        https://by.linkedin.com/in/paul-alexeev-991736150
+                        <a
+                          href={CONTACTS.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer">{CONTACTS.linkedin}</a>
                       </div>
                     </div>
                   </div>
