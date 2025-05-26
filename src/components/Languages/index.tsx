@@ -7,9 +7,7 @@ const Languages = () => {
   return (
     <section className='section-container data-LANG'>
       <header className='heading'>
-        <span className='sectiontitle' id='SECTIONNAME_LANG'>
-          Languages
-        </span>
+        <span className='sectiontitle'>Languages</span>
       </header>
       <div className='sortableInner'>
         {LANGUAGES.map(({ language, level }) => (

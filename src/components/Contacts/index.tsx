@@ -6,9 +6,7 @@ const Contacts = () => {
   return (
     <section className='section-container data-CNTC'>
       <header className='heading'>
-        <span className='sectiontitle' id='SECTIONNAME_CNTC'>
-          Contacts
-        </span>
+        <span className='sectiontitle'>Contacts</span>
       </header>
       <div>
         <div className='iconRow'>

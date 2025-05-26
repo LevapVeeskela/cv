@@ -6,9 +6,7 @@ const Education = () => {
   return (
     <section className='section-container data-EDUC'>
       <header className='heading'>
-        <span className='sectiontitle' id='SECTIONNAME_EDUC'>
-          Education
-        </span>
+        <span className='sectiontitle'>Education</span>
       </header>
       <div className='sortableInner'>
         {EDUCATION.map((edu, index) => (

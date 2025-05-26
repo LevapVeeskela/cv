@@ -7,9 +7,7 @@ const Skills = () => {
   return (
     <section className='section-container data-HILT'>
       <header className='heading'>
-        <span className='sectiontitle' id='SECTIONNAME_HILT'>
-          Skills
-        </span>
+        <span className='sectiontitle'>Skills</span>
       </header>
       <div className='sortableInner'>
         {SKILLS.map(({ skill, level }) => (

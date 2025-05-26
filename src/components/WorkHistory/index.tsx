@@ -6,9 +6,7 @@ const WorkHistory = () => {
   return (
     <section className='section-container data-EXPR'>
       <header className='heading'>
-        <span className='sectiontitle' id='SECTIONNAME_EXPR'>
-          Work History
-        </span>
+        <span className='sectiontitle'>Work History</span>
       </header>
       <div>
         {WORK_HISTORY.map((job, idx) => (

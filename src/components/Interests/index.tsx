@@ -6,14 +6,12 @@ const Interests = () => {
   return (
     <section className='section-container data-INTR'>
       <header className='heading'>
-        <span className='sectiontitle' id='SECTIONNAME_INTR'>
-          Interests
-        </span>
+        <span className='sectiontitle'>Interests</span>
       </header>
       <div className='sortableInner'>
         <div className='paragraph PARAGRAPH_INTR firstparagraph'>
           <div className='clearfix doc-item'>
-            <div className='field singlecolumn' id='FIELD_FRFM'>
+            <div className='field singlecolumn'>
               {INTERESTS.map((interest, i) => (
                 <p key={i}>{interest}</p>
               ))}
