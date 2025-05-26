@@ -1,2 +1,49 @@
+@import '../../layout/variables.scss';
+
 // Стили только для компонента WorkHistory
-// Добавьте специфичные стили для WorkHistory здесь при необходимости
+.jobtitle {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.companyname {
+  font-weight: 500;
+  color: $color-secondary;
+}
+
+.jobcity,
+.jobstate {
+  color: $color-secondary;
+  font-size: 12px;
+}
+
+.jobline {
+  margin-top: 4px;
+  display: block;
+}
+
+.datespara {
+  position: relative;
+}
+
+.doc-item {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.singlecolumn {
+  word-break: break-word;
+  min-width: 0;
+}
+
+.sortableInner {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.paragraph {
+  margin-top: 10px;
+}

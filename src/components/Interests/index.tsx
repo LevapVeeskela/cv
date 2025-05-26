@@ -1,6 +1,6 @@
 import React from 'react';
 import { INTERESTS } from '../../common/constants/interests';
-import '../../pages/style.scss';
+import './styles.scss';
 
 const Interests = () => {
   return (

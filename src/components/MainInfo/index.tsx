@@ -1,7 +1,7 @@
 import React from 'react';
 import photo from '../../assets/photo.jpg';
 import { MAIN_INFO, BIOGRAPHY } from '../../common/constants/mainInfo';
-import '../../pages/style.scss';
+import './styles.scss';
 
 const MainInfo = () => {
   return (

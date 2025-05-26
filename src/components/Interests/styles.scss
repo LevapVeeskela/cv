@@ -1,2 +1,28 @@
+@import '../../layout/variables.scss';
+
 // Стили только для компонента Interests
-// Добавьте специфичные стили для Interests здесь при необходимости
+.firstparagraph {
+  margin-top: 0 !important;
+}
+
+.doc-item {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.singlecolumn {
+  word-break: break-word;
+  min-width: 0;
+}
+
+.sortableInner {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.paragraph {
+  margin-top: 10px;
+}

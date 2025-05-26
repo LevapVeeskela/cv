@@ -1,7 +1,7 @@
 import React from 'react';
 import SkillLevelRow from '../../common/components/SkillLevelRow';
 import { SKILLS } from '../../common/constants/skillsAndLanguages';
-import '../../pages/style.scss';
+import './styles.scss';
 
 const Skills = () => {
   return (

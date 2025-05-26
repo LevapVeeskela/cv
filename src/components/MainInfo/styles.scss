@@ -1,2 +1,39 @@
+@import '../../layout/variables.scss';
+
 // Стили только для компонента MainInfo
-// Добавьте специфичные стили для MainInfo здесь при необходимости
+.name {
+  display: table;
+  width: 100%;
+  color: $color-primary;
+  font-weight: 700;
+  overflow: hidden;
+  padding: 0;
+  text-align: left;
+  word-wrap: break-word;
+}
+
+.flname {
+  font-weight: 400;
+  vertical-align: top;
+  padding-left: 20px;
+}
+
+.resumeTitle {
+  color: $color-primary;
+  font-weight: 500;
+  font-size: 1.2rem;
+  line-height: 22px;
+}
+
+.monogram {
+  width: 92px;
+  min-height: 92px;
+  vertical-align: top;
+}
+
+.photo {
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  object-fit: cover;
+}

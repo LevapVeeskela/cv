@@ -1,6 +1,6 @@
 import React from 'react';
 import { CONTACTS } from '../../common/constants/contacts';
-import '../../pages/style.scss';
+import './styles.scss';
 
 const Contacts = () => {
   return (

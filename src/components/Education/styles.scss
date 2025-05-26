@@ -1,2 +1,61 @@
+@import '../../layout/variables.scss';
+
 // Стили только для компонента Education
-// Добавьте специфичные стили для Education здесь при необходимости
+.degreeGap {
+  margin-bottom: 4px;
+}
+
+.locationGap {
+  margin-top: 4px;
+}
+
+.companyname {
+  font-weight: 500;
+  color: $color-secondary;
+}
+
+.degree {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.jobdates {
+  font-size: 12px;
+  color: $color-secondary;
+  margin-right: 2px;
+}
+
+.joblocation {
+  color: $color-secondary;
+  font-size: 12px;
+}
+
+.datespara {
+  position: relative;
+}
+
+.firstparagraph {
+  margin-top: 0 !important;
+}
+
+.doc-item {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.singlecolumn {
+  word-break: break-word;
+  min-width: 0;
+}
+
+.sortableInner {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.paragraph {
+  margin-top: 10px;
+}

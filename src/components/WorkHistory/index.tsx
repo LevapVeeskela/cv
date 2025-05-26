@@ -1,6 +1,6 @@
 import React from 'react';
 import { WORK_HISTORY } from '../../common/constants/workHistory';
-import '../../pages/style.scss';
+import './styles.scss';
 
 const WorkHistory = () => {
   return (
