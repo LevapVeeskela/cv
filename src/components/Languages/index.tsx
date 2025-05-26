@@ -5,7 +5,7 @@ import '../../pages/style.scss';
 
 const Languages = () => {
   return (
-    <section className='section-container data-LANG'>
+    <section className='section-container'>
       <header className='heading'>
         <span className='sectiontitle'>Languages</span>
       </header>

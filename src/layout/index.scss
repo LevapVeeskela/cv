@@ -98,8 +98,6 @@ h6 {
   overflow: hidden
 }
 
-.user-select-none {}
-
 .v-center {
   display: table-cell;
   vertical-align: middle
@@ -6875,7 +6873,8 @@ a.text-dark:focus {
   opacity: 0;
   width: 0;
   vertical-align: top;
-  -moz-appearance: none
+  -moz-appearance: none;
+  appearance: none;
 }
 
 .checkbox input[type='checkbox']:checked+label:after,
