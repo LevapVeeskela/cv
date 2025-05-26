@@ -6,5 +6,6 @@ src/i18n/locales/**
 **/*.jpg
 **/*.jpeg
 **/*.png
+**/*.scss
 src/assets/*
 stats.html
