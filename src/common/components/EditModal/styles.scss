@@ -28,32 +28,54 @@
   gap: 12px;
 }
 
-.editModal fieldset {
-  border: 1px solid #eee;
-  border-radius: 6px;
-  margin-bottom: 16px;
-  padding: 12px;
-}
-
-.editModal label {
-  display: block;
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
   margin-bottom: 8px;
 }
 
+.editModal label {
+  flex: 1 1 180px;
+  min-width: 140px;
+  margin-bottom: 0;
+}
+
 .editModal input[type="text"],
+.editModal input[type="number"],
+.editModal input[type="file"],
 .editModal textarea {
   width: 100%;
   margin-top: 4px;
   margin-bottom: 8px;
-  padding: 6px;
-  border: 1px solid #ccc;
+  padding: 6px 10px;
+  border: 1px solid #cfd8dc;
   border-radius: 4px;
   font-size: 1rem;
+  background: #f8fafc;
+  transition: border 0.2s;
 }
 
-.editModal textarea {
-  min-height: 60px;
-  resize: vertical;
+.editModal input:focus,
+.editModal textarea:focus {
+  border: 1.5px solid #0187de;
+  outline: none;
+  background: #fff;
+}
+
+.editModal fieldset {
+  border: 1.5px solid #e0e0e0;
+  background: #f6fafd;
+  box-shadow: 0 1px 4px rgba(1,135,222,0.04);
+  margin-bottom: 20px;
+  padding: 16px 12px 10px 12px;
+}
+
+.editModal legend {
+  font-weight: 600;
+  color: #0187de;
+  font-size: 1.08rem;
+  padding: 0 8px;
 }
 
 .EditModalButton {
@@ -73,5 +95,49 @@
 
   &:active {
     background-color: #004085;
+  }
+}
+
+.editModal button[type="button"] {
+  background: #0187de;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 12px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.editModal button[type="button"]:hover {
+  background: #0056b3;
+}
+
+.editModal h2 {
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  font-size: 1.4rem;
+  color: #222;
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+.modal-actions button {
+  min-width: 90px;
+  font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .editModal {
+    padding: 8px;
+    max-width: 98vw;
+  }
+  .form-row {
+    flex-direction: column;
+    gap: 4px;
+  }
+  .editModal label {
+    min-width: 0;
   }
 }

@@ -1,10 +1,53 @@
-import React, { useState, ChangeEvent } from 'react';
+import React, { useState, ChangeEvent, useEffect } from 'react';
 import './styles.scss';
 
+interface Address {
+  city: string;
+  state: string;
+  zip: string;
+}
+
+interface Contacts {
+  address: Address;
+  phone: string;
+  email: string;
+  linkedin: string;
+}
+
+interface Skill {
+  skill: string;
+  level: number;
+}
+
+interface Language {
+  language: string;
+  level: string;
+}
+
+interface Education {
+  start: string;
+  end: string;
+  degree: string;
+  school: string;
+  city: string;
+  description: string;
+  details: string[];
+}
+
+interface WorkHistory {
+  title: string;
+  company: string;
+  city: string;
+  country: string;
+  start: string;
+  end: string;
+  details: string[];
+}
+
 interface CvData {
-  contacts: any;
-  skills: any[];
-  languages: any[];
+  contacts: Contacts;
+  skills: Skill[];
+  languages: Language[];
   mainInfo: {
     firstName: string;
     lastName: string;
@@ -13,8 +56,8 @@ interface CvData {
     photoAlt: string;
   };
   biography: string;
-  education: any[];
-  workHistory: any[];
+  education: Education[];
+  workHistory: WorkHistory[];
   interests: string[];
 }
 
@@ -154,11 +197,57 @@ const EditModal: React.FC<EditModalProps> = ({
     });
   };
 
+  // Contacts
+  const handleContactsChange = (field: string, value: string) => {
+    setFormData({
+      ...formData,
+      contacts: { ...formData.contacts, [field]: value },
+    });
+  };
+  const handleAddressChange = (field: string, value: string) => {
+    setFormData({
+      ...formData,
+      contacts: {
+        ...formData.contacts,
+        address: { ...formData.contacts.address, [field]: value },
+      },
+    });
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        onClose();
+      } else if (
+        e.key === 'Enter' &&
+        (e.target as HTMLElement).tagName !== 'TEXTAREA'
+      ) {
+        e.preventDefault();
+        onApply(formData);
+        onClose();
+      }
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [formData, onApply, onClose]);
+
+  const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  };
+
   return (
-    <div className='editModal-overlay'>
+    <div className='editModal-overlay' onClick={handleOverlayClick}>
       <div className='editModal'>
         <h2>Edit CV Data</h2>
-        <form>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            onApply(formData);
+            onClose();
+          }}
+        >
           <fieldset>
             <legend>Main Info</legend>
             <label>
@@ -230,24 +319,59 @@ const EditModal: React.FC<EditModalProps> = ({
           </fieldset>
 
           <fieldset>
-            <legend>Interests</legend>
-            {formData.interests.map((interest, idx) => (
-              <label key={idx}>
-                Interest {idx + 1}:
+            <legend>Contacts</legend>
+            <label>
+              Phone:
+              <input
+                type='text'
+                value={formData.contacts.phone}
+                onChange={(e) => handleContactsChange('phone', e.target.value)}
+              />
+            </label>
+            <label>
+              Email:
+              <input
+                type='text'
+                value={formData.contacts.email}
+                onChange={(e) => handleContactsChange('email', e.target.value)}
+              />
+            </label>
+            <label>
+              LinkedIn:
+              <input
+                type='text'
+                value={formData.contacts.linkedin}
+                onChange={(e) =>
+                  handleContactsChange('linkedin', e.target.value)
+                }
+              />
+            </label>
+            <div style={{ display: 'flex', gap: 8 }}>
+              <label style={{ flex: 1 }}>
+                City:
                 <input
                   type='text'
-                  value={interest}
-                  onChange={(e) => {
-                    const updated = [...formData.interests];
-                    updated[idx] = e.target.value;
-                    setFormData({ ...formData, interests: updated });
-                  }}
+                  value={formData.contacts.address.city}
+                  onChange={(e) => handleAddressChange('city', e.target.value)}
                 />
               </label>
-            ))}
-            <button type='button' onClick={handleAddInterest}>
-              +
-            </button>
+              <label style={{ flex: 1 }}>
+                State:
+                <input
+                  type='text'
+                  value={formData.contacts.address.state}
+                  onChange={(e) => handleAddressChange('state', e.target.value)}
+                />
+              </label>
+              <label style={{ flex: 1 }}>
+                ZIP:
+                <input
+                  type='text'
+                  value={formData.contacts.address.zip}
+                  onChange={(e) => handleAddressChange('zip', e.target.value)}
+                />
+              </label>
+            </div>
           </fieldset>
 
           {/* Skills Section */}
@@ -473,6 +597,38 @@ const EditModal: React.FC<EditModalProps> = ({
               </div>
             ))}
             <button type='button' onClick={handleAddWorkHistory}>
+              +
+            </button>
+          </fieldset>
+
+          {/* Interests Section */}
+          <fieldset>
+            <legend>Interests</legend>
+            {formData.interests.map((interest, idx) => (
+              <div key={idx} className='form-row'>
+                <label>
+                  Interest {idx + 1}:
+                  <input
+                    type='text'
+                    value={interest}
+                    onChange={(e) => {
+                      const updated = [...formData.interests];
+                      updated[idx] = e.target.value;
+                      setFormData({ ...formData, interests: updated });
+                    }}
+                  />
+                </label>
+              </div>
+            ))}
+            <button
+              type='button'
+              onClick={() =>
+                setFormData({
+                  ...formData,
+                  interests: [...formData.interests, ''],
+                })
+              }
+            >
               +
             </button>
           </fieldset>
