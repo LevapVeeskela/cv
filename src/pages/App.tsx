@@ -10,7 +10,7 @@ import {
   Education,
   Interests,
 } from '../components';
-
+import DownloadPdfButton from '../common/components/DownloadPdfButton';
 const App = () => {
   return (
     <section className='page-wrap'>
@@ -19,6 +19,7 @@ const App = () => {
           <div className='page-final'>
             <section className='container'>
               <div className='body-resume d-flex'>
+                <DownloadPdfButton />
                 <div
                   className='preview-container position-relative'
                   id='resumeDoc'
