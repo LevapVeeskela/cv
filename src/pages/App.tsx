@@ -18,39 +18,39 @@ const App = () => {
         <section className='page-wrapper'>
           <div className='page-final'>
             <section className='container'>
-              <div className='body-resume d-flex '>
-                <div
-                  className='preview-container position-relative'
-                  id='resumeDoc'
-                >
-                  <div
-                    className='section-loader-new d-none'
-                    id='resumeLoader'
-                  ></div>
-                  <div className='spellcheck-notification '>
-                    <i className='fas fa-check '></i>
+              {/* Desktop layout */}
+              <div
+                id='document'
+                className='document fontsize fontface vmargins hmargins pagesize skn-srz9 SRZ9  ZTY'
+              >
+                <div className='parentContainer'>
+                  <div className='left-box'>
+                    <Contacts />
+                    <Skills />
+                    <Languages />
                   </div>
-                  <div className=''>
-                    <div
-                      id='document'
-                      className='document fontsize fontface vmargins hmargins pagesize skn-srz9 SRZ9  ZTY'
-                    >
-                      <div id='CONTAINER_PARENT_0' className='parentContainer'>
-                        <div id='CONTAINER_0' className='left-box'>
-                          <Contacts />
-                          <Skills />
-                          <Languages />
-                        </div>
-                        <div id='CONTAINER_1' className='right-box'>
-                          <MainInfo />
-                          <WorkHistory />
-                          <Education />
-                          <Interests />
-                        </div>
-                      </div>
+                  <div className='right-box'>
+                    <MainInfo />
+                    <WorkHistory />
+                    <Education />
+                    <Interests />
+                  </div>
+                </div>
+                {/* Mobile layout */}
+                <div className='mobile-stack'>
+                  <MainInfo />
+                  <Contacts />
+                  <div className='mobile-skills-langs-row'>
+                    <div className='mobile-skills-col'>
+                      <Skills />
+                    </div>
+                    <div className='mobile-langs-col'>
+                      <Languages />
                     </div>
                   </div>
-                  <div id='svgPreviewHidden' hidden></div>
+                  <WorkHistory />
+                  <Education />
+                  <Interests />
                 </div>
               </div>
             </section>
