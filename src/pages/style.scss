@@ -286,6 +286,14 @@
     flex-direction: column;
   }
 }
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+  button {
+    margin: 0 0 0 5px;
+   }
+}
 
 @media (min-width: 901px) {
   .resume-mobile { display: none !important; }

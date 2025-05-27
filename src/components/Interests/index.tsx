@@ -1,8 +1,11 @@
 import React from 'react';
-import { INTERESTS } from '../../common/constants/interests';
 import './styles.scss';
 
-const Interests = () => {
+interface InterestsProps {
+  data: string[];
+}
+
+const Interests: React.FC<InterestsProps> = ({ data }) => {
   return (
     <section className='section-container'>
       <header className='heading'>
@@ -12,7 +15,7 @@ const Interests = () => {
         <div className='paragraph PARAGRAPH_INTR firstparagraph'>
           <div className='clearfix doc-item'>
             <div className='field singlecolumn'>
-              {INTERESTS.map((interest, i) => (
+              {data.map((interest, i) => (
                 <p key={i}>{interest}</p>
               ))}
             </div>

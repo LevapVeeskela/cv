@@ -1,16 +1,28 @@
 import React from 'react';
 import SkillLevelRow from '../../common/components/SkillLevelRow';
-import { LANGUAGES } from '../../common/constants/skillsAndLanguages';
 
-const Languages = () => {
+interface Language {
+  language: string;
+  level: string;
+}
+
+interface LanguagesProps {
+  data: Language[];
+}
+
+const Languages: React.FC<LanguagesProps> = ({ data }) => {
   return (
     <section className='section-container'>
       <header className='heading'>
         <span className='sectiontitle'>Languages</span>
       </header>
       <div className='sortableInner'>
-        {LANGUAGES.map(({ language, level }) => (
-          <SkillLevelRow key={language} label={language} level={level} />
+        {data.map(({ language, level }) => (
+          <SkillLevelRow
+            key={language}
+            label={language}
+            level={parseInt(level, 10)}
+          />
         ))}
       </div>
     </section>

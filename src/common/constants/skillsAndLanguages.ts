@@ -22,6 +22,6 @@ export const SKILLS = [
 ];
 
 export const LANGUAGES = [
-  { language: 'English(B1)', level: 3 },
-  { language: 'Russian', level: 5 },
+  { language: 'English(B1)', level: '3' },
+  { language: 'Russian', level: '5' },
 ];

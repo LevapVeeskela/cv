@@ -1,15 +1,28 @@
 import React from 'react';
-import { WORK_HISTORY } from '../../common/constants/workHistory';
 import './styles.scss';
 
-const WorkHistory = () => {
+interface JobDetail {
+  title: string;
+  company: string;
+  city: string;
+  country: string;
+  start: string;
+  end: string;
+  details: string[];
+}
+
+interface WorkHistoryProps {
+  data: JobDetail[];
+}
+
+const WorkHistory: React.FC<WorkHistoryProps> = ({ data }) => {
   return (
     <section className='section-container data-EXPR'>
       <header className='heading'>
         <span className='sectiontitle'>Work History</span>
       </header>
       <div>
-        {WORK_HISTORY.map((job, idx) => (
+        {data.map((job, idx) => (
           <div
             key={job.title + job.company + idx}
             className='paragraph datespara'

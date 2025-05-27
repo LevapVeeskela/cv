@@ -1,0 +1,77 @@
+.editModal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.editModal {
+  background: #fff;
+  padding: 20px;
+  max-width: 600px;
+  width: 100%;
+  border-radius: 8px;
+  overflow-y: auto;
+  max-height: 90vh;
+}
+
+.modal-actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.editModal fieldset {
+  border: 1px solid #eee;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  padding: 12px;
+}
+
+.editModal label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.editModal input[type="text"],
+.editModal textarea {
+  width: 100%;
+  margin-top: 4px;
+  margin-bottom: 8px;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.editModal textarea {
+  min-height: 60px;
+  resize: vertical;
+}
+
+.EditModalButton {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1rem;
+
+  &:hover {
+    background-color: #0056b3;
+  }
+
+  &:active {
+    background-color: #004085;
+  }
+}

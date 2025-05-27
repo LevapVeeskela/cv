@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import './style.scss';
 
 import {
@@ -10,8 +10,35 @@ import {
   Education,
   Interests,
 } from '../components';
-import DownloadPdfButton from '../common/components/DownloadPdfButton';
+import {
+  EditModal,
+  DownloadPdfButton,
+  ButtonEditModal,
+} from '../common/components';
+import { CONTACTS } from '../common/constants/contacts';
+import { SKILLS, LANGUAGES } from '../common/constants/skillsAndLanguages';
+import { MAIN_INFO, BIOGRAPHY } from '../common/constants/mainInfo';
+import { EDUCATION } from '../common/constants/education';
+import { WORK_HISTORY } from '../common/constants/workHistory';
+import { INTERESTS } from '../common/constants/interests';
+
 const App = () => {
+  const [cvData, setCvData] = useState({
+    contacts: CONTACTS,
+    skills: SKILLS,
+    languages: LANGUAGES,
+    mainInfo: MAIN_INFO,
+    biography: BIOGRAPHY,
+    education: EDUCATION,
+    workHistory: WORK_HISTORY,
+    interests: INTERESTS,
+  });
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const onClickHandler = () => {
+    setModalOpen(true);
+  };
+
   return (
     <section className='page-wrap'>
       <main id='app' role='main'>
@@ -19,7 +46,10 @@ const App = () => {
           <div className='page-final'>
             <section className='container'>
               <div className='body-resume d-flex'>
-                <DownloadPdfButton />
+                <div className='button-container'>
+                  <DownloadPdfButton />
+                  <ButtonEditModal onClickHandler={onClickHandler} />
+                </div>
                 <div
                   className='preview-container position-relative'
                   id='resumeDoc'
@@ -36,32 +66,42 @@ const App = () => {
                     <div className='resume-root'>
                       <div className='resume-columns'>
                         <div className='resume-left'>
-                          <Contacts />
-                          <Skills />
-                          <Languages />
+                          <Contacts data={cvData.contacts} />
+                          <Skills data={cvData.skills} />
+                          <Languages data={cvData.languages} />
                         </div>
                         <div className='resume-right'>
-                          <MainInfo />
-                          <WorkHistory />
-                          <Education />
-                          <Interests />
+                          <MainInfo
+                            data={{
+                              mainInfo: cvData.mainInfo,
+                              biography: cvData.biography,
+                            }}
+                          />
+                          <WorkHistory data={cvData.workHistory} />
+                          <Education data={cvData.education} />
+                          <Interests data={cvData.interests} />
                         </div>
                       </div>
                       {/* Mobile layout */}
                       <div className='resume-mobile'>
-                        <MainInfo />
-                        <Contacts />
+                        <MainInfo
+                          data={{
+                            mainInfo: cvData.mainInfo,
+                            biography: cvData.biography,
+                          }}
+                        />
+                        <Contacts data={cvData.contacts} />
                         <div className='resume-mobile-skills-langs-row'>
                           <div className='resume-mobile-skills-col'>
-                            <Skills />
+                            <Skills data={cvData.skills} />
                           </div>
                           <div className='resume-mobile-langs-col'>
-                            <Languages />
+                            <Languages data={cvData.languages} />
                           </div>
                         </div>
-                        <WorkHistory />
-                        <Education />
-                        <Interests />
+                        <WorkHistory data={cvData.workHistory} />
+                        <Education data={cvData.education} />
+                        <Interests data={cvData.interests} />
                       </div>
                     </div>
                   </div>
@@ -72,6 +112,13 @@ const App = () => {
           </div>
         </section>
       </main>
+      {isModalOpen && (
+        <EditModal
+          initialData={cvData}
+          onApply={(data) => setCvData(data)}
+          onClose={() => setModalOpen(false)}
+        />
+      )}
     </section>
   );
 };

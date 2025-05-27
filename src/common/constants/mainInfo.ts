@@ -1,7 +1,10 @@
+import photo from '../../assets/photo.jpg';
+
 export const MAIN_INFO = {
   firstName: 'Paul',
   lastName: 'Alexeev',
   title: 'Full Stack Developer',
+  photo: photo,
   photoAlt: 'Paul Alexeev',
 };
 

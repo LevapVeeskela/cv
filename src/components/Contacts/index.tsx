@@ -1,8 +1,17 @@
 import React from 'react';
-import { CONTACTS } from '../../common/constants/contacts';
 import './styles.scss';
 
-const Contacts = () => {
+interface ContactsProps {
+  data?: {
+    address: { city: string; state: string; zip: string };
+    phone: string;
+    email: string;
+    linkedin: string;
+  };
+}
+
+const Contacts: React.FC<ContactsProps> = ({ data }) => {
+  if (!data) return null;
   return (
     <section className='section-container data-CNTC'>
       <header className='heading'>
@@ -21,9 +30,8 @@ const Contacts = () => {
             </svg>
           </span>
           <span className='icoTxt'>
-            <span>{CONTACTS.address.city}</span>,{' '}
-            <span>{CONTACTS.address.state}</span>,{' '}
-            <span>{CONTACTS.address.zip}</span>
+            <span>{data.address.city}</span>, <span>{data.address.state}</span>,{' '}
+            <span>{data.address.zip}</span>
           </span>
         </div>
         <div className='iconRow'>
@@ -39,11 +47,11 @@ const Contacts = () => {
           </span>
           <span className='icoTxt'>
             <a
-              href={`tel:${CONTACTS.phone}`}
+              href={`tel:${data.phone}`}
               target='_blank'
               rel='noopener noreferrer'
             >
-              {CONTACTS.phone}
+              {data.phone}
             </a>
           </span>
         </div>
@@ -64,7 +72,7 @@ const Contacts = () => {
             </svg>
           </span>
           <span className='icoTxt'>
-            <a href={`mailto:${CONTACTS.email}`}>{CONTACTS.email}</a>
+            <a href={`mailto:${data.email}`}>{data.email}</a>
           </span>
         </div>
         <div className='iconRow'>
@@ -79,12 +87,8 @@ const Contacts = () => {
             </svg>
           </span>
           <span className='icoTxt'>
-            <a
-              href={CONTACTS.linkedin}
-              target='_blank'
-              rel='noopener noreferrer'
-            >
-              {CONTACTS.linkedin}
+            <a href={data.linkedin} target='_blank' rel='noopener noreferrer'>
+              {data.linkedin}
             </a>
           </span>
         </div>

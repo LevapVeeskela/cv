@@ -1,15 +1,28 @@
 import React from 'react';
-import { EDUCATION } from '../../common/constants/education';
 import './styles.scss';
 
-const Education = () => {
+interface EducationDetail {
+  degree: string;
+  school: string;
+  city: string;
+  start: string;
+  end: string;
+  description: string;
+  details: string[];
+}
+
+interface EducationProps {
+  data: EducationDetail[];
+}
+
+const Education: React.FC<EducationProps> = ({ data }) => {
   return (
     <section className='section-container data-EDUC'>
       <header className='heading'>
         <span className='sectiontitle'>Education</span>
       </header>
       <div className='sortableInner'>
-        {EDUCATION.map((edu, index) => (
+        {data.map((edu, index) => (
           <div key={index} className='paragraph datespara '>
             <div className='clearfix doc-item'>
               <div className='paddedline date-content'>

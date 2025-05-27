@@ -1,27 +1,42 @@
 import React from 'react';
-import photo from '../../assets/photo.jpg';
-import { MAIN_INFO, BIOGRAPHY } from '../../common/constants/mainInfo';
 import './styles.scss';
 
-const MainInfo = () => {
+interface MainInfoProps {
+  data?: {
+    mainInfo: {
+      firstName: string;
+      lastName: string;
+      title: string;
+      photo?: string;
+      photoAlt?: string;
+    };
+    biography: string;
+  };
+}
+
+const MainInfo: React.FC<MainInfoProps> = ({ data }) => {
+  const mainInfo = data?.mainInfo;
+  const biography = data?.biography;
   return (
     <>
       {/* Name and Title Section */}
       <section className='section-container'>
         <div className='name word-break'>
           <div className='monogram'>
-            <img
-              src={photo}
-              style={{ borderRadius: '50%' }}
-              alt={MAIN_INFO.photoAlt}
-            />
+            {mainInfo?.photo ? (
+              <img
+                src={mainInfo.photo}
+                style={{ borderRadius: '50%' }}
+                alt={mainInfo.photoAlt || ''}
+              />
+            ) : null}
           </div>
           <div className='flname'>
-            <span className='field'>{MAIN_INFO.firstName}</span>
+            <span className='field'>{mainInfo?.firstName}</span>
             <span className='field word-break txtBold'>
-              {MAIN_INFO.lastName}
+              {mainInfo?.lastName}
             </span>
-            <div className='resumeTitle'>{MAIN_INFO.title}</div>
+            <div className='resumeTitle'>{mainInfo?.title}</div>
           </div>
         </div>
       </section>
@@ -30,7 +45,7 @@ const MainInfo = () => {
       <section className='section-container'>
         <header className='heading'>Summary</header>
         <div className='field singlecolumn'>
-          <p>{BIOGRAPHY}</p>
+          <p>{biography}</p>
         </div>
       </section>
     </>
