@@ -19,6 +19,17 @@
   margin-top: 0;
 }
 
+.iconSvg svg {
+  position: relative;
+  display: block;
+}
+.iconSvg svg circle {
+  fill: #0187de;
+}
+.iconSvg svg path {
+  fill: #fff;
+}
+
 .icoTxt {
   margin-left: 4px;
   color: $color-secondary;

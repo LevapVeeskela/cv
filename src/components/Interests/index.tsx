@@ -4,7 +4,7 @@ import './styles.scss';
 
 const Interests = () => {
   return (
-    <section className='section-container data-INTR'>
+    <section className='section-container'>
       <header className='heading'>
         <span className='sectiontitle'>Interests</span>
       </header>
