@@ -244,21 +244,6 @@
   margin-bottom: 0;
 }
 
-/* LinkedIn icon: увеличить in и выровнять по центру */
-.resume-root .iconRow .iconSvg[aria-label='linkedin'] svg {
-  position: relative;
-  width: 24px;
-  height: 24px;
-  display: block;
-}
-.resume-root .iconRow .iconSvg[aria-label='linkedin'] svg circle {
-  fill: #0187de;
-}
-.resume-root .iconRow .iconSvg[aria-label='linkedin'] svg path {
-  transform: scale(1.7) translate(-6px, -10px);
-  fill: #fff;
-}
-
 @media (max-width: 900px) {
   .resume-root {
     max-width: 100vw;
