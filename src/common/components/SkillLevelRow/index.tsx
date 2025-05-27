@@ -15,8 +15,8 @@ const SkillLevelRow: React.FC<SkillLevelRowProps> = ({ label, level }) => {
             key={i}
             style={{
               display: 'inline-block',
-              width: 8,
-              height: 8,
+              width: 12,
+              height: 12,
               borderRadius: '50%',
               background: i < level ? '#0187de' : '#e0e0e0',
               marginRight: 2,

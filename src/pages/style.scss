@@ -1,504 +1,5 @@
 @import '../layout/variables.scss';
 
-/*Font support for MAC*/
-// @font-face {
-//   font-family: 'Century Gothic';
-//   font-weight: normal;
-//   font-style: normal;
-//   src: local('Century Gothic'), url('/blobcontent/zty/fonts/CenturyGothic.ttf') format('truetype')
-// }
-
-// @font-face {
-//   font-family: 'Century Gothic';
-//   font-weight: bold;
-//   font-style: normal;
-//   src: local('Century Gothic Bold'), url('/blobcontent/zty/fonts/CenturyGothicBold.ttf') format('truetype')
-// }
-
-// @font-face {
-//   font-family: 'Century Gothic';
-//   font-weight: bold;
-//   font-style: italic;
-//   src: local('Century Gothic Bold Italic'), url('/blobcontent/zty/fonts/CenturyGothicBoldItalic.ttf') format('truetype')
-// }
-
-// @font-face {
-//   font-family: 'Century Gothic';
-//   font-weight: normal;
-//   font-style: italic;
-//   src: local('Century Gothic Italic'), url('/blobcontent/zty/fonts/CenturyGothicItalic.ttf') format('truetype')
-// }
-
-
-/*START content disc style for LI*/
-#document.skn-srz9 ul,
-#document.skn-srz9 li {
-  margin: 0;
-  padding: 0;
-  list-style-type: disc
-}
-
-#document.skn-srz9 ul li {
-  margin: 0 0 0 16px;
-  padding: 0
-}
-
-@-moz-document url-prefix() {
-  #document.skn-srz9 ul li {
-    margin: 0 0 0 12px;
-    padding: 0 0 0 3px
-  }
-}
-
-/*END content disc style for LI*/
-
-/*common css*/
-#document.skn-srz9 .txtBold {
-  font-weight: bold
-}
-
-#document.skn-srz9 .paddedline {
-  display: block
-}
-
-#document.skn-srz9 .word-break {
-  word-wrap: break-word
-}
-
-#document.skn-srz9 table.skills,
-.table_wrapper {
-  width: 100%;
-  margin-top: 0;
-  word-wrap: break-word
-}
-
-#document.skn-srz9 table.skills th,
-table.skills td {
-  width: 20%;
-  text-align: center
-}
-
-#document.skn-srz9 table.skills .skillname,
-#document.skn-srz9 table.skills .skillrating {
-  text-align: left;
-  width: 35%
-}
-
-#document.skn-srz9 table.skills .skillrating {
-  width: 20%
-}
-
-#document.skn-srz9 table.skills .skillyears,
-#document.skn-srz9 table.skills .skilllast {
-  width: 19%
-}
-
-#document.skn-srz9 table.skills .pad1 {
-  width: 5%
-}
-
-#document.skn-srz9 .skills .pad2,
-#document.skn-srz9 table.skills .pad3 {
-  width: 1%
-}
-
-/* document */
-#document.skn-srz9 {
-  box-sizing: border-box;
-  color: #343434;
-  font-variant-ligatures: none;
-  line-height: 16px;
-  min-height: 792px
-}
-
-#document.skn-srz9 .name {
-  display: table;
-  width: 100%;
-  color: #002e58;
-  font-weight: 700;
-  overflow: hidden;
-  padding: 0;
-  text-align: left;
-  word-wrap: break-word
-}
-
-#document.skn-srz9 .flname {
-  font-weight: 400;
-  vertical-align: top
-}
-
-#document.skn-srz9 .address .singlecolumn {
-  margin-left: 0 !important
-}
-
-#document.skn-srz9 .heading {
-  font-weight: 700;
-  line-height: 15px;
-  margin-bottom: 10px;
-  padding-left: 15px;
-  position: relative
-}
-
-#document.skn-srz9 .heading:before {
-  background: #002e58;
-  border-radius: 50%;
-  content: '';
-  height: 5px;
-  left: 1px;
-  position: absolute;
-  top: 8px;
-  width: 5px
-}
-
-#document.skn-srz9 .sectiontitle {
-  color: #002e58;
-  word-wrap: break-word
-}
-
-#document.skn-srz9 .degreeGap {
-  margin-bottom: 4px
-}
-
-#document.skn-srz9 .locationGap {
-  margin-top: 4px
-}
-
-#document.skn-srz9 .firstparagraph {
-  margin-top: 0 !important
-}
-
-#document.skn-srz9 .section:empty {
-  display: none
-}
-
-/*monogram*/
-#document.skn-srz9 .right-box {
-  position: relative
-}
-
-#document.skn-srz9 .monogram,
-#document.skn-srz9 .flname {
-  display: table-cell
-}
-
-#document.skn-srz9 .monogram {
-  width: 92px;
-  min-height: 92px;
-  vertical-align: top
-}
-
-#document.skn-srz9 .flname {
-  padding-left: 20px
-}
-
-#document.skn-srz9 .monogram svg text {
-  font-size: 28px;
-  font-style: italic;
-  font-weight: 400;
-  text-transform: lowercase
-}
-
-/*left and right css*/
-#document.skn-srz9 .parentContainer {
-  border-collapse: collapse;
-  display: table;
-  min-height: inherit;
-  table-layout: fixed;
-  width: 100%
-}
-
-#document.skn-srz9 .left-box,
-#document.skn-srz9 .right-box {
-  padding-left: 15px;
-  vertical-align: top;
-  display: table-cell
-}
-
-#document.skn-srz9 .left-box {
-  box-sizing: initial;
-  letter-spacing: .2px;
-  padding-left: 0;
-  padding-right: 15px
-}
-
-#document.skn-srz9 .right-box .section:first-child,
-#document.skn-srz9 .left-box .section:first-child,
-#document.skn-srz9 .summary {
-  padding-top: 0
-}
-
-#document.skn-srz9 .right-box .paddedline.date-content {
-  position: absolute;
-  margin-left: 0;
-  width: 65px
-}
-
-#document.skn-srz9 .paragraph {
-  position: relative
-}
-
-#document.skn-srz9 .right-box .experience .paragraph,
-#document.skn-srz9 .right-box .summary .paragraph {
-  margin-left: 0
-}
-
-#document.skn-srz9 .summary .singlecolumn {
-  margin-left: 0 !important
-}
-
-#document.skn-srz9>div:not(.topsection),
-#document.skn-srz9>div:not(.parentContainer) {
-  min-height: auto
-}
-
-#document.skn-srz9 .resumeTitle {
-  color: #002e58;
-  font-weight: 500
-}
-
-/* Issues fix for builder page */
-#displayResume #document.skn-srz9.document {
-  min-height: 792px
-}
-
-#document.skn-srz9>div {
-  min-height: inherit
-}
-
-#document.skn-srz9 .left-box .sortable-item .notdraggable,
-#document.skn-srz9 .right-box .sortable-item .notdraggable {
-  padding-top: 0px
-}
-
-#document.skn-srz9 .right-box .sortable-item .summary {
-  padding-top: 20px
-}
-
-#document.skn-srz9 .sortable-item .name {
-  padding-bottom: 0
-}
-
-#document.skn-srz9 .ratingWrapper .default-fill {
-  fill: #002e58
-}
-
-#document.skn-srz9 .sortable-item .ratingWrapper span {
-  top: 0
-}
-
-/* Only for firefox */
-@-moz-document url-prefix() {
-  #document.skn-srz9 .parentContainer {
-    height: 1px
-  }
-}
-
-/*Icons*/
-#document.skn-srz9 .iconRow {
-  clear: both;
-  word-wrap: break-word
-}
-
-#document.skn-srz9 .iconRow .iconSvg {
-  width: 20px;
-  height: 20px;
-}
-
-#document.skn-srz9 .iconRow .iconSvg svg:first-child {
-  width: 20px;
-  height: 20px
-}
-
-#document.skn-srz9 .iconRow svg circle {
-  fill: #002e58
-}
-
-#document.skn-srz9 .iconRow svg path {
-  fill: #fff
-}
-
-#document.skn-srz9 .ratingWrapper {
-  text-align: right
-}
-
-#document.skn-srz9 .ratingWrapper .noLnht {
-  line-height: 0
-}
-
-#document.skn-srz9 .ratingWrapper svg {
-  height: 13px
-}
-
-/* For dates fix */
-#document.skn-srz9 .right-box .hidedates {
-  visibility: hidden;
-  position: static !important;
-  display: block;
-  float: left
-}
-
-#document.skn-srz9 .left-box .hidedates {
-  display: none
-}
-
-#document.skn-srz9 .paragraph.datespara:after {
-  content: '';
-  display: table;
-  clear: both
-}
-
-#document.skn-srz9 .socl.icoTxt {
-  word-break: break-all
-}
-
-/* Added to handle SOCL link issue*/
-
-/*PICT*/
-#document.skn-srz9:not(.ZFR) .photo {
-  display: none
-}
-
-#document.skn-srz9.ZFR .prflPic,
-#document.skn-srz9.ZFR .prflPic>div {
-  width: 154px;
-  height: 154px
-}
-
-#document.skn-srz9.ZFR .prflPic img {
-  min-width: 100%;
-  max-width: 100%;
-  min-height: 100%;
-  max-height: 100%;
-  border-radius: 50%;
-}
-
-#document.skn-srz9 table {
-  line-height: 18px
-}
-
-#document.skn-srz9.pagesize {
-  width: 700px
-}
-
-#document.skn-srz9.fontface {
-  font-family: Century Gothic
-}
-
-#document.skn-srz9.fontsize {
-  font-size: 11px
-}
-
-#document.skn-srz9.vmargins {
-  padding-top: 22px;
-  padding-bottom: 22px
-}
-
-#document.skn-srz9.hmargins {
-  padding-left: 22px;
-  padding-right: 22px
-}
-
-#document.skn-srz9 .section {
-  padding-top: 20px
-}
-
-#document.skn-srz9 .left-box .section:after {
-  padding-bottom: 10px
-}
-
-#document.skn-srz9 .paragraph {
-  margin-top: 10px
-}
-
-#document.skn-srz9 .singlecolumn,
-#document.skn-srz9 .maincolumn {
-  word-break: break-word
-}
-
-#document.skn-srz9 .right-box .singlecolumn,
-#document.skn-srz9 .right-box .maincolumn {
-  margin-left: 0px
-}
-
-#document.skn-srz9 table.skills td {
-  padding-top: 5px
-}
-
-#document.skn-srz9 .jobtitle,
-#document.skn-srz9 .degree,
-#document.skn-srz9 .programline {
-  font-size: 14px
-}
-
-#document.skn-srz9 .name {
-  color: #0187de;
-  font-size: 36px;
-  line-height: 43px
-}
-
-#document.skn-srz9 .monogram svg circle,
-#document.skn-srz9 .iconRow svg circle {
-  fill: #0187de
-}
-
-#document.skn-srz9 .heading {
-  line-height: 22px
-}
-
-#document.skn-srz9 .sectiontitle,
-#document.skn-srz9 .resumeTitle,
-#document.skn-srz9 .heading:before {
-  font-size: 16px;
-  color: #0187de
-}
-
-#document.skn-srz9 .resumeTitle {
-  line-height: 22px
-}
-
-#document.skn-srz9 .heading:before {
-  background: #0187de;
-  top: 9px
-}
-
-#document.skn-srz9 .left-box {
-  width: 250px;
-}
-
-#document.skn-srz9 .right-box .paragraph .singlecolumn {
-  margin-left: 91px
-}
-
-/*Icons*/
-#document.skn-srz9 .iconRow .iconSvg {
-  padding-top: -2px
-}
-
-/*fixes for builder page*/
-#document.skn-srz9 .left-box .sortable-item .section,
-#document.skn-srz9 .right-box .sortable-item .section {
-  padding-top: 20px
-}
-
-#document.skn-srz9 .ratingWrapper .default-fill {
-  fill: #0187de
-}
-
-/*Hover border style*/
-#document.skn-srz9.active .wrapper-bg {
-  left: -62px !important;
-  right: -62px !important
-}
-
-#document.skn-srz9.active .acrs-bdr {
-  left: -60px !important
-}
-
-#document.skn-srz9.active .acr-edit,
-#document.skn-srz9.active .acr-delete {
-  left: -59px !important
-}
-
 .section-container {
   margin-bottom: $section-margin;
   padding: $section-padding;
@@ -524,25 +25,31 @@ table.skills td {
   font-weight: 700;
 }
 
-/* --- Responsive layout for App resume page --- */
+/* === Resume Layout Styles === */
 
-.page-wrap, .page-wrapper, .page-final, .container, .body-resume {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-}
-
-#document.skn-srz9 {
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.resume-root {
+  box-sizing: border-box;
+  color: #343434;
+  font-family: 'Inter', 'Segoe UI', 'Arial', sans-serif;
+  font-size: 11px;
   background: #fff;
+  margin: 0 auto;
+  min-height: 792px;
+  width: 100%;
+  max-width: 700px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  svg circle {
+    fill: #0187de;
+  }
+  svg path {
+    fill: #fff;
+  }
 }
 
-#document.skn-srz9 .parentContainer {
+.resume-columns {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -550,36 +57,224 @@ table.skills td {
   width: 100%;
 }
 
-#document.skn-srz9 .left-box, #document.skn-srz9 .right-box {
+.resume-left,
+.resume-right {
   display: flex;
   flex-direction: column;
 }
 
-#document.skn-srz9 .left-box {
+.resume-left {
   min-width: 250px;
   max-width: 250px;
+  padding-right: 15px;
 }
-#document.skn-srz9 .right-box {
+.resume-right {
   flex: 1;
   min-width: 0;
 }
 
-/* --- Mobile styles --- */
+.resume-root ul,
+.resume-root li {
+  margin: 0;
+  padding: 0;
+  list-style-type: disc;
+}
+.resume-root ul li {
+  margin: 0 0 0 16px;
+  padding: 0;
+}
+
+.resume-root .section-container {
+  margin-bottom: 16px;
+  padding: 24px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.resume-root .heading {
+  color: #0187de;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.resume-root .sectiontitle {
+  color: #0187de;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.resume-root .paragraph {
+  margin-top: 10px;
+  word-break: break-word;
+}
+
+.resume-root .singlecolumn {
+  word-break: break-word;
+  text-align: justify;
+  min-width: 0;
+  font-size: 13px;
+}
+
+.resume-root .sortableInner {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.resume-root .doc-item {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.resume-root .flname {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 20px;
+  margin-top: 0;
+  gap: 0;
+}
+.resume-root .flname .field {
+  font-size: 36px;
+  color: #0187de;
+  font-weight: 500;
+  margin-bottom: 0;
+  line-height: 1.1;
+}
+.resume-root .flname .txtBold {
+  font-size: 36px;
+  color: #0187de;
+  font-weight: 700;
+  margin-left: 0;
+}
+.resume-root .resumeTitle {
+  color: #0187de;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  margin-left: 0;
+  margin-top: 2px;
+  white-space: normal;
+}
+.resume-root .monogram {
+  width: 92px;
+  min-height: 92px;
+  vertical-align: top;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.resume-root .name {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  color: #0187de;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+/* WorkHistory/Education: fix line breaks and spacing */
+.resume-root .paddedline {
+  display: block;
+  margin-bottom: 2px;
+}
+.resume-root .locationGap {
+  display: block;
+  margin-top: 4px;
+}
+.resume-root .companyname {
+  font-weight: 500;
+  color: #0187de;
+  margin-right: 4px;
+}
+.resume-root .jobcity {
+  color: #0187de;
+  font-size: 12px;
+  margin-right: 2px;
+}
+.resume-root .jobstate {
+  color: #0187de;
+  font-size: 12px;
+}
+.resume-root .jobtitle {
+  font-size: 14px;
+  font-weight: 700;
+  color: #343434;
+  margin-right: 4px;
+}
+.resume-root .datespara {
+  position: relative;
+}
+.resume-root .date-content {
+  min-width: 65px;
+  margin-right: 8px;
+  color: #0187de;
+  font-size: 12px;
+  font-weight: 500;
+  display: inline-block;
+}
+.resume-root .doc-item {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+}
+.resume-root .singlecolumn {
+  display: flex;
+  flex-direction: column;
+  word-break: break-word;
+  min-width: 0;
+}
+.resume-root .jobline {
+  margin-top: 4px;
+  display: block;
+}
+
+/* Interests: уменьшить отступы между строками */
+.resume-root .section-container.data-INTR .field p {
+  margin: 0 0 4px 0;
+  line-height: 1.4;
+}
+.resume-root .section-container.data-INTR .field p:last-child {
+  margin-bottom: 0;
+}
+
+/* LinkedIn icon: увеличить in и выровнять по центру */
+.resume-root .iconRow .iconSvg[aria-label='linkedin'] svg {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+.resume-root .iconRow .iconSvg[aria-label='linkedin'] svg circle {
+  fill: #0187de;
+}
+.resume-root .iconRow .iconSvg[aria-label='linkedin'] svg path {
+  transform: scale(1.7) translate(-6px, -10px);
+  fill: #fff;
+}
+
 @media (max-width: 900px) {
-  #document.skn-srz9 {
-    display: block;
-    width: 100vw;
-    min-width: 0;
+  .resume-root {
     max-width: 100vw;
-    box-sizing: border-box;
+    width: 100vw;
+    padding: 8px;
   }
-  #document.skn-srz9 .mobile-stack {
+  .resume-columns {
+    display: none;
+  }
+  .resume-mobile {
     display: flex !important;
     flex-direction: column;
     width: 100% !important;
     box-sizing: border-box;
   }
-  #document.skn-srz9 .mobile-skills-langs-row {
+  .resume-mobile-skills-langs-row {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -587,8 +282,8 @@ table.skills td {
     margin-bottom: 0.5em;
     box-sizing: border-box;
   }
-  #document.skn-srz9 .mobile-skills-col,
-  #document.skn-srz9 .mobile-langs-col {
+  .resume-mobile-skills-col,
+  .resume-mobile-langs-col {
     flex: 1 1 0;
     min-width: 0;
     width: 100%;
@@ -597,7 +292,7 @@ table.skills td {
     flex-direction: column;
     word-break: break-word;
   }
-  #document.skn-srz9 .mobile-stack > *:not(.mobile-skills-langs-row) {
+  .resume-mobile > *:not(.resume-mobile-skills-langs-row) {
     width: 100% !important;
     margin-bottom: 0.5em;
     box-sizing: border-box;
@@ -605,22 +300,8 @@ table.skills td {
     display: flex;
     flex-direction: column;
   }
-  /* Убираем display: flex у .left-box и .right-box для мобильного */
-  #document.skn-srz9 .left-box,
-  #document.skn-srz9 .right-box {
-    display: block !important;
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
-    box-sizing: border-box;
-  }
 }
 
-/* Hide desktop layout on mobile, and vice versa */
-@media (max-width: 900px) {
-  #document.skn-srz9 .parentContainer { display: none; }
-  #document.skn-srz9 .mobile-stack { display: flex !important; }
-}
 @media (min-width: 901px) {
-  #document.skn-srz9 .mobile-stack { display: none !important; }
+  .resume-mobile { display: none !important; }
 }
