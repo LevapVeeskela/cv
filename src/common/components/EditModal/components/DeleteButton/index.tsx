@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles.scss';
+import styles from './styles.module.scss';
 
 interface DeleteButtonProps {
   onClick: () => void;
@@ -12,7 +12,7 @@ const DeleteButton: React.FC<DeleteButtonProps> = ({
 }) => (
   <button
     type='button'
-    className='delete-button'
+    className={styles.deleteButton}
     title={title}
     onClick={onClick}
   >

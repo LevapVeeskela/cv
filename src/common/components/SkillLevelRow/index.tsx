@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles.scss';
+import styles from './styles.module.scss';
 
 interface SkillLevelRowProps {
   label: string;
@@ -8,8 +8,8 @@ interface SkillLevelRowProps {
 
 const SkillLevelRow: React.FC<SkillLevelRowProps> = ({ label, level }) => {
   return (
-    <div className='SkillLevelRow'>
-      <div className='SkillLevelRow-dots'>
+    <div className={styles.SkillLevelRow}>
+      <div className={styles['SkillLevelRow-dots']}>
         {Array.from({ length: 5 }).map((_, i) => (
           <span
             key={i}
@@ -24,7 +24,7 @@ const SkillLevelRow: React.FC<SkillLevelRowProps> = ({ label, level }) => {
           ></span>
         ))}
       </div>
-      <span className='SkillLevelRow-label'>{label}</span>
+      <span className={styles['SkillLevelRow-label']}>{label}</span>
     </div>
   );
 };

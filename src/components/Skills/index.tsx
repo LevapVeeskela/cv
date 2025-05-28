@@ -8,11 +8,11 @@ interface SkillsProps {
 const Skills: React.FC<SkillsProps> = ({ data }) => {
   if (!data) return null;
   return (
-    <section className='section-container'>
-      <header className='heading'>
-        <span className='sectiontitle'>Skills</span>
+    <section className={'section-container'}>
+      <header className={'heading'}>
+        <span className={'sectiontitle'}>Skills</span>
       </header>
-      <div className='sortableInner'>
+      <div className={'sortableInner'}>
         {data.map(({ skill, level }) => (
           <SkillLevelRow key={skill} label={skill} level={level} />
         ))}

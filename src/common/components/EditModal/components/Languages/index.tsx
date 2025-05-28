@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles.scss';
+import styles from './styles.module.scss';
 import DeleteButton from '../DeleteButton';
 import AddButton from '../AddButton';
 
@@ -21,12 +21,12 @@ const Languages: React.FC<LanguagesProps> = ({
   onRemove,
   onChange,
 }) => (
-  <fieldset className='languages-section'>
+  <fieldset className={styles.languagesSection}>
     <legend>Languages</legend>
     {languages.map((langItem, idx) => (
-      <div key={idx} className='form-row'>
+      <div key={idx} className={styles.formRow}>
         <label>
-          Language:
+          {idx + 1} Language:
           <input
             type='text'
             value={langItem.language}

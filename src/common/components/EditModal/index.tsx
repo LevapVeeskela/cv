@@ -7,7 +7,7 @@ import Languages from './components/Languages';
 import Education from './components/Education';
 import WorkHistory from './components/WorkHistory';
 import Interests from './components/Interests';
-import './styles.scss';
+import styles from './styles.module.scss';
 
 interface Address {
   city: string;
@@ -163,13 +163,12 @@ const EditModal: React.FC<EditModalProps> = ({
   const handleEducationChange = (
     index: number,
     field: keyof CvData['education'][0],
-    value: string,
+    value: string | string[],
   ) => {
     const updated = [...formData.education];
     updated[index] = {
       ...updated[index],
-      [field]:
-        field === 'details' ? value.split(',').map((s) => s.trim()) : value,
+      [field]: field === 'details' ? value : value,
     };
     setFormData({ ...formData, education: updated });
   };
@@ -203,13 +202,12 @@ const EditModal: React.FC<EditModalProps> = ({
   const handleWorkHistoryChange = (
     index: number,
     field: keyof CvData['workHistory'][0],
-    value: string,
+    value: string | string[],
   ) => {
     const updated = [...formData.workHistory];
     updated[index] = {
       ...updated[index],
-      [field]:
-        field === 'details' ? value.split(',').map((s) => s.trim()) : value,
+      [field]: field === 'details' ? value : value,
     };
     setFormData({ ...formData, workHistory: updated });
   };
@@ -280,8 +278,8 @@ const EditModal: React.FC<EditModalProps> = ({
   };
 
   return (
-    <div className='editModal-overlay' onClick={handleOverlayClick}>
-      <div className='editModal'>
+    <div className={styles.editModalOverlay} onClick={handleOverlayClick}>
+      <div className={styles.editModal}>
         <h2>Edit CV Data</h2>
         <form
           onSubmit={(e) => {
@@ -353,7 +351,7 @@ const EditModal: React.FC<EditModalProps> = ({
             }}
           />
 
-          <div className='modal-actions'>
+          <div className={styles.modalActions}>
             <button
               type='button'
               onClick={() => {

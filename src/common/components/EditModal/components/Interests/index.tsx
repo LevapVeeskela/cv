@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles.scss';
+import styles from './styles.module.scss';
 import DeleteButton from '../DeleteButton';
 import AddButton from '../AddButton';
 
@@ -16,10 +16,10 @@ const Interests: React.FC<InterestsProps> = ({
   onRemove,
   onChange,
 }) => (
-  <fieldset className='interests-section'>
+  <fieldset className={styles.interestsSection}>
     <legend>Interests</legend>
     {interests.map((interest, idx) => (
-      <div key={idx} className='form-row'>
+      <div key={idx} className={styles.formRow}>
         <label>
           Interest:
           <input

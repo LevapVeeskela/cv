@@ -1,6 +1,5 @@
 import React from 'react';
 import DeleteButton from '../DeleteButton';
-import './styles.scss';
 
 interface InputWithDeleteProps {
   label: string;

@@ -1,10 +1,10 @@
-.editModal-overlay {
+.editModalOverlay {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,14 +21,14 @@
   max-height: 90vh;
 }
 
-.modal-actions {
+.modalActions {
   margin-top: 20px;
   display: flex;
   justify-content: flex-end;
   gap: 12px;
 }
 
-.form-row {
+.formRow {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
@@ -66,7 +66,7 @@
 .editModal fieldset {
   border: 1.5px solid #e0e0e0;
   background: #f6fafd;
-  box-shadow: 0 1px 4px rgba(1,135,222,0.04);
+  box-shadow: 0 1px 4px rgba(1, 135, 222, 0.04);
   margin-bottom: 20px;
   padding: 16px 12px 10px 12px;
 }
@@ -123,7 +123,7 @@
   text-align: center;
 }
 
-.modal-actions button {
+.modalActions button {
   min-width: 90px;
   font-weight: 500;
 }
@@ -134,10 +134,12 @@
     padding: 8px;
     max-width: 98vw;
   }
-  .form-row {
+
+  .formRow {
     flex-direction: column;
     gap: 4px;
   }
+
   .editModal label {
     min-width: 0;
   }

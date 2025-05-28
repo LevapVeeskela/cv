@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles.scss';
+import styles from './styles.module.scss';
 
 interface SummaryProps {
   biography: string;
@@ -7,7 +7,7 @@ interface SummaryProps {
 }
 
 const Summary: React.FC<SummaryProps> = ({ biography, onChange }) => (
-  <fieldset className='summary-section'>
+  <fieldset className={styles.summarySection}>
     <legend>Summary</legend>
     <label>
       Biography:

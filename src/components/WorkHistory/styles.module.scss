@@ -1,0 +1,97 @@
+@import '../../layout/variables.scss';
+
+.jobtitle {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.companyname {
+  font-weight: 500;
+  color: $color-secondary;
+}
+
+.jobcity,
+.jobstate {
+  color: $color-secondary;
+  font-size: 12px;
+}
+
+.jobline {
+  margin-top: 4px;
+  display: block;
+}
+
+.datespara {
+  position: relative;
+}
+
+.doc-item {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.singlecolumn {
+  word-break: break-word;
+  min-width: 0;
+}
+
+.sortableInner {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.paragraph {
+  margin-top: 10px;
+  word-break: break-word;
+}
+
+.section-container {
+  margin-bottom: 16px;
+  padding: 24px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.heading {
+  color: $color-primary;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.sectiontitle {
+  color: $color-primary;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.date-content {
+  min-width: 65px;
+  margin-right: 8px;
+  color: $color-primary;
+  font-size: 12px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.jobdates {
+  font-size: 12px;
+  margin-right: 2px;
+}
+
+.paddedline {
+  display: block;
+  margin-bottom: 2px;
+}
+
+.txtBold {
+  font-weight: 700;
+}
+
+.locationGap {
+  display: block;
+  margin-top: 4px;
+}

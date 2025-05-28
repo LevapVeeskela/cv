@@ -1,5 +1,5 @@
 import React, { ChangeEvent } from 'react';
-import './styles.scss';
+import styles from './styles.module.scss';
 
 interface MainInfoProps {
   mainInfo: {
@@ -14,7 +14,7 @@ interface MainInfoProps {
 
 const MainInfo: React.FC<MainInfoProps> = ({ mainInfo, onChange }) => {
   return (
-    <fieldset className='main-info-section'>
+    <fieldset className={styles.mainInfoSection}>
       <legend>Main Info</legend>
       <label>
         First Name:

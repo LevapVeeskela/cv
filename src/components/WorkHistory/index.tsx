@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles.scss';
+import styles from './styles.module.scss';
 
 interface JobDetail {
   title: string;
@@ -17,32 +17,34 @@ interface WorkHistoryProps {
 
 const WorkHistory: React.FC<WorkHistoryProps> = ({ data }) => {
   return (
-    <section className='section-container data-EXPR'>
-      <header className='heading'>
-        <span className='sectiontitle'>Work History</span>
+    <section className={`${styles['section-container']} data-EXPR`}>
+      <header className={styles.heading}>
+        <span className={styles.sectiontitle}>Work History</span>
       </header>
       <div>
         {data.map((job, idx) => (
           <div
             key={job.title + job.company + idx}
-            className='paragraph datespara'
+            className={`${styles.paragraph} ${styles.datespara}`}
           >
-            <div className='clearfix doc-item'>
-              <div className='paddedline date-content'>
-                <span className='jobdates'>{job.start}</span>
+            <div className={`clearfix ${styles['doc-item']}`}>
+              <div className={`paddedline ${styles['date-content']}`}>
+                <span className={styles.jobdates}>{job.start}</span>
                 <span> - </span>
-                <span className='jobdates'>{job.end}</span>
+                <span className={styles.jobdates}>{job.end}</span>
               </div>
-              <div className='singlecolumn'>
-                <span className='paddedline'>
-                  <span className='jobtitle txtBold'>{job.title}</span>
+              <div className={styles.singlecolumn}>
+                <span className={styles.paddedline}>
+                  <span className={`${styles.jobtitle} txtBold`}>
+                    {job.title}
+                  </span>
                 </span>
-                <span className='paddedline locationGap'>
-                  <span className='companyname'>{job.company},</span>
-                  <span className='jobcity'>{job.city},</span>
-                  <span className='jobstate'>{job.country}</span>
+                <span className={`${styles.paddedline} ${styles.locationGap}`}>
+                  <span className={styles.companyname}>{job.company},</span>
+                  <span className={styles.jobcity}>{job.city},</span>
+                  <span className={styles.jobstate}>{job.country}</span>
                 </span>
-                <span className='jobline'>
+                <span className={styles.jobline}>
                   <ul>
                     {job.details.map((d, i) => (
                       <li key={i}>{d}</li>

@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles.scss';
+import styles from './styles.module.scss';
 
 interface AddButtonProps {
   onClick: () => void;
@@ -12,7 +12,12 @@ const AddButton: React.FC<AddButtonProps> = ({
   title = 'Add',
   children = '+',
 }) => (
-  <button type='button' className='add-button' title={title} onClick={onClick}>
+  <button
+    type='button'
+    className={styles.addButton}
+    title={title}
+    onClick={onClick}
+  >
     {children}
   </button>
 );

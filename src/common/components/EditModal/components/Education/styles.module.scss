@@ -1,0 +1,14 @@
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.rowBox {
+  border: 1.5px solid #e0e0e0;
+  border-radius: 8px;
+  background: #fafdff;
+  margin-bottom: 16px;
+  padding: 12px 10px 6px 10px;
+}

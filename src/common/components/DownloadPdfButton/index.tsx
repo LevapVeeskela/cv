@@ -1,5 +1,6 @@
+import React from 'react';
 import html2pdf from 'html2pdf.js';
-import './styles.scss';
+import styles from './styles.module.scss';
 
 const DownloadPdfButton = () => {
   const handleDownloadPDF = () => {
@@ -18,7 +19,7 @@ const DownloadPdfButton = () => {
   };
 
   return (
-    <button onClick={handleDownloadPDF} className='DownloadPdfButton'>
+    <button onClick={handleDownloadPDF} className={styles.DownloadPdfButton}>
       Save to PDF
     </button>
   );

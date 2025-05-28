@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles.scss';
+import styles from './styles.module.scss';
 
 interface ArrayFieldSectionProps<T> {
   title: string;
@@ -18,7 +18,11 @@ function ArrayFieldSection<T>({
     <fieldset>
       <legend>{title}</legend>
       {items.map((item, idx) => (
-        <div key={idx} className='form-row' style={{ alignItems: 'center' }}>
+        <div
+          key={idx}
+          className={styles.formRow}
+          style={{ alignItems: 'center' }}
+        >
           {renderItem(item, idx)}
         </div>
       ))}

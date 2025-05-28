@@ -1,4 +1,4 @@
-import './styles.scss';
+import styles from './styles.module.scss';
 
 interface Props {
   onClickHandler: () => void;
@@ -6,7 +6,7 @@ interface Props {
 
 const Button = ({ onClickHandler }: Props) => {
   return (
-    <button className='EditModalButton' onClick={onClickHandler}>
+    <button className={styles.EditModalButton} onClick={onClickHandler}>
       Edit CV
     </button>
   );

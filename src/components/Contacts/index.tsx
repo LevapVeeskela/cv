@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles.scss';
+import styles from './styles.module.scss';
 
 interface ContactsProps {
   data?: {
@@ -13,13 +13,13 @@ interface ContactsProps {
 const Contacts: React.FC<ContactsProps> = ({ data }) => {
   if (!data) return null;
   return (
-    <section className='section-container data-CNTC'>
-      <header className='heading'>
-        <span className='sectiontitle'>Contacts</span>
+    <section className={'section-container'}>
+      <header className={'heading'}>
+        <span className={'sectiontitle'}>Contacts</span>
       </header>
       <div>
-        <div className='iconRow'>
-          <span className='iconSvg' aria-label='address'>
+        <div className={styles.iconRow}>
+          <span className={styles.iconSvg} aria-label='address'>
             <svg viewBox='0 0 54 54'>
               <circle cx='27' cy='27' r='26' fill='#0187de'></circle>
               <path
@@ -29,13 +29,13 @@ const Contacts: React.FC<ContactsProps> = ({ data }) => {
               ></path>
             </svg>
           </span>
-          <span className='icoTxt'>
+          <span className={styles.icoTxt}>
             <span>{data.address.city}</span>, <span>{data.address.state}</span>,{' '}
             <span>{data.address.zip}</span>
           </span>
         </div>
-        <div className='iconRow'>
-          <span className='iconSvg' aria-label='phone'>
+        <div className={styles.iconRow}>
+          <span className={styles.iconSvg} aria-label='phone'>
             <svg viewBox='0 0 54 54'>
               <circle cx='27' cy='27' r='26' fill='#0187de'></circle>
               <path
@@ -45,7 +45,7 @@ const Contacts: React.FC<ContactsProps> = ({ data }) => {
               ></path>
             </svg>
           </span>
-          <span className='icoTxt'>
+          <span className={styles.icoTxt}>
             <a
               href={`tel:${data.phone}`}
               target='_blank'
@@ -55,8 +55,8 @@ const Contacts: React.FC<ContactsProps> = ({ data }) => {
             </a>
           </span>
         </div>
-        <div className='iconRow'>
-          <span className='iconSvg' aria-label='email'>
+        <div className={styles.iconRow}>
+          <span className={styles.iconSvg} aria-label='email'>
             <svg viewBox='0 0 54 54'>
               <circle cx='27' cy='27' r='26' fill='#0187de'></circle>
               <path
@@ -71,12 +71,12 @@ const Contacts: React.FC<ContactsProps> = ({ data }) => {
               ></path>
             </svg>
           </span>
-          <span className='icoTxt'>
+          <span className={styles.icoTxt}>
             <a href={`mailto:${data.email}`}>{data.email}</a>
           </span>
         </div>
-        <div className='iconRow'>
-          <span className='iconSvg' aria-label='linkedin'>
+        <div className={styles.iconRow}>
+          <span className={styles.iconSvg} aria-label='linkedin'>
             <svg viewBox='0 0 54 54'>
               <circle cx='27' cy='27' r='26' fill='#0187de'></circle>
               <path
@@ -86,7 +86,7 @@ const Contacts: React.FC<ContactsProps> = ({ data }) => {
               ></path>
             </svg>
           </span>
-          <span className='icoTxt'>
+          <span className={styles.icoTxt}>
             <a href={data.linkedin} target='_blank' rel='noopener noreferrer'>
               {data.linkedin}
             </a>

@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles.scss';
+import styles from './styles.module.scss';
 
 interface Address {
   city: string;
@@ -23,7 +23,7 @@ const Contacts: React.FC<ContactsProps> = ({
   onChange,
   onAddressChange,
 }) => (
-  <fieldset className='contacts-section'>
+  <fieldset className={styles.contactsSection}>
     <legend>Contacts</legend>
     <label>
       Phone:
@@ -49,7 +49,7 @@ const Contacts: React.FC<ContactsProps> = ({
         onChange={(e) => onChange('linkedin', e.target.value)}
       />
     </label>
-    <div className='contacts-address-row'>
+    <div className={styles.contactsAddressRow}>
       <label>
         City:
         <input

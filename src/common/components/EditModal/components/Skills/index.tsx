@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles.scss';
+import styles from './styles.module.scss';
 import DeleteButton from '../DeleteButton';
 import AddButton from '../AddButton';
 
@@ -21,12 +21,12 @@ const Skills: React.FC<SkillsProps> = ({
   onRemove,
   onChange,
 }) => (
-  <fieldset className='skills-section'>
+  <fieldset className={styles.skillsSection}>
     <legend>Skills</legend>
     {skills.map((skillItem, idx) => (
-      <div key={idx} className='form-row'>
+      <div key={idx} className={styles.formRow}>
         <label>
-          Skill:
+          {idx + 1} Skill:
           <input
             type='text'
             value={skillItem.skill}

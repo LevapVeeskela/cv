@@ -1,7 +1,7 @@
 export const WORK_HISTORY = [
   {
     title: 'Software Engineer',
-    company: 'Eurasian processing company',
+    company: 'Eurasian Processing Company',
     city: 'Minsk',
     country: 'Belarus',
     start: '2022',
