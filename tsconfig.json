@@ -25,16 +25,16 @@
       "@/*": [
         "./src/*",
       ],
-      "pages/*": [
+      "@pages/*": [
         "src/pages/*"
       ],
-      "components/*": [
+      "@components/*": [
         "src/components/*"
       ],
-      "types/*": [
+      "@types/*": [
         "src/types/*"
       ],
-      "public/*": [
+      "@public/*": [
         "public/*"
       ],
       "@constants": [

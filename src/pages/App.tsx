@@ -1,4 +1,11 @@
-import { useState } from 'react';
+import {
+  ProjectProvider,
+  useProjectContext,
+} from '../core/context/ProjectContext';
+import {
+  EditModalProvider,
+  useEditModalContext,
+} from '../core/context/EditModalContext';
 import './style.scss';
 
 import {
@@ -16,28 +23,13 @@ import {
   ButtonEditModal,
   ImportJsonButton,
 } from '../common/components';
-import { CONTACTS } from '../common/constants/contacts';
-import { SKILLS, LANGUAGES } from '../common/constants/skillsAndLanguages';
-import { MAIN_INFO, BIOGRAPHY } from '../common/constants/mainInfo';
-import { EDUCATION } from '../common/constants/education';
-import { WORK_HISTORY } from '../common/constants/workHistory';
-import { INTERESTS } from '../common/constants/interests';
 
-const App = () => {
-  const [cvData, setCvData] = useState({
-    contacts: CONTACTS,
-    skills: SKILLS,
-    languages: LANGUAGES,
-    mainInfo: MAIN_INFO,
-    biography: BIOGRAPHY,
-    education: EDUCATION,
-    workHistory: WORK_HISTORY,
-    interests: INTERESTS,
-  });
-  const [isModalOpen, setModalOpen] = useState(false);
+const AppContent = () => {
+  const { cvData, setCvData } = useProjectContext();
+  const { isModalOpen, openModal } = useEditModalContext();
 
   const onClickHandler = () => {
-    setModalOpen(true);
+    openModal(cvData);
   };
 
   return (
@@ -114,15 +106,17 @@ const App = () => {
           </div>
         </section>
       </main>
-      {isModalOpen && (
-        <EditModal
-          initialData={cvData}
-          onApply={(data) => setCvData(data)}
-          onClose={() => setModalOpen(false)}
-        />
-      )}
+      {isModalOpen && <EditModal />}
     </section>
   );
 };
+
+const App = () => (
+  <ProjectProvider>
+    <EditModalProvider>
+      <AppContent />
+    </EditModalProvider>
+  </ProjectProvider>
+);
 
 export default App;
