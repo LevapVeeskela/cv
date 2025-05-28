@@ -1,4 +1,4 @@
-import photo from '../../assets/photo.jpg';
+import photo from '../../assets/photo.jpg'; // Ensure the file exists in the specified path
 
 export const MAIN_INFO = {
   firstName: 'Paul',

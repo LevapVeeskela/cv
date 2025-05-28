@@ -1,4 +1,4 @@
-@import '../../../layout/variables.scss';
+@use '../../../layout/variables.scss' as *;
 
 .SkillLevelRow {
   display: flex;

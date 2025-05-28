@@ -7,14 +7,14 @@ interface InterestsProps {
 
 const Interests: React.FC<InterestsProps> = ({ data }) => {
   return (
-    <section className='section-container'>
-      <header className='heading'>
-        <span className='sectiontitle'>Interests</span>
+    <section className={'section-container'}>
+      <header className={'heading'}>
+        <span className={'sectiontitle'}>Interests</span>
       </header>
-      <div className='sortableInner'>
-        <div className='paragraph PARAGRAPH_INTR firstparagraph'>
-          <div className='clearfix doc-item'>
-            <div className='field singlecolumn'>
+      <div className={styles.sortableInner}>
+        <div className={`${styles.paragraph} ${styles.firstParagraph}`}>
+          <div className={`${styles.clearfix} ${styles.docItem}`}>
+            <div className={`${styles.field} ${styles.singleColumn}`}>
               {data.map((interest, i) => (
                 <p key={i}>{interest}</p>
               ))}

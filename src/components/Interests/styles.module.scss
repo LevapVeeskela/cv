@@ -1,19 +1,23 @@
-@import '../../layout/variables.scss';
+@use '../../layout/variables.scss' as *;
 
-.firstparagraph {
-  margin-top: 0 !important;
+.sectionContainer {
+  border: 1.5px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px 18px 12px 18px;
+  background: #f6fafd;
+  margin-bottom: 18px;
 }
 
-.doc-item {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 10px;
+.heading {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #0187de;
+  margin-bottom: 10px;
 }
 
-.singlecolumn {
-  word-break: break-word;
-  min-width: 0;
+.sectionTitle {
+  font-size: 1.1rem;
+  font-weight: 500;
 }
 
 .sortableInner {
@@ -24,4 +28,32 @@
 
 .paragraph {
   margin-top: 10px;
+}
+
+.firstParagraph {
+  margin-top: 0 !important;
+}
+
+.docItem {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.field {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #222;
+}
+
+.singleColumn {
+  word-break: break-word;
+  min-width: 0;
+  font-size: 13px;
+}
+
+.field p {
+  margin: 0;
+  padding: 0;
 }
