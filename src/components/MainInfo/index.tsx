@@ -1,4 +1,5 @@
 import React from 'react';
+import { EMPTY_STRING } from '@constants';
 import styles from './styles.module.scss';
 
 interface MainInfoProps {
@@ -21,22 +22,26 @@ const MainInfo: React.FC<MainInfoProps> = ({ data }) => {
     <>
       {/* Name and Title Section */}
       <section className='section-container'>
-        <div className='name word-break'>
-          <div className='monogram'>
+        <div className={`${styles.mainInfoName} word-break`}>
+          <div className={styles.mainInfoMonogram}>
             {mainInfo?.photo ? (
               <img
                 src={mainInfo.photo}
-                style={{ borderRadius: '50%' }}
-                alt={mainInfo.photoAlt || ''}
+                className={styles.mainInfoPhoto}
+                alt={mainInfo.photoAlt || EMPTY_STRING}
               />
             ) : null}
           </div>
-          <div className='flname'>
-            <span className='field'>{mainInfo?.firstName}</span>
-            <span className='field word-break txtBold'>
+          <div className={styles.mainInfoFlname}>
+            <span className={`${styles.mainInfoFullName} field`}>
+              {mainInfo?.firstName}
+            </span>
+            <span
+              className={`${styles.mainInfoFullName} ${styles.txtBold} field word-break`}
+            >
               {mainInfo?.lastName}
             </span>
-            <div className='resumeTitle'>{mainInfo?.title}</div>
+            <div className={styles.mainInfoResumeTitle}>{mainInfo?.title}</div>
           </div>
         </div>
       </section>

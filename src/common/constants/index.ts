@@ -1,3 +1,4 @@
+export * from './common';
 export * from './contacts';
 export * from './education';
 export * from './interests';

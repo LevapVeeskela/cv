@@ -1,5 +1,4 @@
 {
-  "extends": "./tsconfig.paths.json",
   "compilerOptions": {
     "target": "es5",
     "lib": [
@@ -25,8 +24,6 @@
     "paths": {
       "@/*": [
         "./src/*",
-        "./dist/*",
-        ""
       ],
       "pages/*": [
         "src/pages/*"
@@ -35,10 +32,16 @@
         "src/components/*"
       ],
       "types/*": [
-        "src/@types/*"
+        "src/types/*"
       ],
       "public/*": [
         "public/*"
+      ],
+      "@constants": [
+        "src/common/constants/index.ts"
+      ],
+      "@constants/*": [
+        "src/common/constants/*"
       ]
     }
   },

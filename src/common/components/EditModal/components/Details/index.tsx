@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './styles.module.scss';
 import DeleteButton from '../DeleteButton';
 import AddButton from '../AddButton';
+import { EMPTY_STRING } from '@constants';
 
 interface DetailsProps {
   details: string[];
@@ -24,7 +25,7 @@ const Details: React.FC<DetailsProps> = ({
     onChange(updated);
   };
   const handleAdd = () => {
-    onChange([...details, '']);
+    onChange([...details, EMPTY_STRING]);
   };
   return (
     <div className={styles.detailsBox}>

@@ -8,6 +8,7 @@ import Education from './components/Education';
 import WorkHistory from './components/WorkHistory';
 import Interests from './components/Interests';
 import ExportJsonButton from './components/ExportJsonButton';
+import { EMPTY_STRING } from '@constants';
 import styles from './styles.module.scss';
 
 interface Address {
@@ -98,7 +99,10 @@ const EditModal: React.FC<EditModalProps> = ({
   };
 
   const handleAddInterest = () => {
-    setFormData({ ...formData, interests: [...formData.interests, ''] });
+    setFormData({
+      ...formData,
+      interests: [...formData.interests, EMPTY_STRING],
+    });
   };
   const handleRemoveInterest = (idx: number) => {
     setFormData({
@@ -124,7 +128,7 @@ const EditModal: React.FC<EditModalProps> = ({
   const handleAddSkill = () => {
     setFormData({
       ...formData,
-      skills: [...formData.skills, { skill: '', level: 0 }],
+      skills: [...formData.skills, { skill: EMPTY_STRING, level: 0 }],
     });
   };
 
@@ -149,7 +153,10 @@ const EditModal: React.FC<EditModalProps> = ({
   const handleAddLanguage = () => {
     setFormData({
       ...formData,
-      languages: [...formData.languages, { language: '', level: '0' }],
+      languages: [
+        ...formData.languages,
+        { language: EMPTY_STRING, level: '0' },
+      ],
     });
   };
 
@@ -180,12 +187,12 @@ const EditModal: React.FC<EditModalProps> = ({
       education: [
         ...formData.education,
         {
-          start: '',
-          end: '',
-          degree: '',
-          school: '',
-          city: '',
-          description: '',
+          start: EMPTY_STRING,
+          end: EMPTY_STRING,
+          degree: EMPTY_STRING,
+          school: EMPTY_STRING,
+          city: EMPTY_STRING,
+          description: EMPTY_STRING,
           details: [],
         },
       ],
@@ -219,12 +226,12 @@ const EditModal: React.FC<EditModalProps> = ({
       workHistory: [
         ...formData.workHistory,
         {
-          title: '',
-          company: '',
-          city: '',
-          country: '',
-          start: '',
-          end: '',
+          title: EMPTY_STRING,
+          company: EMPTY_STRING,
+          city: EMPTY_STRING,
+          country: EMPTY_STRING,
+          start: EMPTY_STRING,
+          end: EMPTY_STRING,
           details: [],
         },
       ],
