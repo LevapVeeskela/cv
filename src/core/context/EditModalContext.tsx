@@ -42,6 +42,9 @@ export interface EditModalContextType {
   handleAddWorkHistory: () => void;
   handleRemoveWorkHistory: (idx: number) => void;
   handleApply: () => void;
+  handleOverlayClick: (e: React.MouseEvent<HTMLDivElement>) => void;
+  handleSubmit: (e: React.FormEvent) => void;
+  handleInterestChange: (index: number, value: string) => void;
 }
 
 export const EditModalContext = createContext<EditModalContextType>(

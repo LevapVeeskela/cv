@@ -1,13 +1,6 @@
 import { useEffect } from 'react';
 
 export const useEditModalLifecycle = (state: any, handlers: any) => {
-  // Пример жизненного цикла: сброс editData при закрытии модалки
-  useEffect(() => {
-    if (!state.isModalOpen) {
-      // Можно добавить сброс editData или другую логику
-    }
-  }, [state.isModalOpen]);
-
   useEffect(() => {
     if (!state.isModalOpen) return;
     const handleKeyDown = (e: KeyboardEvent) => {

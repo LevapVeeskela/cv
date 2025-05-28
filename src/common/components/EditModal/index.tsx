@@ -11,10 +11,9 @@ import ExportJsonButton from './components/ExportJsonButton';
 import styles from './styles.module.scss';
 import { useEditModalContext } from '../../../core/context/EditModalContext';
 
-const EditModal: React.FC = () => {
+const EditModal = () => {
   const {
     formData,
-    setFormData,
     closeModal,
     handleMainInfoChange,
     handleBiographyChange,
@@ -34,27 +33,18 @@ const EditModal: React.FC = () => {
     handleWorkHistoryChange,
     handleAddWorkHistory,
     handleRemoveWorkHistory,
-    handleApply,
+    handleOverlayClick,
+    handleSubmit,
+    handleInterestChange,
   } = useEditModalContext();
 
   if (!formData) return null;
-
-  const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (e.target === e.currentTarget) {
-      closeModal();
-    }
-  };
 
   return (
     <div className={styles.editModalOverlay} onClick={handleOverlayClick}>
       <div className={styles.editModal}>
         <h2>Edit CV Data</h2>
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            handleApply();
-          }}
-        >
+        <form onSubmit={handleSubmit}>
           <MainInfo
             mainInfo={formData.mainInfo}
             onChange={handleMainInfoChange}
@@ -96,11 +86,7 @@ const EditModal: React.FC = () => {
             interests={formData.interests}
             onAdd={handleAddInterest}
             onRemove={handleRemoveInterest}
-            onChange={(idx, value) => {
-              const updated = [...formData.interests];
-              updated[idx] = value;
-              setFormData({ ...formData, interests: updated });
-            }}
+            onChange={handleInterestChange}
           />
           <div className={styles.modalActions}>
             <ExportJsonButton data={formData} />

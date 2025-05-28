@@ -191,6 +191,27 @@ export const useEditModalHandlers = (state: EditModalState) => {
       workHistory: state.formData.workHistory.filter((_: any, i) => i !== idx),
     });
   };
+  // Overlay click (закрытие по клику вне модалки)
+  const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (e.target === e.currentTarget) {
+      state.closeModal();
+    }
+  };
+
+  // Submit формы
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    handleApply();
+  };
+
+  // Изменение интересов
+  const handleInterestChange = (index: number, value: string) => {
+    if (!state.formData) return;
+    const updated = [...state.formData.interests];
+    updated[index] = value;
+    state.setFormData({ ...state.formData, interests: updated });
+  };
+
   // Применить изменения
   const handleApply = () => {
     if (state.formData) {
@@ -217,6 +238,9 @@ export const useEditModalHandlers = (state: EditModalState) => {
     handleWorkHistoryChange,
     handleAddWorkHistory,
     handleRemoveWorkHistory,
+    handleOverlayClick,
+    handleSubmit,
+    handleInterestChange,
     handleApply,
   };
 };
