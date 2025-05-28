@@ -14,6 +14,7 @@ import {
   EditModal,
   DownloadPdfButton,
   ButtonEditModal,
+  ImportJsonButton,
 } from '../common/components';
 import { CONTACTS } from '../common/constants/contacts';
 import { SKILLS, LANGUAGES } from '../common/constants/skillsAndLanguages';
@@ -49,6 +50,7 @@ const App = () => {
                 <div className='button-container'>
                   <DownloadPdfButton />
                   <ButtonEditModal onClickHandler={onClickHandler} />
+                  <ImportJsonButton onImport={setCvData} />
                 </div>
                 <div
                   className='preview-container position-relative'

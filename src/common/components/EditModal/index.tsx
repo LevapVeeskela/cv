@@ -7,6 +7,7 @@ import Languages from './components/Languages';
 import Education from './components/Education';
 import WorkHistory from './components/WorkHistory';
 import Interests from './components/Interests';
+import ExportJsonButton from './components/ExportJsonButton';
 import styles from './styles.module.scss';
 
 interface Address {
@@ -351,7 +352,12 @@ const EditModal: React.FC<EditModalProps> = ({
             }}
           />
 
-          <div className={styles.modalActions}>
+          <div
+            className={styles.modalActions}
+            style={{ justifyContent: 'flex-start', gap: 0 }}
+          >
+            <ExportJsonButton data={formData} />
+            <div style={{ flex: 1 }} />
             <button
               type='button'
               onClick={() => {
@@ -361,7 +367,7 @@ const EditModal: React.FC<EditModalProps> = ({
             >
               Apply
             </button>
-            <button type='button' onClick={onClose}>
+            <button type='button' onClick={onClose} style={{ marginLeft: 10 }}>
               Cancel
             </button>
           </div>

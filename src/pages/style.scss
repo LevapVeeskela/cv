@@ -290,9 +290,10 @@
   display: flex;
   justify-content: center;
   margin-top: 16px;
-  button {
-    margin: 0 0 0 5px;
-   }
+  button,
+    label {
+      margin-left: 5px;
+    }
 }
 
 @media (min-width: 901px) {
