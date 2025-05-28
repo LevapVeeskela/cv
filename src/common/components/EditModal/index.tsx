@@ -91,6 +91,12 @@ const EditModal: React.FC<EditModalProps> = ({
   const handleAddInterest = () => {
     setFormData({ ...formData, interests: [...formData.interests, ''] });
   };
+  const handleRemoveInterest = (idx: number) => {
+    setFormData({
+      ...formData,
+      interests: formData.interests.filter((_, i) => i !== idx),
+    });
+  };
 
   // Skills
   const handleSkillChange = (
@@ -113,6 +119,13 @@ const EditModal: React.FC<EditModalProps> = ({
     });
   };
 
+  const handleRemoveSkill = (idx: number) => {
+    setFormData({
+      ...formData,
+      skills: formData.skills.filter((_, i) => i !== idx),
+    });
+  };
+
   // Languages
   const handleLanguageChange = (
     index: number,
@@ -128,6 +141,13 @@ const EditModal: React.FC<EditModalProps> = ({
     setFormData({
       ...formData,
       languages: [...formData.languages, { language: '', level: '0' }],
+    });
+  };
+
+  const handleRemoveLanguage = (idx: number) => {
+    setFormData({
+      ...formData,
+      languages: formData.languages.filter((_, i) => i !== idx),
     });
   };
 
@@ -164,6 +184,13 @@ const EditModal: React.FC<EditModalProps> = ({
     });
   };
 
+  const handleRemoveEducation = (idx: number) => {
+    setFormData({
+      ...formData,
+      education: formData.education.filter((_, i) => i !== idx),
+    });
+  };
+
   // WorkHistory
   const handleWorkHistoryChange = (
     index: number,
@@ -194,6 +221,13 @@ const EditModal: React.FC<EditModalProps> = ({
           details: [],
         },
       ],
+    });
+  };
+
+  const handleRemoveWorkHistory = (idx: number) => {
+    setFormData({
+      ...formData,
+      workHistory: formData.workHistory.filter((_, i) => i !== idx),
     });
   };
 
@@ -378,7 +412,11 @@ const EditModal: React.FC<EditModalProps> = ({
           <fieldset>
             <legend>Skills</legend>
             {formData.skills.map((skillItem, idx) => (
-              <div key={idx}>
+              <div
+                key={idx}
+                className='form-row'
+                style={{ alignItems: 'center' }}
+              >
                 <label>
                   Skill {idx + 1}:
                   <input
@@ -399,6 +437,14 @@ const EditModal: React.FC<EditModalProps> = ({
                     }
                   />
                 </label>
+                <button
+                  type='button'
+                  className='delete-button'
+                  title='Удалить'
+                  onClick={() => handleRemoveSkill(idx)}
+                >
+                  🗑
+                </button>
               </div>
             ))}
             <button type='button' onClick={handleAddSkill}>
@@ -410,7 +456,11 @@ const EditModal: React.FC<EditModalProps> = ({
           <fieldset>
             <legend>Languages</legend>
             {formData.languages.map((langItem, idx) => (
-              <div key={idx}>
+              <div
+                key={idx}
+                className='form-row'
+                style={{ alignItems: 'center' }}
+              >
                 <label>
                   Language {idx + 1}:
                   <input
@@ -431,6 +481,14 @@ const EditModal: React.FC<EditModalProps> = ({
                     }
                   />
                 </label>
+                <button
+                  type='button'
+                  className='delete-button'
+                  title='Удалить'
+                  onClick={() => handleRemoveLanguage(idx)}
+                >
+                  🗑
+                </button>
               </div>
             ))}
             <button type='button' onClick={handleAddLanguage}>
@@ -442,7 +500,11 @@ const EditModal: React.FC<EditModalProps> = ({
           <fieldset>
             <legend>Education</legend>
             {formData.education.map((edu, idx) => (
-              <div key={idx}>
+              <div
+                key={idx}
+                className='form-row'
+                style={{ alignItems: 'center', flexWrap: 'wrap' }}
+              >
                 <label>
                   Start:
                   <input
@@ -512,6 +574,14 @@ const EditModal: React.FC<EditModalProps> = ({
                     }
                   />
                 </label>
+                <button
+                  type='button'
+                  className='delete-button'
+                  title='Удалить'
+                  onClick={() => handleRemoveEducation(idx)}
+                >
+                  🗑
+                </button>
               </div>
             ))}
             <button type='button' onClick={handleAddEducation}>
@@ -523,7 +593,11 @@ const EditModal: React.FC<EditModalProps> = ({
           <fieldset>
             <legend>Work History</legend>
             {formData.workHistory.map((job, idx) => (
-              <div key={idx}>
+              <div
+                key={idx}
+                className='form-row'
+                style={{ alignItems: 'center', flexWrap: 'wrap' }}
+              >
                 <label>
                   Title:
                   <input
@@ -594,6 +668,14 @@ const EditModal: React.FC<EditModalProps> = ({
                     }
                   />
                 </label>
+                <button
+                  type='button'
+                  className='delete-button'
+                  title='Удалить'
+                  onClick={() => handleRemoveWorkHistory(idx)}
+                >
+                  🗑
+                </button>
               </div>
             ))}
             <button type='button' onClick={handleAddWorkHistory}>
@@ -605,7 +687,11 @@ const EditModal: React.FC<EditModalProps> = ({
           <fieldset>
             <legend>Interests</legend>
             {formData.interests.map((interest, idx) => (
-              <div key={idx} className='form-row'>
+              <div
+                key={idx}
+                className='form-row'
+                style={{ alignItems: 'center' }}
+              >
                 <label>
                   Interest {idx + 1}:
                   <input
@@ -618,17 +704,17 @@ const EditModal: React.FC<EditModalProps> = ({
                     }}
                   />
                 </label>
+                <button
+                  type='button'
+                  className='delete-button'
+                  title='Удалить'
+                  onClick={() => handleRemoveInterest(idx)}
+                >
+                  🗑
+                </button>
               </div>
             ))}
-            <button
-              type='button'
-              onClick={() =>
-                setFormData({
-                  ...formData,
-                  interests: [...formData.interests, ''],
-                })
-              }
-            >
+            <button type='button' onClick={handleAddInterest}>
               +
             </button>
           </fieldset>
