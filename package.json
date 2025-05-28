@@ -1,7 +1,7 @@
 {
   "name": "cv",
   "homepage": "https://LevapVeeskela.github.io/cv",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "html2pdf.js": "0.10.3",
