@@ -1,0 +1,12 @@
+.contacts-section {
+  margin-bottom: 1.5rem;
+
+  .contacts-address-row {
+    display: flex;
+    gap: 8px;
+
+    label {
+      flex: 1;
+    }
+  }
+}

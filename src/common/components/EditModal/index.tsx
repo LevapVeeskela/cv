@@ -1,4 +1,12 @@
-import React, { useState, ChangeEvent, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import MainInfo from './components/MainInfo';
+import Summary from './components/Summary';
+import Contacts from './components/Contacts';
+import Skills from './components/Skills';
+import Languages from './components/Languages';
+import Education from './components/Education';
+import WorkHistory from './components/WorkHistory';
+import Interests from './components/Interests';
 import './styles.scss';
 
 interface Address {
@@ -282,442 +290,68 @@ const EditModal: React.FC<EditModalProps> = ({
             onClose();
           }}
         >
-          <fieldset>
-            <legend>Main Info</legend>
-            <label>
-              First Name:
-              <input
-                type='text'
-                value={formData.mainInfo.firstName}
-                onChange={(e) =>
-                  handleMainInfoChange('firstName', e.target.value)
-                }
-              />
-            </label>
-            <label>
-              Last Name:
-              <input
-                type='text'
-                value={formData.mainInfo.lastName}
-                onChange={(e) =>
-                  handleMainInfoChange('lastName', e.target.value)
-                }
-              />
-            </label>
-            <label>
-              Title:
-              <input
-                type='text'
-                value={formData.mainInfo.title}
-                onChange={(e) => handleMainInfoChange('title', e.target.value)}
-              />
-            </label>
-            <label>
-              Photo:
-              <input
-                type='file'
-                accept='image/*'
-                onChange={(e: ChangeEvent<HTMLInputElement>) => {
-                  const file = e.target.files && e.target.files[0];
-                  if (file) {
-                    const reader = new FileReader();
-                    reader.onload = () => {
-                      handleMainInfoChange('photo', reader.result as string);
-                    };
-                    reader.readAsDataURL(file);
-                  }
-                }}
-              />
-            </label>
-            <label>
-              Photo Alt:
-              <input
-                type='text'
-                value={formData.mainInfo.photoAlt}
-                onChange={(e) =>
-                  handleMainInfoChange('photoAlt', e.target.value)
-                }
-              />
-            </label>
-          </fieldset>
+          {/* Main Info Section */}
+          <MainInfo
+            mainInfo={formData.mainInfo}
+            onChange={handleMainInfoChange}
+          />
 
-          <fieldset>
-            <legend>Summary</legend>
-            <label>
-              Biography:
-              <textarea
-                value={formData.biography}
-                onChange={(e) => handleBiographyChange(e.target.value)}
-              />
-            </label>
-          </fieldset>
+          {/* Summary Section */}
+          <Summary
+            biography={formData.biography}
+            onChange={handleBiographyChange}
+          />
 
-          <fieldset>
-            <legend>Contacts</legend>
-            <label>
-              Phone:
-              <input
-                type='text'
-                value={formData.contacts.phone}
-                onChange={(e) => handleContactsChange('phone', e.target.value)}
-              />
-            </label>
-            <label>
-              Email:
-              <input
-                type='text'
-                value={formData.contacts.email}
-                onChange={(e) => handleContactsChange('email', e.target.value)}
-              />
-            </label>
-            <label>
-              LinkedIn:
-              <input
-                type='text'
-                value={formData.contacts.linkedin}
-                onChange={(e) =>
-                  handleContactsChange('linkedin', e.target.value)
-                }
-              />
-            </label>
-            <div style={{ display: 'flex', gap: 8 }}>
-              <label style={{ flex: 1 }}>
-                City:
-                <input
-                  type='text'
-                  value={formData.contacts.address.city}
-                  onChange={(e) => handleAddressChange('city', e.target.value)}
-                />
-              </label>
-              <label style={{ flex: 1 }}>
-                State:
-                <input
-                  type='text'
-                  value={formData.contacts.address.state}
-                  onChange={(e) => handleAddressChange('state', e.target.value)}
-                />
-              </label>
-              <label style={{ flex: 1 }}>
-                ZIP:
-                <input
-                  type='text'
-                  value={formData.contacts.address.zip}
-                  onChange={(e) => handleAddressChange('zip', e.target.value)}
-                />
-              </label>
-            </div>
-          </fieldset>
+          {/* Contacts Section */}
+          <Contacts
+            contacts={formData.contacts}
+            onChange={handleContactsChange}
+            onAddressChange={handleAddressChange}
+          />
 
           {/* Skills Section */}
-          <fieldset>
-            <legend>Skills</legend>
-            {formData.skills.map((skillItem, idx) => (
-              <div
-                key={idx}
-                className='form-row'
-                style={{ alignItems: 'center' }}
-              >
-                <label>
-                  Skill {idx + 1}:
-                  <input
-                    type='text'
-                    value={skillItem.skill}
-                    onChange={(e) =>
-                      handleSkillChange(idx, 'skill', e.target.value)
-                    }
-                  />
-                </label>
-                <label>
-                  Level:
-                  <input
-                    type='number'
-                    value={skillItem.level}
-                    onChange={(e) =>
-                      handleSkillChange(idx, 'level', e.target.value)
-                    }
-                  />
-                </label>
-                <button
-                  type='button'
-                  className='delete-button'
-                  title='Удалить'
-                  onClick={() => handleRemoveSkill(idx)}
-                >
-                  🗑
-                </button>
-              </div>
-            ))}
-            <button type='button' onClick={handleAddSkill}>
-              +
-            </button>
-          </fieldset>
+          <Skills
+            skills={formData.skills}
+            onAdd={handleAddSkill}
+            onRemove={handleRemoveSkill}
+            onChange={handleSkillChange}
+          />
 
           {/* Languages Section */}
-          <fieldset>
-            <legend>Languages</legend>
-            {formData.languages.map((langItem, idx) => (
-              <div
-                key={idx}
-                className='form-row'
-                style={{ alignItems: 'center' }}
-              >
-                <label>
-                  Language {idx + 1}:
-                  <input
-                    type='text'
-                    value={langItem.language}
-                    onChange={(e) =>
-                      handleLanguageChange(idx, 'language', e.target.value)
-                    }
-                  />
-                </label>
-                <label>
-                  Level:
-                  <input
-                    type='text'
-                    value={langItem.level}
-                    onChange={(e) =>
-                      handleLanguageChange(idx, 'level', e.target.value)
-                    }
-                  />
-                </label>
-                <button
-                  type='button'
-                  className='delete-button'
-                  title='Удалить'
-                  onClick={() => handleRemoveLanguage(idx)}
-                >
-                  🗑
-                </button>
-              </div>
-            ))}
-            <button type='button' onClick={handleAddLanguage}>
-              +
-            </button>
-          </fieldset>
+          <Languages
+            languages={formData.languages}
+            onAdd={handleAddLanguage}
+            onRemove={handleRemoveLanguage}
+            onChange={handleLanguageChange}
+          />
 
           {/* Education Section */}
-          <fieldset>
-            <legend>Education</legend>
-            {formData.education.map((edu, idx) => (
-              <div
-                key={idx}
-                className='form-row'
-                style={{ alignItems: 'center', flexWrap: 'wrap' }}
-              >
-                <label>
-                  Start:
-                  <input
-                    type='text'
-                    value={edu.start}
-                    onChange={(e) =>
-                      handleEducationChange(idx, 'start', e.target.value)
-                    }
-                  />
-                </label>
-                <label>
-                  End:
-                  <input
-                    type='text'
-                    value={edu.end}
-                    onChange={(e) =>
-                      handleEducationChange(idx, 'end', e.target.value)
-                    }
-                  />
-                </label>
-                <label>
-                  Degree:
-                  <input
-                    type='text'
-                    value={edu.degree}
-                    onChange={(e) =>
-                      handleEducationChange(idx, 'degree', e.target.value)
-                    }
-                  />
-                </label>
-                <label>
-                  School:
-                  <input
-                    type='text'
-                    value={edu.school}
-                    onChange={(e) =>
-                      handleEducationChange(idx, 'school', e.target.value)
-                    }
-                  />
-                </label>
-                <label>
-                  City:
-                  <input
-                    type='text'
-                    value={edu.city}
-                    onChange={(e) =>
-                      handleEducationChange(idx, 'city', e.target.value)
-                    }
-                  />
-                </label>
-                <label>
-                  Description:
-                  <textarea
-                    value={edu.description}
-                    onChange={(e) =>
-                      handleEducationChange(idx, 'description', e.target.value)
-                    }
-                  />
-                </label>
-                <label>
-                  Details (comma separated):
-                  <input
-                    type='text'
-                    value={edu.details ? edu.details.join(', ') : ''}
-                    onChange={(e) =>
-                      handleEducationChange(idx, 'details', e.target.value)
-                    }
-                  />
-                </label>
-                <button
-                  type='button'
-                  className='delete-button'
-                  title='Удалить'
-                  onClick={() => handleRemoveEducation(idx)}
-                >
-                  🗑
-                </button>
-              </div>
-            ))}
-            <button type='button' onClick={handleAddEducation}>
-              +
-            </button>
-          </fieldset>
+          <Education
+            education={formData.education}
+            onAdd={handleAddEducation}
+            onRemove={handleRemoveEducation}
+            onChange={handleEducationChange}
+          />
 
           {/* Work History Section */}
-          <fieldset>
-            <legend>Work History</legend>
-            {formData.workHistory.map((job, idx) => (
-              <div
-                key={idx}
-                className='form-row'
-                style={{ alignItems: 'center', flexWrap: 'wrap' }}
-              >
-                <label>
-                  Title:
-                  <input
-                    type='text'
-                    value={job.title}
-                    onChange={(e) =>
-                      handleWorkHistoryChange(idx, 'title', e.target.value)
-                    }
-                  />
-                </label>
-                <label>
-                  Company:
-                  <input
-                    type='text'
-                    value={job.company}
-                    onChange={(e) =>
-                      handleWorkHistoryChange(idx, 'company', e.target.value)
-                    }
-                  />
-                </label>
-                <label>
-                  City:
-                  <input
-                    type='text'
-                    value={job.city}
-                    onChange={(e) =>
-                      handleWorkHistoryChange(idx, 'city', e.target.value)
-                    }
-                  />
-                </label>
-                <label>
-                  Country:
-                  <input
-                    type='text'
-                    value={job.country}
-                    onChange={(e) =>
-                      handleWorkHistoryChange(idx, 'country', e.target.value)
-                    }
-                  />
-                </label>
-                <label>
-                  Start:
-                  <input
-                    type='text'
-                    value={job.start}
-                    onChange={(e) =>
-                      handleWorkHistoryChange(idx, 'start', e.target.value)
-                    }
-                  />
-                </label>
-                <label>
-                  End:
-                  <input
-                    type='text'
-                    value={job.end}
-                    onChange={(e) =>
-                      handleWorkHistoryChange(idx, 'end', e.target.value)
-                    }
-                  />
-                </label>
-                <label>
-                  Details (comma separated):
-                  <input
-                    type='text'
-                    value={job.details ? job.details.join(', ') : ''}
-                    onChange={(e) =>
-                      handleWorkHistoryChange(idx, 'details', e.target.value)
-                    }
-                  />
-                </label>
-                <button
-                  type='button'
-                  className='delete-button'
-                  title='Удалить'
-                  onClick={() => handleRemoveWorkHistory(idx)}
-                >
-                  🗑
-                </button>
-              </div>
-            ))}
-            <button type='button' onClick={handleAddWorkHistory}>
-              +
-            </button>
-          </fieldset>
+          <WorkHistory
+            workHistory={formData.workHistory}
+            onAdd={handleAddWorkHistory}
+            onRemove={handleRemoveWorkHistory}
+            onChange={handleWorkHistoryChange}
+          />
 
           {/* Interests Section */}
-          <fieldset>
-            <legend>Interests</legend>
-            {formData.interests.map((interest, idx) => (
-              <div
-                key={idx}
-                className='form-row'
-                style={{ alignItems: 'center' }}
-              >
-                <label>
-                  Interest {idx + 1}:
-                  <input
-                    type='text'
-                    value={interest}
-                    onChange={(e) => {
-                      const updated = [...formData.interests];
-                      updated[idx] = e.target.value;
-                      setFormData({ ...formData, interests: updated });
-                    }}
-                  />
-                </label>
-                <button
-                  type='button'
-                  className='delete-button'
-                  title='Удалить'
-                  onClick={() => handleRemoveInterest(idx)}
-                >
-                  🗑
-                </button>
-              </div>
-            ))}
-            <button type='button' onClick={handleAddInterest}>
-              +
-            </button>
-          </fieldset>
+          <Interests
+            interests={formData.interests}
+            onAdd={handleAddInterest}
+            onRemove={handleRemoveInterest}
+            onChange={(idx, value) => {
+              const updated = [...formData.interests];
+              updated[idx] = value;
+              setFormData({ ...formData, interests: updated });
+            }}
+          />
 
           <div className='modal-actions'>
             <button

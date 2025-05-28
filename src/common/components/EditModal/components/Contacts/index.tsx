@@ -1,0 +1,81 @@
+import React from 'react';
+import './styles.scss';
+
+interface Address {
+  city: string;
+  state: string;
+  zip: string;
+}
+
+interface ContactsProps {
+  contacts: {
+    address: Address;
+    phone: string;
+    email: string;
+    linkedin: string;
+  };
+  onChange: (field: string, value: string) => void;
+  onAddressChange: (field: string, value: string) => void;
+}
+
+const Contacts: React.FC<ContactsProps> = ({
+  contacts,
+  onChange,
+  onAddressChange,
+}) => (
+  <fieldset className='contacts-section'>
+    <legend>Contacts</legend>
+    <label>
+      Phone:
+      <input
+        type='text'
+        value={contacts.phone}
+        onChange={(e) => onChange('phone', e.target.value)}
+      />
+    </label>
+    <label>
+      Email:
+      <input
+        type='text'
+        value={contacts.email}
+        onChange={(e) => onChange('email', e.target.value)}
+      />
+    </label>
+    <label>
+      LinkedIn:
+      <input
+        type='text'
+        value={contacts.linkedin}
+        onChange={(e) => onChange('linkedin', e.target.value)}
+      />
+    </label>
+    <div className='contacts-address-row'>
+      <label>
+        City:
+        <input
+          type='text'
+          value={contacts.address.city}
+          onChange={(e) => onAddressChange('city', e.target.value)}
+        />
+      </label>
+      <label>
+        State:
+        <input
+          type='text'
+          value={contacts.address.state}
+          onChange={(e) => onAddressChange('state', e.target.value)}
+        />
+      </label>
+      <label>
+        ZIP:
+        <input
+          type='text'
+          value={contacts.address.zip}
+          onChange={(e) => onAddressChange('zip', e.target.value)}
+        />
+      </label>
+    </div>
+  </fieldset>
+);
+
+export default Contacts;
