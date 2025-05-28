@@ -1,11 +1,10 @@
-import React from 'react';
 import styles from './styles.module.scss';
 
 interface InterestsProps {
   data: string[];
 }
 
-const Interests: React.FC<InterestsProps> = ({ data }) => {
+const Interests = ({ data }: InterestsProps) => {
   return (
     <section className={'section-container'}>
       <header className={'heading'}>

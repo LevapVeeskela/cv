@@ -1,4 +1,3 @@
-import React from 'react';
 import SkillLevelRow from '../../common/components/SkillLevelRow';
 
 interface Language {
@@ -10,7 +9,7 @@ interface LanguagesProps {
   data: Language[];
 }
 
-const Languages: React.FC<LanguagesProps> = ({ data }) => {
+const Languages = ({ data }: LanguagesProps) => {
   return (
     <section className='section-container'>
       <header className='heading'>

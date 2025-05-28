@@ -1,4 +1,3 @@
-import React from 'react';
 import { EMPTY_STRING } from '@constants';
 import styles from './styles.module.scss';
 
@@ -15,7 +14,7 @@ interface MainInfoProps {
   };
 }
 
-const MainInfo: React.FC<MainInfoProps> = ({ data }) => {
+const MainInfo = ({ data }: MainInfoProps) => {
   const mainInfo = data?.mainInfo;
   const biography = data?.biography;
   return (

@@ -1,7 +1,6 @@
-import React from 'react';
-import styles from './styles.module.scss';
 import DeleteButton from '../DeleteButton';
 import AddButton from '../AddButton';
+import styles from './styles.module.scss';
 
 interface InterestsProps {
   interests: string[];
@@ -10,12 +9,12 @@ interface InterestsProps {
   onChange: (idx: number, value: string) => void;
 }
 
-const Interests: React.FC<InterestsProps> = ({
+const Interests = ({
   interests,
   onAdd,
   onRemove,
   onChange,
-}) => (
+}: InterestsProps) => (
   <fieldset className={styles.interestsSection}>
     <legend>Interests</legend>
     {interests.map((interest, idx) => (

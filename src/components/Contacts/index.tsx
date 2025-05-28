@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './styles.module.scss';
 
 interface ContactsProps {
@@ -10,7 +9,7 @@ interface ContactsProps {
   };
 }
 
-const Contacts: React.FC<ContactsProps> = ({ data }) => {
+const Contacts = ({ data }: ContactsProps) => {
   if (!data) return null;
   return (
     <section className={'section-container'}>

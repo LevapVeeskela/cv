@@ -1,11 +1,10 @@
-import React from 'react';
 import SkillLevelRow from '../../common/components/SkillLevelRow';
 
 interface SkillsProps {
   data?: { skill: string; level: number }[];
 }
 
-const Skills: React.FC<SkillsProps> = ({ data }) => {
+const Skills = ({ data }: SkillsProps) => {
   if (!data) return null;
   return (
     <section className={'section-container'}>

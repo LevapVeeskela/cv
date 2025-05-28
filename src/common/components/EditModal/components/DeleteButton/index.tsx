@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './styles.module.scss';
 
 interface DeleteButtonProps {
@@ -6,10 +5,7 @@ interface DeleteButtonProps {
   title?: string;
 }
 
-const DeleteButton: React.FC<DeleteButtonProps> = ({
-  onClick,
-  title = 'Delete',
-}) => (
+const DeleteButton = ({ onClick, title = 'Delete' }: DeleteButtonProps) => (
   <button
     type='button'
     className={styles.deleteButton}

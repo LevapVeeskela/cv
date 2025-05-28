@@ -1,4 +1,3 @@
-import React from 'react';
 import DeleteButton from '../DeleteButton';
 
 interface InputWithDeleteProps {
@@ -9,13 +8,13 @@ interface InputWithDeleteProps {
   type?: string;
 }
 
-const InputWithDelete: React.FC<InputWithDeleteProps> = ({
+const InputWithDelete = ({
   label,
   value,
   onChange,
   onDelete,
   type = 'text',
-}) => (
+}: InputWithDeleteProps) => (
   <>
     <label style={{ flex: 1 }}>
       {label}

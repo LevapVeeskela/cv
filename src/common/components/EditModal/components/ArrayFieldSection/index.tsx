@@ -1,11 +1,11 @@
-import React from 'react';
+import { ReactNode } from 'react';
 import styles from './styles.module.scss';
 
 interface ArrayFieldSectionProps<T> {
   title: string;
   items: T[];
   onAdd: () => void;
-  renderItem: (item: T, index: number) => React.ReactNode;
+  renderItem: (item: T, index: number) => ReactNode;
 }
 
 function ArrayFieldSection<T>({

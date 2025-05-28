@@ -1,11 +1,11 @@
-import React, { ChangeEvent } from 'react';
+import { ChangeEvent } from 'react';
 import styles from './styles.module.scss';
 
 interface ImportJsonButtonProps {
   onImport: (data: any) => void;
 }
 
-const ImportJsonButton: React.FC<ImportJsonButtonProps> = ({ onImport }) => {
+const ImportJsonButton = ({ onImport }: ImportJsonButtonProps) => {
   const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;

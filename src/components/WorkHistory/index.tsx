@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './styles.module.scss';
 
 interface JobDetail {
@@ -15,7 +14,7 @@ interface WorkHistoryProps {
   data: JobDetail[];
 }
 
-const WorkHistory: React.FC<WorkHistoryProps> = ({ data }) => {
+const WorkHistory = ({ data }: WorkHistoryProps) => {
   return (
     <section className={`${styles['section-container']} data-EXPR`}>
       <header className={styles.heading}>

@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './styles.module.scss';
 
 interface Address {
@@ -18,11 +17,7 @@ interface ContactsProps {
   onAddressChange: (field: string, value: string) => void;
 }
 
-const Contacts: React.FC<ContactsProps> = ({
-  contacts,
-  onChange,
-  onAddressChange,
-}) => (
+const Contacts = ({ contacts, onChange, onAddressChange }: ContactsProps) => (
   <fieldset className={styles.contactsSection}>
     <legend>Contacts</legend>
     <label>

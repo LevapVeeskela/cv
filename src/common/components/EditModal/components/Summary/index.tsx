@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './styles.module.scss';
 
 interface SummaryProps {
@@ -6,7 +5,7 @@ interface SummaryProps {
   onChange: (value: string) => void;
 }
 
-const Summary: React.FC<SummaryProps> = ({ biography, onChange }) => (
+const Summary = ({ biography, onChange }: SummaryProps) => (
   <fieldset className={styles.summarySection}>
     <legend>Summary</legend>
     <label>

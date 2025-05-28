@@ -1,8 +1,7 @@
-import React from 'react';
-import styles from './styles.module.scss';
 import DeleteButton from '../DeleteButton';
 import AddButton from '../AddButton';
 import Details from '../Details';
+import styles from './styles.module.scss';
 
 interface EducationItem {
   start: string;
@@ -25,12 +24,12 @@ interface EducationProps {
   ) => void;
 }
 
-const Education: React.FC<EducationProps> = ({
+const Education = ({
   education,
   onAdd,
   onRemove,
   onChange,
-}) => (
+}: EducationProps) => (
   <fieldset className={styles.educationSection}>
     <legend>Education</legend>
     {education.map((edu, idx) => (

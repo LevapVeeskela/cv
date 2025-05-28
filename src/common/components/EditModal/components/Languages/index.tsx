@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './styles.module.scss';
 import DeleteButton from '../DeleteButton';
 import AddButton from '../AddButton';
@@ -15,12 +14,12 @@ interface LanguagesProps {
   onChange: (index: number, field: keyof Language, value: string) => void;
 }
 
-const Languages: React.FC<LanguagesProps> = ({
+const Languages = ({
   languages,
   onAdd,
   onRemove,
   onChange,
-}) => (
+}: LanguagesProps) => (
   <fieldset className={styles.languagesSection}>
     <legend>Languages</legend>
     {languages.map((langItem, idx) => (

@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './styles.module.scss';
 
 interface ExportJsonButtonProps {
@@ -6,10 +5,10 @@ interface ExportJsonButtonProps {
   fileName?: string;
 }
 
-const ExportJsonButton: React.FC<ExportJsonButtonProps> = ({
+const ExportJsonButton = ({
   data,
   fileName = 'cv-data.json',
-}) => {
+}: ExportJsonButtonProps) => {
   const handleExport = () => {
     const json = JSON.stringify(data, null, 2);
     const blob = new Blob([json], { type: 'application/json' });

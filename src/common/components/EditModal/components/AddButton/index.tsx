@@ -1,17 +1,16 @@
-import React from 'react';
+import { PropsWithChildren } from 'react';
 import styles from './styles.module.scss';
 
 interface AddButtonProps {
   onClick: () => void;
   title?: string;
-  children?: React.ReactNode;
 }
 
-const AddButton: React.FC<AddButtonProps> = ({
+const AddButton = ({
   onClick,
   title = 'Add',
   children = '+',
-}) => (
+}: PropsWithChildren<AddButtonProps>) => (
   <button
     type='button'
     className={styles.addButton}

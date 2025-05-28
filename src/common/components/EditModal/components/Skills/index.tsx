@@ -1,7 +1,6 @@
-import React from 'react';
-import styles from './styles.module.scss';
 import DeleteButton from '../DeleteButton';
 import AddButton from '../AddButton';
+import styles from './styles.module.scss';
 
 interface Skill {
   skill: string;
@@ -15,12 +14,7 @@ interface SkillsProps {
   onChange: (index: number, field: keyof Skill, value: string) => void;
 }
 
-const Skills: React.FC<SkillsProps> = ({
-  skills,
-  onAdd,
-  onRemove,
-  onChange,
-}) => (
+const Skills = ({ skills, onAdd, onRemove, onChange }: SkillsProps) => (
   <fieldset className={styles.skillsSection}>
     <legend>Skills</legend>
     {skills.map((skillItem, idx) => (

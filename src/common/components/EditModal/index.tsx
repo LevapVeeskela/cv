@@ -1,4 +1,3 @@
-import React from 'react';
 import MainInfo from './components/MainInfo';
 import Summary from './components/Summary';
 import Contacts from './components/Contacts';

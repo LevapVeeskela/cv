@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './styles.module.scss';
 
 interface SkillLevelRowProps {
@@ -6,7 +5,7 @@ interface SkillLevelRowProps {
   level: number; // 1-5
 }
 
-const SkillLevelRow: React.FC<SkillLevelRowProps> = ({ label, level }) => {
+const SkillLevelRow = ({ label, level }: SkillLevelRowProps) => {
   return (
     <div className={styles.SkillLevelRow}>
       <div className={styles['SkillLevelRow-dots']}>

@@ -1,8 +1,7 @@
-import React from 'react';
-import styles from './styles.module.scss';
+import { EMPTY_STRING } from '@constants';
 import DeleteButton from '../DeleteButton';
 import AddButton from '../AddButton';
-import { EMPTY_STRING } from '@constants';
+import styles from './styles.module.scss';
 
 interface DetailsProps {
   details: string[];
@@ -10,11 +9,7 @@ interface DetailsProps {
   label?: string;
 }
 
-const Details: React.FC<DetailsProps> = ({
-  details,
-  onChange,
-  label = 'Details',
-}) => {
+const Details = ({ details, onChange, label = 'Details' }: DetailsProps) => {
   const handleChange = (idx: number, value: string) => {
     const updated = [...details];
     updated[idx] = value;

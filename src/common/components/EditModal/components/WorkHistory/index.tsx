@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './styles.module.scss';
 import DeleteButton from '../DeleteButton';
 import AddButton from '../AddButton';
@@ -25,12 +24,12 @@ interface WorkHistoryProps {
   ) => void;
 }
 
-const WorkHistory: React.FC<WorkHistoryProps> = ({
+const WorkHistory = ({
   workHistory,
   onAdd,
   onRemove,
   onChange,
-}) => (
+}: WorkHistoryProps) => (
   <fieldset className={styles.workHistorySection}>
     <legend>Work History</legend>
     {workHistory.map((job, idx) => (
