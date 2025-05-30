@@ -12,6 +12,9 @@ export interface EditModalContextType {
   closeModal: () => void;
   formData: CvData | null;
   setFormData: (data: CvData) => void;
+  showCloseConfirm: boolean;
+  showCloseConfirmDialog: () => void;
+  hideCloseConfirmDialog: () => void;
   handleMainInfoChange: (
     field: keyof CvData['mainInfo'],
     value: string | File | null,

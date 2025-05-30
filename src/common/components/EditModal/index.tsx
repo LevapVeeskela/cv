@@ -1,3 +1,4 @@
+import { useEditModalContext } from '@core/context/EditModalContext';
 import MainInfo from './components/MainInfo';
 import Summary from './components/Summary';
 import Contacts from './components/Contacts';
@@ -8,8 +9,8 @@ import WorkHistory from './components/WorkHistory';
 import Interests from './components/Interests';
 import ExportJsonButton from './components/ExportJsonButton';
 import KeyAchievements from './components/KeyAchievements';
+import CloseConfirm from './components/CloseConfirm';
 import styles from './styles.module.scss';
-import { useEditModalContext } from '../../../core/context/EditModalContext';
 
 const EditModal = () => {
   const {
@@ -33,18 +34,27 @@ const EditModal = () => {
     handleWorkHistoryChange,
     handleAddWorkHistory,
     handleRemoveWorkHistory,
-    handleOverlayClick,
     handleSubmit,
     handleInterestChange,
     handleAchievementChange,
     handleAddAchievement,
     handleRemoveAchievement,
+    showCloseConfirm,
+    showCloseConfirmDialog,
+    hideCloseConfirmDialog,
   } = useEditModalContext();
 
   if (!formData) return null;
 
   return (
-    <div className={styles.editModalOverlay} onClick={handleOverlayClick}>
+    <div
+      className={styles.editModalOverlay}
+      onClick={(e) => {
+        if (e.target === e.currentTarget) {
+          showCloseConfirmDialog();
+        }
+      }}
+    >
       <div className={styles.editModal}>
         <h2>Edit CV Data</h2>
         <form onSubmit={handleSubmit}>
@@ -113,6 +123,12 @@ const EditModal = () => {
             </button>
           </div>
         </form>
+        {showCloseConfirm && (
+          <CloseConfirm
+            onCancel={hideCloseConfirmDialog}
+            onConfirm={closeModal}
+          />
+        )}
       </div>
     </div>
   );
