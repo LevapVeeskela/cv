@@ -1,15 +1,12 @@
 import { ChangeEvent } from 'react';
+import { EditModalContextType } from '@core/context/EditModalContext';
+import { CvData } from '@core/hooks/project/useProjectState';
+import DeleteButton from '../DeleteButton';
 import styles from './styles.module.scss';
 
 interface MainInfoProps {
-  mainInfo: {
-    firstName: string;
-    lastName: string;
-    title: string;
-    photo: string;
-    photoAlt: string;
-  };
-  onChange: (field: keyof MainInfoProps['mainInfo'], value: string) => void;
+  mainInfo: CvData['mainInfo'];
+  onChange: EditModalContextType['handleMainInfoChange'];
 }
 
 const MainInfo = ({ mainInfo, onChange }: MainInfoProps) => {
@@ -40,22 +37,28 @@ const MainInfo = ({ mainInfo, onChange }: MainInfoProps) => {
           onChange={(e) => onChange('title', e.target.value)}
         />
       </label>
-      <label>
+      <label className={styles.photoInputRow}>
         Photo:
-        <input
-          type='file'
-          accept='image/*'
-          onChange={(e: ChangeEvent<HTMLInputElement>) => {
-            const file = e.target.files && e.target.files[0];
-            if (file) {
-              const reader = new FileReader();
-              reader.onload = () => {
-                onChange('photo', reader.result as string);
-              };
-              reader.readAsDataURL(file);
-            }
-          }}
-        />
+        <div className={styles.photoInputWrapper}>
+          <input
+            type='file'
+            accept='image/*'
+            onChange={(e: ChangeEvent<HTMLInputElement>) => {
+              const file = e.target.files && e.target.files[0];
+              if (file) {
+                const reader = new FileReader();
+                reader.onload = () => {
+                  onChange('photo', reader.result as string);
+                };
+                reader.readAsDataURL(file);
+              }
+            }}
+          />
+          <DeleteButton
+            title={'Delete photo?'}
+            onClick={() => onChange('photo', null)}
+          />
+        </div>
       </label>
       <label>
         Photo Alt:

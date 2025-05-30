@@ -15,6 +15,8 @@ interface WorkHistoryProps {
 }
 
 const WorkHistory = ({ data }: WorkHistoryProps) => {
+  if (data?.length === 0) return null;
+
   return (
     <section className={`${styles['section-container']} data-EXPR`}>
       <header className={styles.heading}>

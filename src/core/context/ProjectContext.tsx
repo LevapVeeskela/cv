@@ -6,7 +6,7 @@ import {
   // useProjectLifecycle,
 } from '../hooks/project';
 
-type ProjectContextType = {
+export type ProjectContextType = {
   cvData: CvData;
   setCvData: React.Dispatch<React.SetStateAction<CvData>>;
 };

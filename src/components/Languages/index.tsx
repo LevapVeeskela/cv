@@ -9,7 +9,9 @@ interface LanguagesProps {
   data: Language[];
 }
 
-const Languages = ({ data }: LanguagesProps) => {
+const Languages = ({ data = [] }: LanguagesProps) => {
+  if (data?.length === 0) return null;
+
   return (
     <section className='section-container'>
       <header className='heading'>

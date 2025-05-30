@@ -1,10 +1,15 @@
 import { useState } from 'react';
-import { CONTACTS } from '@constants/contacts';
-import { SKILLS, LANGUAGES } from '@constants/skillsAndLanguages';
-import { MAIN_INFO, BIOGRAPHY } from '@constants/mainInfo';
-import { EDUCATION } from '@constants/education';
-import { WORK_HISTORY } from '@constants/workHistory';
-import { INTERESTS } from '@constants/interests';
+import {
+  MAIN_INFO,
+  BIOGRAPHY,
+  ACHIEVEMENTS,
+  CONTACTS,
+  SKILLS,
+  LANGUAGES,
+  EDUCATION,
+  WORK_HISTORY,
+  INTERESTS,
+} from '@constants';
 
 const DEFAULT_CV_DATA = {
   contacts: CONTACTS,
@@ -15,6 +20,7 @@ const DEFAULT_CV_DATA = {
   education: EDUCATION,
   workHistory: WORK_HISTORY,
   interests: INTERESTS,
+  achievements: ACHIEVEMENTS,
 };
 
 export type CvData = typeof DEFAULT_CV_DATA;

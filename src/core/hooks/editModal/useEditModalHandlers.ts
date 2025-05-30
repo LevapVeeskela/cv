@@ -15,7 +15,7 @@ export const useEditModalHandlers = (state: EditModalState) => {
   // Main Info
   const handleMainInfoChange = (
     field: keyof CvData['mainInfo'],
-    value: string,
+    value: string | File | null,
   ) => {
     if (!state.formData) return;
     state.setFormData({
@@ -191,6 +191,27 @@ export const useEditModalHandlers = (state: EditModalState) => {
       workHistory: state.formData.workHistory.filter((_: any, i) => i !== idx),
     });
   };
+  // Key Achievements
+  const handleAchievementChange = (index: number, value: string) => {
+    if (!state.formData) return;
+    const updated = [...state.formData.achievements];
+    updated[index] = value;
+    state.setFormData({ ...state.formData, achievements: updated });
+  };
+  const handleAddAchievement = () => {
+    if (!state.formData) return;
+    state.setFormData({
+      ...state.formData,
+      achievements: [...state.formData.achievements, ''],
+    });
+  };
+  const handleRemoveAchievement = (idx: number) => {
+    if (!state.formData) return;
+    state.setFormData({
+      ...state.formData,
+      achievements: state.formData.achievements.filter((_, i) => i !== idx),
+    });
+  };
   // Overlay click (закрытие по клику вне модалки)
   const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.target === e.currentTarget) {
@@ -238,6 +259,9 @@ export const useEditModalHandlers = (state: EditModalState) => {
     handleWorkHistoryChange,
     handleAddWorkHistory,
     handleRemoveWorkHistory,
+    handleAchievementChange,
+    handleAddAchievement,
+    handleRemoveAchievement,
     handleOverlayClick,
     handleSubmit,
     handleInterestChange,

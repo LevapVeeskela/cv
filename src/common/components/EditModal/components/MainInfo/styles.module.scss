@@ -1,3 +1,14 @@
 .main-info-section {
   margin-bottom: 1.5rem;
 }
+.photoInputRow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.photoInputWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}

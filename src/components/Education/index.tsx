@@ -15,6 +15,8 @@ interface EducationProps {
 }
 
 const Education = ({ data }: EducationProps) => {
+  if (data?.length === 0) return null;
+
   return (
     <section className='section-container'>
       <header className='heading'>

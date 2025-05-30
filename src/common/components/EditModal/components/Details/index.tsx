@@ -27,11 +27,10 @@ const Details = ({ details, onChange, label = 'Details' }: DetailsProps) => {
       <div className={styles.detailsLabel}>{label}:</div>
       {details.map((d, idx) => (
         <div key={idx} className={styles.detailsRow}>
-          <input
-            type='text'
+          <textarea
+            className={styles.textarea}
             value={d}
             onChange={(e) => handleChange(idx, e.target.value)}
-            className={styles.detailsInput}
           />
           <DeleteButton onClick={() => handleDelete(idx)} />
         </div>

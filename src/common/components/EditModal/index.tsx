@@ -7,6 +7,7 @@ import Education from './components/Education';
 import WorkHistory from './components/WorkHistory';
 import Interests from './components/Interests';
 import ExportJsonButton from './components/ExportJsonButton';
+import KeyAchievements from './components/KeyAchievements';
 import styles from './styles.module.scss';
 import { useEditModalContext } from '../../../core/context/EditModalContext';
 
@@ -35,6 +36,9 @@ const EditModal = () => {
     handleOverlayClick,
     handleSubmit,
     handleInterestChange,
+    handleAchievementChange,
+    handleAddAchievement,
+    handleRemoveAchievement,
   } = useEditModalContext();
 
   if (!formData) return null;
@@ -48,14 +52,20 @@ const EditModal = () => {
             mainInfo={formData.mainInfo}
             onChange={handleMainInfoChange}
           />
-          <Summary
-            biography={formData.biography}
-            onChange={handleBiographyChange}
-          />
           <Contacts
             contacts={formData.contacts}
             onChange={handleContactsChange}
             onAddressChange={handleAddressChange}
+          />
+          <Summary
+            biography={formData.biography}
+            onChange={handleBiographyChange}
+          />
+          <KeyAchievements
+            achievements={formData.achievements}
+            onAdd={handleAddAchievement}
+            onChange={handleAchievementChange}
+            onDelete={handleRemoveAchievement}
           />
           <Skills
             skills={formData.skills}
@@ -87,6 +97,7 @@ const EditModal = () => {
             onRemove={handleRemoveInterest}
             onChange={handleInterestChange}
           />
+
           <div className={styles.modalActions}>
             <ExportJsonButton data={formData} />
             <div style={{ flex: 1 }} />

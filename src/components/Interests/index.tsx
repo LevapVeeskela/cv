@@ -4,7 +4,9 @@ interface InterestsProps {
   data: string[];
 }
 
-const Interests = ({ data }: InterestsProps) => {
+const Interests = ({ data = [] }: InterestsProps) => {
+  if (data?.length === 0) return null;
+
   return (
     <section className={'section-container'}>
       <header className={'heading'}>

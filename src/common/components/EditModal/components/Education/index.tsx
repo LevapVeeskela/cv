@@ -78,6 +78,7 @@ const Education = ({
           <label>
             Description:
             <textarea
+              className={styles.textarea}
               value={edu.description}
               onChange={(e) => onChange(idx, 'description', e.target.value)}
             />

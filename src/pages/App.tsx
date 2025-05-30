@@ -16,6 +16,7 @@ import {
   WorkHistory,
   Education,
   Interests,
+  KeyAchievements,
 } from '../components';
 import {
   EditModal,
@@ -71,6 +72,7 @@ const AppContent = () => {
                               biography: cvData.biography,
                             }}
                           />
+                          <KeyAchievements data={cvData.achievements} />
                           <WorkHistory data={cvData.workHistory} />
                           <Education data={cvData.education} />
                           <Interests data={cvData.interests} />
@@ -84,6 +86,7 @@ const AppContent = () => {
                             biography: cvData.biography,
                           }}
                         />
+                        <KeyAchievements data={cvData.achievements} />
                         <Contacts data={cvData.contacts} />
                         <div className='resume-mobile-skills-langs-row'>
                           <div className='resume-mobile-skills-col'>

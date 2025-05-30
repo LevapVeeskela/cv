@@ -14,7 +14,7 @@ export interface EditModalContextType {
   setFormData: (data: CvData) => void;
   handleMainInfoChange: (
     field: keyof CvData['mainInfo'],
-    value: string,
+    value: string | File | null,
   ) => void;
   handleBiographyChange: (value: string) => void;
   handleContactsChange: (field: string, value: string) => void;
@@ -45,6 +45,9 @@ export interface EditModalContextType {
   handleOverlayClick: (e: React.MouseEvent<HTMLDivElement>) => void;
   handleSubmit: (e: React.FormEvent) => void;
   handleInterestChange: (index: number, value: string) => void;
+  handleAchievementChange: (index: number, value: string) => void;
+  handleAddAchievement: () => void;
+  handleRemoveAchievement: (idx: number) => void;
 }
 
 export const EditModalContext = createContext<EditModalContextType>(

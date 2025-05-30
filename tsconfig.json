@@ -42,6 +42,15 @@
       ],
       "@constants/*": [
         "src/common/constants/*"
+      ],
+      "@utils": [
+        "src/common/utils/index.ts"
+      ],
+      "@utils/*": [
+        "src/common/utils/*"
+      ],
+      "@core/*": [
+        "src/core/*"
       ]
     }
   },

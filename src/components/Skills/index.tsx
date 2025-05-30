@@ -4,8 +4,9 @@ interface SkillsProps {
   data?: { skill: string; level: number }[];
 }
 
-const Skills = ({ data }: SkillsProps) => {
-  if (!data) return null;
+const Skills = ({ data = [] }: SkillsProps) => {
+  if (data?.length === 0) return null;
+
   return (
     <section className={'section-container'}>
       <header className={'heading'}>

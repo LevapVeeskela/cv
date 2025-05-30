@@ -5,3 +5,4 @@ export * from './interests';
 export * from './mainInfo';
 export * from './skillsAndLanguages';
 export * from './workHistory';
+export * from './achievements';

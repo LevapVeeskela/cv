@@ -1,36 +1,38 @@
-.detailsBox {
+.formRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.rowBox {
+  border: 1.5px solid #e0e0e0;
+  border-radius: 8px;
+  background: #fafdff;
+  margin-bottom: 16px;
+  padding: 12px 10px 6px 10px;
+}
+
+.keyAchievementsEdit {
   border: 1.5px solid #b3d6f6;
   background: #f6fafd;
   border-radius: 8px;
-  margin: 12px 0 8px 0;
+  margin: 12px 0 16px 0;
   padding: 12px 10px 10px 10px;
 }
-.detailsLabel {
+
+.label {
   font-weight: 600;
   color: #0187de;
   margin-bottom: 6px;
   font-size: 1.05rem;
 }
-.detailsRow {
+
+.row {
   display: flex;
   align-items: center;
   gap: 8px;
   margin-bottom: 6px;
-}
-.detailsInput {
-  flex: 1 1 0;
-  min-width: 0;
-  padding: 6px 10px;
-  border: 1px solid #cfd8dc;
-  border-radius: 4px;
-  font-size: 1rem;
-  background: #f8fafc;
-  transition: border 0.2s;
-}
-.detailsInput:focus {
-  border: 1.5px solid #0187de;
-  outline: none;
-  background: #fff;
 }
 
 .textarea {
