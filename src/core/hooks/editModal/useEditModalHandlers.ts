@@ -237,13 +237,15 @@ export const useEditModalHandlers = (state: EditModalState) => {
   // Очистка раздела только в formData (EditModal)
   const handleClearSection = (section: keyof CvData) => {
     if (!state.formData) return;
+    const value = DEFAULT_CV_DATA_EMPTY[section];
     state.setFormData({
       ...state.formData,
-      [section]: Array.isArray(DEFAULT_CV_DATA_EMPTY[section])
-        ? []
-        : typeof DEFAULT_CV_DATA_EMPTY[section] === 'object'
-          ? { ...DEFAULT_CV_DATA_EMPTY[section] }
-          : DEFAULT_CV_DATA_EMPTY[section],
+      [section]:
+        value && typeof value === 'object' && !Array.isArray(value)
+          ? { ...value }
+          : Array.isArray(value)
+            ? []
+            : value,
     });
   };
 
