@@ -1,12 +1,15 @@
+import { CvData } from '@core/hooks/project';
+import { EMPTY_STRING } from '@constants';
 import DeleteButton from '../DeleteButton';
 import AddButton from '../AddButton';
 import ClearButton from '../ClearButton';
+import UnvisibleLevelButton from '../../../UnvisibleLevel';
+import React, { useState } from 'react';
 import styles from './styles.module.scss';
-import { CvData } from '@core/hooks/project';
 
 interface Skill {
   skill: string;
-  level: number;
+  level: string;
 }
 
 interface SkillsProps {
@@ -15,6 +18,7 @@ interface SkillsProps {
   onRemove: (idx: number) => void;
   onChange: (index: number, field: keyof Skill, value: string) => void;
   onClearSection: (section: keyof CvData) => void;
+  onClearAllLevels: () => void;
 }
 
 const Skills = ({
@@ -23,10 +27,26 @@ const Skills = ({
   onRemove,
   onChange,
   onClearSection,
+  onClearAllLevels,
 }: SkillsProps) => {
+  const [levelDisabled, setLevelDisabled] = useState(false);
+
+  const handleToggleLevels = () => {
+    if (!levelDisabled) {
+      onClearAllLevels();
+    }
+    setLevelDisabled((prev) => !prev);
+  };
+
   return (
     <fieldset className={styles.skillsSection} style={{ position: 'relative' }}>
       <legend>Skills</legend>
+      <div className={styles.unvisibleLevelButton}>
+        <UnvisibleLevelButton
+          disabled={levelDisabled}
+          onClick={handleToggleLevels}
+        />
+      </div>
       <ClearButton
         onClick={() => onClearSection('skills')}
         title='Clear all skills'
@@ -45,10 +65,19 @@ const Skills = ({
             Level:
             <input
               type='number'
-              value={skillItem.level}
-              onChange={(e) => onChange(idx, 'level', e.target.value)}
+              value={levelDisabled ? '' : skillItem.level}
+              max={5}
+              maxLength={1}
+              disabled={levelDisabled}
+              onChange={(e) => {
+                if (e.target.value != EMPTY_STRING && +e.target.value > 5) {
+                  return;
+                }
+                onChange(idx, 'level', e.target.value);
+              }}
             />
           </label>
+
           <DeleteButton onClick={() => onRemove(idx)} />
         </div>
       ))}

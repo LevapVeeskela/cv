@@ -6,7 +6,7 @@ interface Language {
 }
 
 interface LanguagesProps {
-  data: Language[];
+  data?: Language[];
 }
 
 const Languages = ({ data = [] }: LanguagesProps) => {
@@ -19,11 +19,7 @@ const Languages = ({ data = [] }: LanguagesProps) => {
       </header>
       <div className='sortableInner'>
         {data.map(({ language, level }) => (
-          <SkillLevelRow
-            key={language}
-            label={language}
-            level={parseInt(level, 10)}
-          />
+          <SkillLevelRow key={language} label={language} level={level} />
         ))}
       </div>
     </section>

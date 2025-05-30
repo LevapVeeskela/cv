@@ -1,7 +1,12 @@
 import SkillLevelRow from '../../common/components/SkillLevelRow';
 
+interface Skill {
+  skill: string;
+  level: string;
+}
+
 interface SkillsProps {
-  data?: { skill: string; level: number }[];
+  data?: Skill[];
 }
 
 const Skills = ({ data = [] }: SkillsProps) => {

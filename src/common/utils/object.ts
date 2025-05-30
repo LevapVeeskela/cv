@@ -1,4 +1,4 @@
-import { EMPTY_STRING } from '@/common/constants';
+import { EMPTY_STRING } from '@constants';
 
 export const isEmptyObject = (obj: object | null | undefined) => {
   for (const prop in obj) {

@@ -30,6 +30,7 @@ export interface EditModalContextType {
   handleLanguageChange: (index: number, field: string, value: string) => void;
   handleAddLanguage: () => void;
   handleRemoveLanguage: (idx: number) => void;
+  handleClearAllLanguageLevels: () => void;
   handleEducationChange: (
     index: number,
     field: string,
@@ -52,6 +53,7 @@ export interface EditModalContextType {
   handleAddAchievement: () => void;
   handleRemoveAchievement: (idx: number) => void;
   handleClearSection: (section: keyof CvData) => void;
+  handleClearAllSkillLevels: () => void;
 }
 
 export const EditModalContext = createContext<EditModalContextType>(

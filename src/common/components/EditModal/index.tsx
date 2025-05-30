@@ -43,6 +43,8 @@ const EditModal = () => {
     showCloseConfirmDialog,
     hideCloseConfirmDialog,
     handleClearSection,
+    handleClearAllLanguageLevels,
+    handleClearAllSkillLevels,
   } = useEditModalContext();
 
   if (!formData) return null;
@@ -88,6 +90,7 @@ const EditModal = () => {
             onRemove={handleRemoveSkill}
             onChange={handleSkillChange}
             onClearSection={handleClearSection}
+            onClearAllLevels={handleClearAllSkillLevels}
           />
           <Languages
             languages={formData.languages}
@@ -95,6 +98,7 @@ const EditModal = () => {
             onRemove={handleRemoveLanguage}
             onChange={handleLanguageChange}
             onClearSection={handleClearSection}
+            onClearAllLevels={handleClearAllLanguageLevels}
           />
           <Education
             education={formData.education}

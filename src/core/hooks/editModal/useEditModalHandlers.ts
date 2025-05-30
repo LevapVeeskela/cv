@@ -10,7 +10,8 @@ export interface EditModalState {
   openModal: (initialData: CvData) => void;
   closeModal: () => void;
 }
-
+// handleClearAllSkillLevels
+// handleClearAllLanguageLevels
 export const useEditModalHandlers = (state: EditModalState) => {
   const { setCvData } = useProjectContext();
   // Main Info
@@ -72,11 +73,19 @@ export const useEditModalHandlers = (state: EditModalState) => {
     };
     state.setFormData({ ...state.formData, skills: updated });
   };
+
+  // Новый метод: массовое зануление level для Skills
+  const handleClearAllSkillLevels = () => {
+    if (!state.formData) return;
+    const updated = state.formData.skills.map((s) => ({ ...s, level: '' }));
+    state.setFormData({ ...state.formData, skills: updated });
+  };
+
   const handleAddSkill = () => {
     if (!state.formData) return;
     state.setFormData({
       ...state.formData,
-      skills: [...state.formData.skills, { skill: EMPTY_STRING, level: 0 }],
+      skills: [...state.formData.skills, { skill: EMPTY_STRING, level: '' }],
     });
   };
   const handleRemoveSkill = (idx: number) => {
@@ -97,13 +106,20 @@ export const useEditModalHandlers = (state: EditModalState) => {
     updated[index] = { ...updated[index], [field]: value };
     state.setFormData({ ...state.formData, languages: updated });
   };
+
+  // Новый метод: массовое зануление level
+  const handleClearAllLanguageLevels = () => {
+    if (!state.formData) return;
+    const updated = state.formData.languages.map((l) => ({ ...l, level: '' }));
+    state.setFormData({ ...state.formData, languages: updated });
+  };
   const handleAddLanguage = () => {
     if (!state.formData) return;
     state.setFormData({
       ...state.formData,
       languages: [
         ...state.formData.languages,
-        { language: EMPTY_STRING, level: '0' },
+        { language: EMPTY_STRING, level: '' },
       ],
     });
   };
@@ -266,9 +282,11 @@ export const useEditModalHandlers = (state: EditModalState) => {
     handleSkillChange,
     handleAddSkill,
     handleRemoveSkill,
+    handleClearAllSkillLevels,
     handleLanguageChange,
     handleAddLanguage,
     handleRemoveLanguage,
+    handleClearAllLanguageLevels,
     handleEducationChange,
     handleAddEducation,
     handleRemoveEducation,
