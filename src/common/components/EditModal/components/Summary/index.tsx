@@ -1,18 +1,33 @@
 import styles from './styles.module.scss';
+import ClearButton from '../ClearButton';
+import { CvData } from '@core/hooks/project';
 
 interface SummaryProps {
   biography: string;
   onChange: (value: string) => void;
+  onClearSection: (section: keyof CvData) => void;
 }
 
-const Summary = ({ biography, onChange }: SummaryProps) => (
-  <fieldset className={styles.summarySection}>
-    <legend>Summary</legend>
-    <label>
-      Biography:
-      <textarea value={biography} onChange={(e) => onChange(e.target.value)} />
-    </label>
-  </fieldset>
-);
+const Summary = ({ biography, onChange, onClearSection }: SummaryProps) => {
+  return (
+    <fieldset
+      className={styles.summarySection}
+      style={{ position: 'relative' }}
+    >
+      <legend>Summary</legend>
+      <ClearButton
+        onClick={() => onClearSection('biography')}
+        title='Clear biography'
+      />
+      <label>
+        Biography:
+        <textarea
+          value={biography}
+          onChange={(e) => onChange(e.target.value)}
+        />
+      </label>
+    </fieldset>
+  );
+};
 
 export default Summary;

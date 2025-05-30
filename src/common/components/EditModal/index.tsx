@@ -42,6 +42,7 @@ const EditModal = () => {
     showCloseConfirm,
     showCloseConfirmDialog,
     hideCloseConfirmDialog,
+    handleClearSection,
   } = useEditModalContext();
 
   if (!formData) return null;
@@ -61,51 +62,60 @@ const EditModal = () => {
           <MainInfo
             mainInfo={formData.mainInfo}
             onChange={handleMainInfoChange}
+            onClearSection={handleClearSection}
           />
           <Contacts
             contacts={formData.contacts}
             onChange={handleContactsChange}
             onAddressChange={handleAddressChange}
+            onClearSection={handleClearSection}
           />
           <Summary
             biography={formData.biography}
             onChange={handleBiographyChange}
+            onClearSection={handleClearSection}
           />
           <KeyAchievements
             achievements={formData.achievements}
             onAdd={handleAddAchievement}
             onChange={handleAchievementChange}
             onDelete={handleRemoveAchievement}
+            onClearSection={handleClearSection}
           />
           <Skills
             skills={formData.skills}
             onAdd={handleAddSkill}
             onRemove={handleRemoveSkill}
             onChange={handleSkillChange}
+            onClearSection={handleClearSection}
           />
           <Languages
             languages={formData.languages}
             onAdd={handleAddLanguage}
             onRemove={handleRemoveLanguage}
             onChange={handleLanguageChange}
+            onClearSection={handleClearSection}
           />
           <Education
             education={formData.education}
             onAdd={handleAddEducation}
             onRemove={handleRemoveEducation}
             onChange={handleEducationChange}
+            onClearSection={handleClearSection}
           />
           <WorkHistory
             workHistory={formData.workHistory}
             onAdd={handleAddWorkHistory}
             onRemove={handleRemoveWorkHistory}
             onChange={handleWorkHistoryChange}
+            onClearSection={handleClearSection}
           />
           <Interests
             interests={formData.interests}
             onAdd={handleAddInterest}
             onRemove={handleRemoveInterest}
             onChange={handleInterestChange}
+            onClearSection={handleClearSection}
           />
 
           <div className={styles.modalActions}>

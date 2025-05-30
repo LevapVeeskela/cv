@@ -1,18 +1,27 @@
 import { ChangeEvent } from 'react';
 import { EditModalContextType } from '@core/context/EditModalContext';
-import { CvData } from '@core/hooks/project/useProjectState';
+import { CvData } from '@core/hooks/project';
 import DeleteButton from '../DeleteButton';
+import ClearButton from '../ClearButton';
 import styles from './styles.module.scss';
 
 interface MainInfoProps {
   mainInfo: CvData['mainInfo'];
   onChange: EditModalContextType['handleMainInfoChange'];
+  onClearSection: (section: keyof CvData) => void;
 }
 
-const MainInfo = ({ mainInfo, onChange }: MainInfoProps) => {
+const MainInfo = ({ mainInfo, onChange, onClearSection }: MainInfoProps) => {
   return (
-    <fieldset className={styles.mainInfoSection}>
+    <fieldset
+      className={styles.mainInfoSection}
+      style={{ position: 'relative' }}
+    >
       <legend>Main Info</legend>
+      <ClearButton
+        onClick={() => onClearSection('mainInfo')}
+        title='Clear all main info fields'
+      />
       <label>
         First Name:
         <input

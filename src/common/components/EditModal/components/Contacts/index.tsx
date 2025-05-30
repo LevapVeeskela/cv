@@ -1,4 +1,6 @@
 import styles from './styles.module.scss';
+import ClearButton from '../ClearButton';
+import { CvData } from '@core/hooks/project';
 
 interface Address {
   city: string;
@@ -15,62 +17,77 @@ interface ContactsProps {
   };
   onChange: (field: string, value: string) => void;
   onAddressChange: (field: string, value: string) => void;
+  onClearSection: (section: keyof CvData) => void;
 }
 
-const Contacts = ({ contacts, onChange, onAddressChange }: ContactsProps) => (
-  <fieldset className={styles.contactsSection}>
-    <legend>Contacts</legend>
-    <label>
-      Phone:
-      <input
-        type='text'
-        value={contacts.phone}
-        onChange={(e) => onChange('phone', e.target.value)}
+const Contacts = ({
+  contacts,
+  onChange,
+  onAddressChange,
+  onClearSection,
+}: ContactsProps) => {
+  return (
+    <fieldset
+      className={styles.contactsSection}
+      style={{ position: 'relative' }}
+    >
+      <legend>Contacts</legend>
+      <ClearButton
+        onClick={() => onClearSection('contacts')}
+        title='Clear all contacts'
       />
-    </label>
-    <label>
-      Email:
-      <input
-        type='text'
-        value={contacts.email}
-        onChange={(e) => onChange('email', e.target.value)}
-      />
-    </label>
-    <label>
-      LinkedIn:
-      <input
-        type='text'
-        value={contacts.linkedin}
-        onChange={(e) => onChange('linkedin', e.target.value)}
-      />
-    </label>
-    <div className={styles.contactsAddressRow}>
       <label>
-        City:
+        Phone:
         <input
           type='text'
-          value={contacts.address.city}
-          onChange={(e) => onAddressChange('city', e.target.value)}
+          value={contacts.phone}
+          onChange={(e) => onChange('phone', e.target.value)}
         />
       </label>
       <label>
-        State:
+        Email:
         <input
           type='text'
-          value={contacts.address.state}
-          onChange={(e) => onAddressChange('state', e.target.value)}
+          value={contacts.email}
+          onChange={(e) => onChange('email', e.target.value)}
         />
       </label>
       <label>
-        ZIP:
+        LinkedIn:
         <input
           type='text'
-          value={contacts.address.zip}
-          onChange={(e) => onAddressChange('zip', e.target.value)}
+          value={contacts.linkedin}
+          onChange={(e) => onChange('linkedin', e.target.value)}
         />
       </label>
-    </div>
-  </fieldset>
-);
+      <div className={styles.contactsAddressRow}>
+        <label>
+          City:
+          <input
+            type='text'
+            value={contacts.address.city}
+            onChange={(e) => onAddressChange('city', e.target.value)}
+          />
+        </label>
+        <label>
+          State:
+          <input
+            type='text'
+            value={contacts.address.state}
+            onChange={(e) => onAddressChange('state', e.target.value)}
+          />
+        </label>
+        <label>
+          ZIP:
+          <input
+            type='text'
+            value={contacts.address.zip}
+            onChange={(e) => onAddressChange('zip', e.target.value)}
+          />
+        </label>
+      </div>
+    </fieldset>
+  );
+};
 
 export default Contacts;

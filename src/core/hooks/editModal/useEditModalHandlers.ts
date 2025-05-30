@@ -1,6 +1,7 @@
 import { EMPTY_STRING } from '@constants';
 import { CvData } from '../../hooks/project';
 import { useProjectContext } from '../../context/ProjectContext';
+import { DEFAULT_CV_DATA_EMPTY } from '../../hooks/project/useProjectState';
 
 export interface EditModalState {
   isModalOpen: boolean;
@@ -233,10 +234,23 @@ export const useEditModalHandlers = (state: EditModalState) => {
     state.setFormData({ ...state.formData, interests: updated });
   };
 
+  // Очистка раздела только в formData (EditModal)
+  const handleClearSection = (section: keyof CvData) => {
+    if (!state.formData) return;
+    state.setFormData({
+      ...state.formData,
+      [section]: Array.isArray(DEFAULT_CV_DATA_EMPTY[section])
+        ? []
+        : typeof DEFAULT_CV_DATA_EMPTY[section] === 'object'
+          ? { ...DEFAULT_CV_DATA_EMPTY[section] }
+          : DEFAULT_CV_DATA_EMPTY[section],
+    });
+  };
+
   // Применить изменения
   const handleApply = () => {
     if (state.formData) {
-      setCvData(state.formData);
+      setCvData({ ...state.formData });
     }
     state.closeModal();
   };
@@ -266,5 +280,6 @@ export const useEditModalHandlers = (state: EditModalState) => {
     handleSubmit,
     handleInterestChange,
     handleApply,
+    handleClearSection,
   };
 };

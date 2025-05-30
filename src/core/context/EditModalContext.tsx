@@ -51,6 +51,7 @@ export interface EditModalContextType {
   handleAchievementChange: (index: number, value: string) => void;
   handleAddAchievement: () => void;
   handleRemoveAchievement: (idx: number) => void;
+  handleClearSection: (section: keyof CvData) => void;
 }
 
 export const EditModalContext = createContext<EditModalContextType>(
