@@ -23,7 +23,9 @@ import {
   DownloadPdfButton,
   ButtonEditModal,
   ImportJsonButton,
+  ExportJsonButton,
 } from '../common/components';
+import ResetCacheButton from '../common/components/ResetCacheButton';
 
 const AppContent = () => {
   const { cvData, setCvData } = useProjectContext();
@@ -44,6 +46,8 @@ const AppContent = () => {
                   <DownloadPdfButton />
                   <ButtonEditModal onClickHandler={onClickHandler} />
                   <ImportJsonButton onImport={setCvData} />
+                  <ExportJsonButton data={cvData} />
+                  <ResetCacheButton />
                 </div>
                 <div
                   className='preview-container position-relative'

@@ -6,3 +6,5 @@ export * from './mainInfo';
 export * from './skillsAndLanguages';
 export * from './workHistory';
 export * from './achievements';
+export * from './storage';
+export * from './defaultValues';

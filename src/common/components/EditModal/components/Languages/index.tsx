@@ -1,4 +1,4 @@
-import { CvData } from '@core/hooks/project';
+import { CvData } from '@constants';
 import { EMPTY_STRING } from '@constants';
 import DeleteButton from '../DeleteButton';
 import AddButton from '../AddButton';

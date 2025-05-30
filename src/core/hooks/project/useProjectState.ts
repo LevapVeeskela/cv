@@ -1,57 +1,29 @@
-import { useState } from 'react';
-import {
-  MAIN_INFO,
-  BIOGRAPHY,
-  ACHIEVEMENTS,
-  CONTACTS,
-  SKILLS,
-  LANGUAGES,
-  EDUCATION,
-  WORK_HISTORY,
-  INTERESTS,
-  EMPTY_STRING,
-} from '@constants';
-
-const DEFAULT_CV_DATA = {
-  contacts: CONTACTS,
-  skills: SKILLS,
-  languages: LANGUAGES,
-  mainInfo: MAIN_INFO,
-  biography: BIOGRAPHY,
-  education: EDUCATION,
-  workHistory: WORK_HISTORY,
-  interests: INTERESTS,
-  achievements: ACHIEVEMENTS,
-};
-
-export type CvData = typeof DEFAULT_CV_DATA;
-
-export const DEFAULT_CV_DATA_EMPTY: CvData = {
-  contacts: {
-    address: { city: EMPTY_STRING, state: EMPTY_STRING, zip: EMPTY_STRING },
-    phone: EMPTY_STRING,
-    email: EMPTY_STRING,
-    linkedin: EMPTY_STRING,
-  },
-  skills: [],
-  languages: [],
-  mainInfo: {
-    firstName: EMPTY_STRING,
-    lastName: EMPTY_STRING,
-    title: EMPTY_STRING,
-    photo: EMPTY_STRING,
-    photoAlt: EMPTY_STRING,
-  },
-  biography: EMPTY_STRING,
-  education: [],
-  workHistory: [],
-  interests: [],
-  achievements: [],
-};
+import { useState, useEffect, useCallback } from 'react';
+import { DEFAULT_CV_DATA, LOCAL_STORAGE_KEY } from '@constants';
 
 export const useProjectState = () => {
-  const [cvData, setCvData] = useState(DEFAULT_CV_DATA);
-  return { cvData, setCvData };
+  const [cvData, setCvData] = useState(() => {
+    const stored = localStorage.getItem(LOCAL_STORAGE_KEY);
+    if (stored) {
+      try {
+        return JSON.parse(stored);
+      } catch {
+        return DEFAULT_CV_DATA;
+      }
+    }
+    return DEFAULT_CV_DATA;
+  });
+
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(cvData));
+  }, [cvData]);
+
+  const resetCvData = useCallback(() => {
+    setCvData(DEFAULT_CV_DATA);
+    localStorage.removeItem(LOCAL_STORAGE_KEY);
+  }, []);
+
+  return { cvData, setCvData, resetCvData };
 };
 
 export type ProjectState = ReturnType<typeof useProjectState>;

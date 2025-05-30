@@ -1,10 +1,10 @@
 import React, { createContext, PropsWithChildren, useContext } from 'react';
+import { CvData } from '@constants';
 import {
   useEditModalState,
   useEditModalLifecycle,
   useEditModalHandlers,
 } from '../hooks/editModal';
-import { CvData } from '../hooks/project';
 
 export interface EditModalContextType {
   isModalOpen: boolean;

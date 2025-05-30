@@ -1,7 +1,5 @@
-import { EMPTY_STRING } from '@constants';
-import { CvData } from '../../hooks/project';
+import { EMPTY_STRING, DEFAULT_CV_DATA_EMPTY, CvData } from '@constants';
 import { useProjectContext } from '../../context/ProjectContext';
-import { DEFAULT_CV_DATA_EMPTY } from '../../hooks/project/useProjectState';
 
 export interface EditModalState {
   isModalOpen: boolean;

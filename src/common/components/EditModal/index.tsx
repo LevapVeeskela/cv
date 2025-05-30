@@ -1,4 +1,5 @@
 import { useEditModalContext } from '@core/context/EditModalContext';
+import ExportJsonButton from '../ExportJsonButton';
 import MainInfo from './components/MainInfo';
 import Summary from './components/Summary';
 import Contacts from './components/Contacts';
@@ -7,7 +8,6 @@ import Languages from './components/Languages';
 import Education from './components/Education';
 import WorkHistory from './components/WorkHistory';
 import Interests from './components/Interests';
-import ExportJsonButton from './components/ExportJsonButton';
 import KeyAchievements from './components/KeyAchievements';
 import CloseConfirm from './components/CloseConfirm';
 import styles from './styles.module.scss';

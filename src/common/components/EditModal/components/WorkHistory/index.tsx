@@ -1,9 +1,9 @@
-import styles from './styles.module.scss';
+import { CvData } from '@constants';
 import DeleteButton from '../DeleteButton';
 import AddButton from '../AddButton';
 import Details from '../Details';
 import ClearButton from '../ClearButton';
-import { CvData } from '@core/hooks/project';
+import styles from './styles.module.scss';
 
 interface WorkHistoryItem {
   title: string;

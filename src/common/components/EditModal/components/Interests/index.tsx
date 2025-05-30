@@ -2,7 +2,7 @@ import DeleteButton from '../DeleteButton';
 import AddButton from '../AddButton';
 import ClearButton from '../ClearButton';
 import styles from './styles.module.scss';
-import { CvData } from '@core/hooks/project';
+import { CvData } from '@constants';
 
 interface InterestsProps {
   interests: string[];

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { CvData } from '../../hooks/project';
+import { CvData } from '@constants';
 
 export const useEditModalState = () => {
   const [isModalOpen, setModalOpen] = useState(false);

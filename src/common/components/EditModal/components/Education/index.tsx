@@ -1,9 +1,9 @@
+import { CvData } from '@constants';
 import DeleteButton from '../DeleteButton';
 import AddButton from '../AddButton';
 import Details from '../Details';
 import ClearButton from '../ClearButton';
 import styles from './styles.module.scss';
-import { CvData } from '@core/hooks/project';
 
 interface EducationItem {
   start: string;

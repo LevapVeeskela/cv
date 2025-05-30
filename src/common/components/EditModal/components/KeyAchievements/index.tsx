@@ -1,7 +1,7 @@
 import AddButton from '../AddButton';
 import DeleteButton from '../DeleteButton';
 import ClearButton from '../ClearButton';
-import { CvData } from '@core/hooks/project';
+import { CvData } from '@constants';
 import styles from './styles.module.scss';
 
 interface KeyAchievementsEditProps {

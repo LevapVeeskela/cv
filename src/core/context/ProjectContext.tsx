@@ -7,7 +7,10 @@ import {
   // useProjectLifecycle,
 } from '../hooks/project';
 
-export type ProjectContextType = ProjectState & ProjectHandlers;
+export type ProjectContextType = ProjectState &
+  ProjectHandlers & {
+    resetCvData: () => void;
+  };
 
 export const ProjectContext = createContext<ProjectContextType>(
   {} as ProjectContextType,
@@ -20,7 +23,9 @@ export const ProjectProvider = ({ children }: PropsWithChildren) => {
   // useProjectLifecycle(state);
 
   return (
-    <ProjectContext.Provider value={{ ...state, ...handlers }}>
+    <ProjectContext.Provider
+      value={{ ...state, ...handlers, resetCvData: state.resetCvData }}
+    >
       {children}
     </ProjectContext.Provider>
   );

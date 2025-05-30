@@ -1,6 +1,6 @@
 import styles from './styles.module.scss';
 import ClearButton from '../ClearButton';
-import { CvData } from '@core/hooks/project';
+import { CvData } from '@constants';
 
 interface SummaryProps {
   biography: string;
