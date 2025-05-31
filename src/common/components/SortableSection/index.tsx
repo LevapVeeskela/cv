@@ -1,10 +1,9 @@
+import React, { PropsWithChildren } from 'react';
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
-import React from 'react';
 
 interface SortableSectionProps {
   id: string;
-  children: React.ReactNode;
   isDragMode: boolean;
 }
 
@@ -12,7 +11,7 @@ const SortableSection = ({
   id,
   children,
   isDragMode,
-}: SortableSectionProps) => {
+}: PropsWithChildren<SortableSectionProps>) => {
   const {
     setNodeRef,
     attributes,

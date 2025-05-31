@@ -15,7 +15,7 @@ interface EducationProps {
 }
 
 const Education = ({ data }: EducationProps) => {
-  if (data?.length === 0) return null;
+  if (!Array.isArray(data) || data.length === 0) return null;
 
   return (
     <section className='section-container'>

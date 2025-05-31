@@ -35,9 +35,15 @@ export const useProjectState = () => {
       try {
         const parsed = JSON.parse(stored);
         return {
-          left: Array.isArray(parsed.left) ? parsed.left : [...LEFT_SECTIONS],
+          left: Array.isArray(parsed.left)
+            ? parsed.left
+                .map((k: any) => String(k))
+                .filter((k: any) => LEFT_SECTIONS.includes(k as any))
+            : [...LEFT_SECTIONS],
           right: Array.isArray(parsed.right)
             ? parsed.right
+                .map((k: any) => String(k))
+                .filter((k: any) => RIGHT_SECTIONS.includes(k as any))
             : [...RIGHT_SECTIONS],
         };
       } catch {
@@ -55,40 +61,17 @@ export const useProjectState = () => {
   );
   const [isMobile, setIsMobile] = useState(false);
 
-  // Сохраняем порядок при изменении
-  const saveOrder = (left: LeftSectionKey[], right: RightSectionKey[]) => {
-    localStorage.setItem(ORDER_STORAGE_KEY, JSON.stringify({ left, right }));
-  };
-
-  // Обновляем localStorage при изменении порядка
-  const setLeftOrderWithSave = (order: LeftSectionKey[]) => {
-    setLeftOrder(order);
-    saveOrder(order, rightOrder);
-  };
-  const setRightOrderWithSave = (order: RightSectionKey[]) => {
-    setRightOrder(order);
-    saveOrder(leftOrder, order);
-  };
-
-  // Сброс порядка к дефолту
-  const resetOrder = () => {
-    setLeftOrder([...LEFT_SECTIONS]);
-    setRightOrder([...RIGHT_SECTIONS]);
-    saveOrder([...LEFT_SECTIONS], [...RIGHT_SECTIONS]);
-  };
-
   return {
     cvData,
     setCvData,
     isDragMode,
     setIsDragMode,
     leftOrder,
-    setLeftOrder: setLeftOrderWithSave,
+    setLeftOrder,
     rightOrder,
-    setRightOrder: setRightOrderWithSave,
+    setRightOrder,
     isMobile,
     setIsMobile,
-    resetOrder,
   };
 };
 

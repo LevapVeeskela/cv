@@ -7,6 +7,9 @@ import {
   LeftSectionKey,
   RightSectionKey,
   SectionKey,
+  ORDER_STORAGE_KEY,
+  LEFT_SECTIONS,
+  RIGHT_SECTIONS,
 } from '@constants';
 import { ProjectState } from './useProjectState';
 
@@ -16,7 +19,6 @@ export const useProjectHandlers = ({
   setLeftOrder,
   rightOrder,
   setRightOrder,
-  resetOrder,
 }: ProjectState) => {
   // Удаляет указанный раздел из cvData
   const handleClearSection = (section: string) => {
@@ -25,6 +27,13 @@ export const useProjectHandlers = ({
       delete updated[section];
       return updated;
     });
+  };
+
+  // Сброс порядка к дефолту
+  const resetOrder = () => {
+    setLeftOrder([...LEFT_SECTIONS]);
+    setRightOrder([...RIGHT_SECTIONS]);
+    saveOrder([...LEFT_SECTIONS], [...RIGHT_SECTIONS]);
   };
 
   const resetCvData = useCallback(() => {
@@ -55,7 +64,38 @@ export const useProjectHandlers = ({
     }
   };
 
-  return { handleClearSection, resetCvData, handleDragEnd };
+  // Сохраняем порядок при изменении
+  const saveOrder = (left: LeftSectionKey[], right: RightSectionKey[]) => {
+    localStorage.setItem(ORDER_STORAGE_KEY, JSON.stringify({ left, right }));
+  };
+
+  // Обновляем localStorage при изменении порядка
+  const setLeftOrderWithSave = (order: LeftSectionKey[]) => {
+    setLeftOrder(order);
+    saveOrder(order, rightOrder);
+  };
+  const setRightOrderWithSave = (order: RightSectionKey[]) => {
+    setRightOrder(order);
+    saveOrder(leftOrder, order);
+  };
+
+  const setOrdersFromImport = (
+    left: LeftSectionKey[],
+    right: RightSectionKey[],
+  ) => {
+    setLeftOrder(left);
+    setRightOrder(right);
+    saveOrder(left, right);
+  };
+  return {
+    handleClearSection,
+    resetCvData,
+    handleDragEnd,
+    setLeftOrderWithSave,
+    setRightOrderWithSave,
+    resetOrder,
+    setOrdersFromImport,
+  };
 };
 
 export type ProjectHandlers = ReturnType<typeof useProjectHandlers>;

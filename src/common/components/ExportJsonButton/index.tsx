@@ -1,16 +1,26 @@
+import React from 'react';
+import { useProjectContext } from '@core/context/ProjectContext';
 import styles from './styles.module.scss';
+import { CvData } from '@constants';
 
 interface ExportJsonButtonProps {
-  data: any;
+  data: CvData;
   fileName?: string;
 }
 
 const ExportJsonButton = ({
   data,
-  fileName = 'cv-data.json',
+  fileName = 'cv-export.json',
 }: ExportJsonButtonProps) => {
+  const { leftOrder, rightOrder } = useProjectContext();
+
   const handleExport = () => {
-    const json = JSON.stringify(data, null, 2);
+    const exportData = {
+      ...data,
+      leftOrder,
+      rightOrder,
+    };
+    const json = JSON.stringify(exportData, null, 2);
     const blob = new Blob([json], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
@@ -19,6 +29,7 @@ const ExportJsonButton = ({
     a.click();
     URL.revokeObjectURL(url);
   };
+
   return (
     <button
       type='button'
