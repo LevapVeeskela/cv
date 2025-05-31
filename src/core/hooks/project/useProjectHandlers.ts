@@ -16,6 +16,7 @@ export const useProjectHandlers = ({
   setLeftOrder,
   rightOrder,
   setRightOrder,
+  resetOrder,
 }: ProjectState) => {
   // Удаляет указанный раздел из cvData
   const handleClearSection = (section: string) => {
@@ -29,7 +30,8 @@ export const useProjectHandlers = ({
   const resetCvData = useCallback(() => {
     setCvData(DEFAULT_CV_DATA);
     localStorage.removeItem(LOCAL_STORAGE_KEY);
-  }, [setCvData]);
+    resetOrder();
+  }, [setCvData, resetOrder]);
 
   const handleDragEnd = (event: DragEndEvent) => {
     const { active, over } = event;

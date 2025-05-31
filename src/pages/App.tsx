@@ -41,6 +41,7 @@ import {
   verticalListSortingStrategy,
 } from '@dnd-kit/sortable';
 import { SECTION_COMPONENTS } from '../common/constants/sections';
+import { EMPTY_STRING } from '@/common/constants';
 
 const AppContent = () => {
   const {
@@ -64,7 +65,7 @@ const AppContent = () => {
   );
 
   return (
-    <section className={`page-wrap${isMobile ? ' mobile' : ''}`}>
+    <section className={`page-wrap${isMobile ? ' mobile' : EMPTY_STRING}`}>
       <main id='app' role='main'>
         <section className='page-wrapper'>
           <div className='page-final'>
