@@ -17,7 +17,6 @@ interface MainInfoProps {
 
 const MainInfo = ({ data }: MainInfoProps) => {
   const mainInfo = data?.mainInfo;
-  const biography = data?.biography || EMPTY_STRING;
 
   if (isEmptyValueObject(data)) return null;
 
@@ -49,16 +48,6 @@ const MainInfo = ({ data }: MainInfoProps) => {
                 {mainInfo?.title}
               </div>
             </div>
-          </div>
-        </section>
-      )}
-
-      {/* Summary/Biography Section */}
-      {biography?.length > 0 && (
-        <section className='section-container'>
-          <header className='heading'>Summary</header>
-          <div className='field singlecolumn'>
-            <p>{biography}</p>
           </div>
         </section>
       )}

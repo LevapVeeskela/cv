@@ -6,3 +6,4 @@ export { default as Languages } from './Languages';
 export { default as WorkHistory } from './WorkHistory';
 export { default as Contacts } from './Contacts';
 export { default as KeyAchievements } from './KeyAchievements';
+export { default as Summary } from './Summary';

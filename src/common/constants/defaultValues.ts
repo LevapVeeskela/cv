@@ -1,15 +1,12 @@
-import {
-  MAIN_INFO,
-  BIOGRAPHY,
-  ACHIEVEMENTS,
-  CONTACTS,
-  SKILLS,
-  LANGUAGES,
-  EDUCATION,
-  WORK_HISTORY,
-  INTERESTS,
-  EMPTY_STRING,
-} from './';
+import { MAIN_INFO } from './mainInfo';
+import { BIOGRAPHY } from './biography';
+import { ACHIEVEMENTS } from './achievements';
+import { CONTACTS } from './contacts';
+import { SKILLS, LANGUAGES } from './skillsAndLanguages';
+import { EDUCATION } from './education';
+import { WORK_HISTORY } from './workHistory';
+import { INTERESTS } from './interests';
+import { EMPTY_STRING } from './common';
 
 export const DEFAULT_CV_DATA = {
   contacts: CONTACTS,

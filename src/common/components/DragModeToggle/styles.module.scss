@@ -1,0 +1,34 @@
+.dragToggleBtn {
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 0;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  min-width: 0;
+  min-height: 0;
+  background-color: #007bff;
+
+  &:hover {
+    background-color: #0056b3;
+  }
+
+  &:active {
+    background-color: #004085;
+  }
+}
+.dragToggleBtn[aria-pressed="true"] {
+  background: #005fa3;
+}
+
+.dragToggleBtn svg {
+  display: block;
+}

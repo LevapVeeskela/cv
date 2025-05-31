@@ -15,12 +15,12 @@ interface WorkHistoryProps {
 }
 
 const WorkHistory = ({ data }: WorkHistoryProps) => {
-  if (data?.length === 0) return null;
+  if (!Array.isArray(data) || data.length === 0) return null;
 
   return (
-    <section className={`${styles['section-container']} data-EXPR`}>
-      <header className={styles.heading}>
-        <span className={styles.sectiontitle}>Work History</span>
+    <section className={'section-container'}>
+      <header className={'heading'}>
+        <span className={'sectiontitle'}>Work History</span>
       </header>
       <div>
         {data.map((job, idx) => (

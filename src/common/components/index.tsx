@@ -5,3 +5,5 @@ export { default as SkillLevelRow } from './SkillLevelRow';
 export { default as ImportJsonButton } from './ImportJsonButton';
 export { default as ResetCacheButton } from './ResetCacheButton';
 export { default as ExportJsonButton } from './ExportJsonButton';
+export { default as DragModeToggle } from './DragModeToggle';
+export { default as SortableSection } from './SortableSection';
