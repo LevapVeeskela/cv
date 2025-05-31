@@ -1,6 +1,9 @@
 import { useEffect } from 'react';
+import { LOCAL_STORAGE_KEY } from '@constants';
+import { ProjectState } from './useProjectState';
 
-// TODO: maybe add more lifecycle methods in the future
-export const useProjectLifecycle = (state: any) => {
-  useEffect(() => {}, [state.cvData]);
+export const useProjectLifecycle = ({ cvData }: ProjectState) => {
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(cvData));
+  }, [cvData]);
 };

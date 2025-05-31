@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState } from 'react';
 import { DEFAULT_CV_DATA, LOCAL_STORAGE_KEY } from '@constants';
 
 export const useProjectState = () => {
@@ -14,16 +14,7 @@ export const useProjectState = () => {
     return DEFAULT_CV_DATA;
   });
 
-  useEffect(() => {
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(cvData));
-  }, [cvData]);
-
-  const resetCvData = useCallback(() => {
-    setCvData(DEFAULT_CV_DATA);
-    localStorage.removeItem(LOCAL_STORAGE_KEY);
-  }, []);
-
-  return { cvData, setCvData, resetCvData };
+  return { cvData, setCvData };
 };
 
 export type ProjectState = ReturnType<typeof useProjectState>;
