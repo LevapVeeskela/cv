@@ -53,14 +53,14 @@ export const useProjectHandlers = ({
     ) {
       const oldIdx = leftOrder.indexOf(activeId as LeftSectionKey);
       const newIdx = leftOrder.indexOf(overId as LeftSectionKey);
-      setLeftOrder(arrayMove(leftOrder, oldIdx, newIdx));
+      setLeftOrderWithSave(arrayMove(leftOrder, oldIdx, newIdx));
     } else if (
       rightOrder.includes(activeId as RightSectionKey) &&
       rightOrder.includes(overId as RightSectionKey)
     ) {
       const oldIdx = rightOrder.indexOf(activeId as RightSectionKey);
       const newIdx = rightOrder.indexOf(overId as RightSectionKey);
-      setRightOrder(arrayMove(rightOrder, oldIdx, newIdx));
+      setRightOrderWithSave(arrayMove(rightOrder, oldIdx, newIdx));
     }
   };
 

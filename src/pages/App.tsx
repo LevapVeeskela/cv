@@ -40,8 +40,7 @@ import {
   SortableContext,
   verticalListSortingStrategy,
 } from '@dnd-kit/sortable';
-import { SECTION_COMPONENTS } from '../common/constants/sections';
-import { EMPTY_STRING } from '@/common/constants';
+import { EMPTY_STRING, SECTION_COMPONENTS } from '@constants';
 
 const AppContent = () => {
   const {
