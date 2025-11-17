@@ -56,7 +56,7 @@ export const WORK_HISTORY = [
     end: '2021',
     details: [
       'Discussed and developed the application architecture.',
-      'Wrote back-end on .Net and .Net Core platform on C# using Visual Studio 2015/2017/2019 and using databases such as SQL(MySQL), NoSQL(MongoDb), using IDE: SQL Server Management Studio and Navicat Premium 15.',
+      'Wrote back-end on .Net and .Net Core platform on C# using Visual Studio 2015/2017/2019 and using databases such as SQL(MySQL, MS SQL), NoSQL(MongoDb), using IDE: SQL Server Management Studio and Navicat Premium 15.',
       'Wrote front-end on AngularJs, Angular 2+, VueJs, React framework using Visual Studio Code.',
       'Was engaged in the deployment of projects using local TFS 2015, Azure Devops 2019.',
       'Reviewed code, debugged problems and corrected issues.',
