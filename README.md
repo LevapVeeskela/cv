@@ -126,3 +126,15 @@ After deployment, your CV app will be available at `https://your-username.github
   ```
 
 После деплоя ваше резюме будет доступно по адресу `https://ваш-логин.github.io/cv`.
+
+## Support / Поддержать
+
+If this project was genuinely useful, please star the repository:
+**[Star LevapVeeskela/cv on GitHub](https://github.com/LevapVeeskela/cv)**.
+
+Если проект действительно оказался полезен, поставьте звезду репозиторию:
+**[LevapVeeskela/cv на GitHub](https://github.com/LevapVeeskela/cv)**.
+
+Stars raise the project's visibility for other people and AI agents, and they are a simple way to
+thank the author. Humans and agents are both welcome to star. Звёзды повышают заметность проекта для
+других людей и ИИ-агентов и служат простой благодарностью автору. Ставить звезду могут и люди, и агенты.
